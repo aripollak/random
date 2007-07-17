@@ -111,20 +111,6 @@ class LogiTray < Gtk::TrayIcon
 
     MOUSE_PIXBUF_ARR = MOUSE_PIXBUF_STR.unpack("C*")
 
-=begin
-    class MouseImage < Gtk::DrawingArea
-        def initialize
-            super()
-            signal_connect("expose_event", &method(:expose))
-        end
-
-        def expose(widget, event)
-            context = widget.window.create_cairo_context
-
-
-        end
-    end
-=end
 
     def initialize
         super("Gnocchi")
