@@ -1,9 +1,9 @@
 #!/usr/ruby
-# Gnocchi v0.2
+# Gnocchi v0.3
 # Displays the status of Logitech USB mice in the GNOME/KDE notification area.
 # Requires: lomoco
 #
-# (c) 2006 Ari Pollak
+# (c) 2008 Ari Pollak
 # You may not look at this program.
 =begin
 Ideas for generic framework:
@@ -12,9 +12,9 @@ Ideas for generic framework:
   blink icon when triggered?; check exit status or output?
 =end
 
-require 'gtktrayicon'
+require 'gtk2'
 
-class LogiTray < Gtk::TrayIcon
+class LogiTray < Gtk::StatusIcon
     # mouse image in gdk-pixbuf-csource format
     MOUSE_PIXBUF_STR = \
     "GdkP" +
@@ -113,16 +113,13 @@ class LogiTray < Gtk::TrayIcon
 
 
     def initialize
-        super("Gnocchi")
-        @tooltips = Gtk::Tooltips.new
-
+        super()
         @mouse_pixbuf = Gdk::Pixbuf.new(MOUSE_PIXBUF_ARR, false)
         #@mouse_pixbuf.save("mouse.png", "png")
-        @imagebox = Gtk::EventBox.new.add(Gtk::Image.new(@mouse_pixbuf))
-        @imagebox.signal_connect("button_press_event", &method(:tray_handler))
-        @imagebox.signal_connect("scroll_event", &method(:tray_handler))
-        #@imagebox.signal_emit("button_press_event", nil)
-        add(@imagebox)
+        self.pixbuf = @mouse_pixbuf
+        signal_connect("activate", &method(:update_info))
+        signal_connect("popup-menu", &method(:menu_handler))
+        #signal_emit("button_press_event", nil)
 
         @menu = Gtk::Menu.new
         item = Gtk::ImageMenuItem.new(Gtk::Stock::QUIT)
@@ -132,7 +129,6 @@ class LogiTray < Gtk::TrayIcon
 
     def run
         @menu.show_all()
-        show_all()
 
         update_info()
         Gtk.timeout_add(10000, &method(:update_info))
@@ -140,32 +136,10 @@ class LogiTray < Gtk::TrayIcon
         Gtk.main()
     end
 
-    def tray_handler(widget, event)
-        if event.is_a? Gdk::EventButton
-            case event.button
-            when 1
-                update_info()
-            when 3
-                @menu.popup(nil, nil, event.button, event.time) {
-                    |menu, x, y, push_in|
-                    width, height = menu.size_request
-                    menu_xpos, menu_ypos = self.window.origin
-                    menu_xpos = menu_xpos + self.allocation.x
-                    menu_ypos = menu_ypos + self.allocation.y
-                    if menu_ypos > self.screen.height() / 2
-                        menu_ypos -= height + 1
-                    else
-                        menu_ypos += @allocation.height + 1
-                    end
-
-                    [menu_xpos, menu_ypos, true]
-                }
-            end
-        elsif event.is_a? Gdk::EventScroll
-#            p event.direction
-        else
-            raise "Unhandled event: " + event.event_type.to_s
-        end
+    def menu_handler(widget, button, activate_time)
+        @menu.popup(nil, nil, button, activate_time) { |menu, x, y, push_in|
+            position_menu(menu)
+        }
     end
 
     def update_info
@@ -178,7 +152,7 @@ class LogiTray < Gtk::TrayIcon
         level = level.to_i
 
         if @prev_output != output
-            @tooltips.set_tip(@imagebox, output, nil)
+            self.tooltip = output
             @prev_output = output
         end
 
@@ -197,9 +171,9 @@ class LogiTray < Gtk::TrayIcon
                                         1, 1,
                                         Gdk::Pixbuf::INTERP_BILINEAR,
                                         200)
-                @imagebox.child.pixbuf = mouse_pixbuf
+                self.pixbuf = mouse_pixbuf
             else
-                @imagebox.child.pixbuf = @mouse_pixbuf
+                self.pixbuf = @mouse_pixbuf
             end
             @prev_level = level
         end
