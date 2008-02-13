@@ -158,7 +158,7 @@ class LogiTray < Gtk::StatusIcon
 
         if @prev_level != level
             if level <= 4
-                icon_pixbuf = @imagebox.render_icon(Gtk::Stock::NO,
+                icon_pixbuf = Gtk::Image::new.render_icon(Gtk::Stock::NO,
                                                     Gtk::IconSize::MENU)
                 mouse_pixbuf = @mouse_pixbuf.dup
                 mouse_pixbuf.composite!(icon_pixbuf, 8, 8,
