@@ -1,4 +1,4 @@
-#!/usr/ruby
+#!/usr/bin/ruby
 # Gnocchi v0.3
 # Displays the status of Logitech USB mice in the GNOME/KDE notification area.
 # Requires: lomoco
@@ -142,7 +142,7 @@ class LogiTray < Gtk::StatusIcon
         }
     end
 
-    def update_info
+    def update_info(*args)
         output = `lomoco -i 2>&1`
         output.strip!
         begin

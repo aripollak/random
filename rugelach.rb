@@ -1,4 +1,4 @@
-#!/usr/ruby
+#!/usr/bin/ruby
 # Rugelach v0.1
 # Displays the wireless signal strength of wireless connections in
 # the GNOME/KDE Notification Area
