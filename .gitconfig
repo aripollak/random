@@ -1,0 +1,18 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[clean]
+	requireForce = true
+[alias] 
+	co = checkout
+	ld = log --decorate --graph
+	st = status
+	svn-diff = !git-svn-diff.sh
+[user]
+	name = Ari Pollak
+	email = ajp@aripollak.com
+[merge]
+	tool = gvimdiff
+[core]
+	excludesfile = ~/.gitconfig-ignore
