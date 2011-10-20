@@ -2,11 +2,17 @@
 	diff = auto
 	status = auto
 	branch = auto
+#branch]
+#	# make git pull re-apply your local changes on top of any new commits;
+#	# you probably don't want this if you ever merge any other branches.
+#	autosetuprebase = remote
 [clean]
 	requireForce = true
 [alias] 
 	co = checkout
 	ld = log --decorate --graph
+	lol = log --oneline --decorate
+	lolg = log --oneline --decorate --graph
 	st = status
 	svn-diff = !git-svn-diff.sh
 [user]
