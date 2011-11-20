@@ -1,0 +1,25 @@
+#!/bin/sh
+# Makes a sound every time a response is received from the given remote host;
+# slightly more friendly than ping -a.
+# Usage: ./pingspeech yahoo.com
+
+perl_command='"ping\n\n" if m/bytes from/;'
+
+TEMP=`getopt -o s` || exit 1
+eval set -- "$TEMP"
+
+while true; do 
+    case "$1" in
+        -s) 
+            # With -s, speak the ping time in ms instead of "ping"
+            perl_command='"$1\n\n" if m/bytes from.*time=([0-9\.]+)/;'
+            shift
+            ;;
+        --)
+            shift; break ;;
+    esac
+done
+
+echo $@
+echo "Pinging. Press Ctrl+C to exit."
+ping $* | perl -ne "$|=1; print $perl_command" | festival --tts
