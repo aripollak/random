@@ -5,7 +5,7 @@
 
 perl_command='"ping\n\n" if m/bytes from/;'
 
-TEMP=`getopt -o s` || exit 1
+TEMP=`getopt -o s -- "$@"` || exit 1
 eval set -- "$TEMP"
 
 while true; do 
@@ -20,6 +20,5 @@ while true; do
     esac
 done
 
-echo $@
 echo "Pinging. Press Ctrl+C to exit."
-ping $* | perl -ne "$|=1; print $perl_command" | festival --tts
+ping $@ | perl -ne "$|=1; print $perl_command" | festival --tts
