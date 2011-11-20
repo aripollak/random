@@ -1,0 +1,88 @@
+#!/usr/bin/perl -w
+# Copyright © 2004 Jamie Zawinski <jwz@jwz.org>
+#
+# Permission to use, copy, modify, distribute, and sell this software and its
+# documentation for any purpose is hereby granted without fee, provided that
+# the above copyright notice appear in all copies and that both that
+# copyright notice and this permission notice appear in supporting
+# documentation.  No representations are made about the suitability of this
+# software for any purpose.  It is provided "as is" without express or 
+# implied warranty.
+#
+# Runs wget repeatedly on printf-formatted URLs with increasing numbers.
+# E.g., "wgetn http://example.com/img_%04d.jpg 201 299" will try to get
+# img_0201.jpg through img_0299.jpg.
+#
+# Created: 13-Jan-2004.
+
+require 5;
+use diagnostics;
+use strict;
+
+my $progname = $0; $progname =~ s@.*/@@g;
+my $version = q{ $Revision: 1.1 $ }; $version =~ s/^[^0-9]+([0-9.]+).*$/$1/;
+
+my $verbose = 0;
+
+sub wgetn {
+  my ($pattern, $from, $to) = @_;
+
+  for (my $i = $from; $i <= $to; $i++) {
+    my $url = sprintf ($pattern, $i);
+    my @cmd = ("wget", "-nvc", $url);
+    print STDERR "" . join (" ", @cmd) . "\n" if ($verbose);
+
+    if (system (@cmd) != 0) {
+      my $status = $? >> 8;
+      my $signal = $? & 127;
+      my $core   = $? & 128;
+      if ($core) {
+        print STDERR "$progname: $cmd[0] dumped core\n";
+      } elsif ($signal) {
+        #$signal = "SIG" . $signames[$signal];
+        print STDERR "$progname: $cmd[0] died with signal $signal\n";
+      } else {
+#        print STDERR "$progname: $cmd[0] exited with status $status\n";
+        next;
+      }
+      exit ($status == 0 ? -1 : $status);
+    }
+  }
+}
+
+sub error {
+  ($_) = @_;
+  print STDERR "$progname: $_\n";
+  exit 1;
+}
+
+sub usage {
+  print STDERR "usage: $progname [--verbose] url-pattern from to\n";
+  exit 1;
+}
+
+sub main {
+  my $pattern = undef;
+  my $from = undef;
+  my $to = undef;
+
+  while ($#ARGV >= 0) {
+    $_ = shift @ARGV;
+    if ($_ eq "--verbose") { $verbose++; }
+    elsif (m/^-v+$/) { $verbose += length($_)-1; }
+    elsif (m/^-./) { usage; }
+    elsif (!defined ($pattern)) { $pattern = $_; }
+    elsif (!defined ($from))    { $from    = $_; }
+    elsif (!defined ($to))      { $to      = $_; }
+    else { usage; }
+  }
+
+  usage unless (defined ($pattern) && $pattern =~ m/^http:/);
+  usage unless (defined ($from) && $from =~ m/^\d+$/);
+  usage unless (defined ($to) && $to =~ m/^\d+$/ && $to > $from);
+
+  wgetn ($pattern, $from, $to);
+}
+
+main;
+exit 0;
