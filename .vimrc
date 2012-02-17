@@ -55,7 +55,7 @@ set wildmode=longest,list " don't automatically cycle through completions
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
 " Make p in Visual mode replace the selected text with the "" register.
-vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
+"vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
 if has("autocmd")
  " Enabled file type detection
@@ -65,9 +65,11 @@ if has("autocmd")
  filetype indent on
 
  autocmd Bufenter *.mdwn setfiletype ikiwiki
+ autocmd Bufenter *.mdwn setlocal spell
  autocmd Filetype c setlocal sts=4 sw=4
  autocmd Filetype c++ setlocal sts=4 sw=4
  autocmd Filetype debchangelog setlocal et sts=2 indentexpr=4
+ autocmd Filetype git setlocal nobackup
  autocmd Filetype html setlocal tw=79
  autocmd Filetype perl setlocal et sts=4 sw=4
  autocmd Filetype python setlocal et sts=4 sw=4 foldmethod=indent
@@ -84,9 +86,6 @@ if has("autocmd")
     \ endif
 endif " has ("autocmd")
 
-" The following are commented out as they cause vim to behave a lot
-" different from regular vi. They are highly recommended though.
-
 " Make cursor keys ignore wrapping in insert or visual mode
 map j gj
 map k gk
@@ -97,9 +96,7 @@ if v:version >= 700
   inoremap <Up> <C-R>=pumvisible() ? "\<lt>Up>" : "\<lt>C-O>gk"<CR>
 endif
 
-" Many shells allow editing in "Emacs Style".
-" Although I love Vi, I am quite used to this kind of editing now.
-" So here it is - command line editing commands in emacs style:
+" Emacs-style navigation
 map <C-A> <Home>
 "  map <C-F> <Right>
 "  map <C-B> <Left>
@@ -123,14 +120,22 @@ endfunction
 map <C-S> <Esc>:update<CR>
 inoremap <C-S> <Esc>:update<CR>a
 map <C-\> :nohlsearch<CR>
+" leader is \ by default, so this command is \d:
 map <leader>d :cd %:p:h<CR> " go to directory of current file
+" toggle paste mode:
 map <leader>o <Esc>:set paste! linebreak!<CR>:call TShowBreak()<CR>:set paste?<CR>
 map <leader>tt :tabnew<CR>
+" :w!! will save the file as root
+cmap w!! w !sudo tee %
 
 let g:is_posix=1 " shell scripts are posix-compliant
-let is_mzscheme=1 " for special mzscheme syntax where applicable
+" omnicompletion for supertab by default:
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+" alias :ConqueTerm to :Term:
+command! -nargs=+ Term ConqueTerm <args>
+command! Zsh ConqueTerm <args>
 
-" Width # will set all width preferences to #
+" :Width # will set all width preferences to #
 command! -nargs=1 Width setlocal sw=<args> sts=<args>
 
 runtime ftplugin/man.vim
