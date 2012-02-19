@@ -1,29 +1,28 @@
-[color]
-	diff = auto
-	status = auto
-	branch = auto
+[alias] 
+	# shows you latest commit on all branches, and upstream info:
+	b = branch -vv 
+	co = checkout
+	ld = log --graph
+	lds = log --graph --stat
+	lol = log --oneline
+	lolg = log --oneline --graph
+	st = status
+	svn-diff = !git-svn-diff.sh
 #[branch]
 #	# make git pull re-apply your local changes on top of any new commits;
 #	# you probably don't want this if you ever merge any other branches.
 #	autosetuprebase = remote
 [clean]
 	requireForce = true
-[alias] 
-	# shows you latest commit on all branches, and upstream info:
-	b = branch -vv 
-	co = checkout
-	ld = log --decorate --graph
-	lds = log --decorate --graph --stat
-	lol = log --oneline --decorate
-	lolg = log --oneline --decorate --graph
-	st = status
-	svn-diff = !git-svn-diff.sh
-[user]
-	name = Ari Pollak
-	email = ajp@aripollak.com
-[merge]
-	tool = gvimdiff
+[color]
+	diff = auto
+	status = auto
+	branch = auto
 [core]
 	excludesfile = ~/.gitconfig-ignore
+[log]
+	decorate = short
+[merge]
+	tool = gvimdiff
 [rebase]
-	stat = true
+	stat = true # shows which files changed when doing a rebase
