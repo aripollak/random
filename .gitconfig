@@ -1,23 +1,24 @@
-[alias] 
+[alias]
 	# shows you latest commit on all branches, and upstream info:
-	b = branch -vv 
+	b = branch -vv
 	co = checkout
-	ld = log --graph
-	lds = log --graph --stat
+	furcate = branch
+	lg = log --graph
+	lgn = log --graph --name-status
+	lgs = log --graph --stat --summary
 	lol = log --oneline
 	lolg = log --oneline --graph
 	st = status
-	svn-diff = !git-svn-diff.sh
 #[branch]
 #	# make git pull re-apply your local changes on top of any new commits;
 #	# you probably don't want this if you ever merge any other branches.
+#	# it's probably okay on a per-repository basis.
 #	autosetuprebase = remote
 [clean]
 	requireForce = true
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+	# enables color for everything that supports it
+	ui = auto
 [core]
 	excludesfile = ~/.gitconfig-ignore
 [log]
