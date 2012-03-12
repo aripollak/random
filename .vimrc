@@ -18,6 +18,7 @@ syntax on
 set backspace=indent,eol,start	" more powerful backspacing
 set backup		" keep a backup file
 set backupskip+=*.tmp
+set colorcolumn=81      " shows an ugly red bar down this column
 set cursorline
 set foldnestmax=2
 set formatoptions=crq
@@ -43,6 +44,9 @@ set showmode
 set sidescroll=10
 set smartcase " only ignore case when pattern contains just lowercase letters
 set softtabstop=4
+" Suffixes that get lower priority when doing tab completion for filenames.
+" These are files we are not likely to want to edit or read.
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 "set tabstop=4
 set tags+=../tags;,../TAGS
 "set textwidth=0		" Don't wrap words by default
@@ -50,9 +54,6 @@ set visualbell
 set wildignore+=*.o,*.pyc
 set wildmode=longest,list " don't automatically cycle through completions
 
-" Suffixes that get lower priority when doing tab completion for filenames.
-" These are files we are not likely to want to edit or read.
-set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
 " Make p in Visual mode replace the selected text with the "" register.
 "vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
@@ -61,9 +62,11 @@ if has("autocmd")
  " Enabled file type detection
  " Use the default filetype settings. If you also want to load indent files
  " to automatically do language-dependent indenting add 'indent' as well.
- filetype plugin on
- filetype indent on
+ filetype plugin indent on
 
+ " Highlight trailing whitespace while not in insert mode
+ autocmd InsertEnter * match Error /\s\+\%#\@<!$/
+ autocmd InsertLeave * match Error /\s\+$/
  autocmd Bufenter *.mdwn setfiletype ikiwiki
  autocmd Bufenter *.mdwn setlocal spell
  autocmd Filetype c setlocal sts=4 sw=4
@@ -73,6 +76,7 @@ if has("autocmd")
  autocmd Filetype html setlocal tw=79
  autocmd Filetype perl setlocal et sts=4 sw=4
  autocmd Filetype python setlocal et sts=4 sw=4 foldmethod=indent
+ autocmd Filetype python let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
  autocmd Filetype ruby setlocal et
  autocmd Filetype sh setlocal et isf-==
  autocmd Filetype svn setlocal nobackup
@@ -108,7 +112,7 @@ cmap <C-D> <Delete>
 inoremap <C-A> <Home>
 inoremap <C-E> <End>
 inoremap <C-D> <Delete>
-  
+
 function! TShowBreak()
   if &showbreak == ''
     set showbreak=>\ 
@@ -122,6 +126,7 @@ inoremap <C-S> <Esc>:update<CR>a
 map <C-\> :nohlsearch<CR>
 " leader is \ by default, so this command is \d:
 map <leader>d :cd %:p:h<CR> " go to directory of current file
+map <leader>n :NERDTreeToggle<CR>
 " toggle paste mode:
 map <leader>o <Esc>:set paste! linebreak!<CR>:call TShowBreak()<CR>:set paste?<CR>
 map <leader>tt :tabnew<CR>
@@ -129,13 +134,13 @@ map <leader>tt :tabnew<CR>
 cmap w!! w !sudo tee %
 
 let g:is_posix=1 " shell scripts are posix-compliant
-" omnicompletion for supertab by default:
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let python_highlight_all=1
 " alias :ConqueTerm to :Term:
 command! -nargs=+ Term ConqueTerm <args>
-command! Zsh ConqueTerm <args>
+command! Zsh ConqueTerm zsh
 
 " :Width # will set all width preferences to #
 command! -nargs=1 Width setlocal sw=<args> sts=<args>
 
 runtime ftplugin/man.vim
+call pathogen#infect() " requires https://github.com/tpope/vim-pathogen
