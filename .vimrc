@@ -18,7 +18,9 @@ syntax on
 set backspace=indent,eol,start	" more powerful backspacing
 set backup		" keep a backup file
 set backupskip+=*.tmp
-set colorcolumn=81      " shows an ugly red bar down this column
+if has("colorcolumn") " can be removed after debian lenny
+    set colorcolumn=81      " shows an ugly red bar down this column
+endif
 set cursorline
 set foldnestmax=2
 set formatoptions=crq
