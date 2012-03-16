@@ -119,14 +119,13 @@ export PAGER=less
 export PYTHONSTARTUP=~/.pythonrc
 
 
-# Set/unset  shell options
-setopt   notify correct correctall pushdtohome autolist
-setopt   autocd longlistjobs
-setopt   autoresume histignoredups noclobber
-setopt   autopushd extendedglob rcquotes
-setopt	 sharehistory hist_ignore_space extended_history
-setopt   interactivecomments printeightbit hist_expire_dups_first
+# Set/unset shell options
+setopt   autocd autolist autopushd autoresume correct correctall
+setopt   extended_glob extended_history
+setopt   hist_expire_dups_first hist_ignore_space histignoredups 
 setopt   hist_fcntl_lock 2>/dev/null # only in debian squeeze and higher
+setopt   longlistjobs interactivecomments noclobber notify
+setopt   printeightbit pushdtohome rcquotes sharehistory
 unsetopt automenu # don't start completing when I press TAB too many times
 unsetopt autoparamslash beep bgnice
 
@@ -141,6 +140,10 @@ bindkey -e                 # emacs key bindings
 bindkey ' ' magic-space    # also do history expansion on space
 bindkey '^I' complete-word # complete on tab, leave expansion to _expand
 [ -n "${terminfo[kf7]}" ] && bindkey -s "${terminfo[kf7]}" "cd ..; ls\r" # F7
+
+autoload      edit-command-line
+zle -N        edit-command-line
+bindkey '\ee' edit-command-line
 
 # Setup new style completion system.
 autoload -U compinit
