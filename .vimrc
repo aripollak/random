@@ -77,6 +77,7 @@ if has("autocmd")
  autocmd Filetype git setlocal nobackup
  autocmd Filetype html setlocal tw=79
  autocmd Filetype perl setlocal et sts=4 sw=4
+ autocmd Filetype puppet setlocal et sts=4 sw=4
  autocmd Filetype python setlocal et sts=4 sw=4 foldmethod=indent
  autocmd Filetype python let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
  autocmd Filetype ruby setlocal et
