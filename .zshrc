@@ -108,6 +108,7 @@ esac
 [ -x /usr/bin/lessfile ] && eval $(lessfile)
 export DEBEMAIL=ari@debian.org
 export DEBFULLNAME="Ari Pollak"
+export DEBSIGN_KEYID=B70E403B
 export EDITOR=vim
 export EMAIL=ajp@aripollak.com # for git
 export GREP_OPTIONS="--color=auto --exclude-dir=.svn --exclude-dir=.git \
