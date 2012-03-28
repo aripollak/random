@@ -86,7 +86,7 @@ if [ -d "/usr/share/zsh/functions/VCS_Info/" ]; then
 fi
 
 p_host="${fg[green]}"
-PROMPT='${debian_chroot}%{${fg[green]}%}%n%{${fg[white]}%}@%{${p_host}%}%m%{${fg[white]}%}: %{${fg[cyan]}%}%~%{${fg[white]}%}${p_vcs}%#%{${fg[default]}%} '
+PROMPT='${debian_chroot}%{${fg[green]}%}%n%{${fg[white]}%}@%{${p_host}%}%m%{${fg[white]}%}:%{${fg[cyan]}%}%~%{${fg[white]}%}${p_vcs}%#%{${fg[default]}%} '
 RPROMPT='%W %t'     # prompt for right side of screen
 ### END PROMPT SETUP ###
 
