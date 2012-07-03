@@ -50,6 +50,7 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 "set tabstop=4
 set tags+=../tags;,../TAGS
 "set textwidth=0		" Don't wrap words by default
+set undofile " omg why is this not on by default
 set visualbell
 set wildignore+=*.o,*.pyc
 set wildmode=longest,list " don't automatically cycle through completions
