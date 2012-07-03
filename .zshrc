@@ -4,6 +4,7 @@ umask 022
 #cdpath=(.. ~ ~/src ~/zsh)
 
 export PATH="$PATH:/usr/games:$HOME/bin:/usr/sbin:/sbin"
+
 HISTFILE=~/.zsh_history
 HISTSIZE=5500
 SAVEHIST=5000
@@ -192,6 +193,7 @@ compdef _doc doc
 _qstat() { compadd $(qmgr -c 'p s' | grep 'create queue' | cut -d' ' -f3) }
 compdef _qstat qstat
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 [ -f ~/.zshrc.priv ] && source ~/.zshrc.priv
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local # a good place to override p_host
