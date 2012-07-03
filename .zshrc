@@ -73,7 +73,6 @@ if [ -f /etc/debian_chroot ]; then
 fi
 
 setopt promptsubst # re-interpolate variables in prompt on every redraw
-autoload -U colors && colors # This can be replaced post-lenny, with %F
 if [ -d "/usr/share/zsh/functions/VCS_Info/" ]; then
     autoload -U add-zsh-hook
     autoload -U vcs_info # for VCS info in my prompt
@@ -85,8 +84,8 @@ if [ -d "/usr/share/zsh/functions/VCS_Info/" ]; then
     add-zsh-hook precmd vcs_info_precmd
 fi
 
-p_host="${fg[green]}"
-PROMPT='${debian_chroot}%{${fg[green]}%}%n%{${fg[white]}%}@%{${p_host}%}%m%{${fg[white]}%}:%{${fg[cyan]}%}%~%{${fg[white]}%}${p_vcs}%#%{${fg[default]}%} '
+p_host="%F{green}"
+PROMPT='${debian_chroot}%F{green}%n%F{white}@${p_host}%m%F{white}:%F{cyan}%~%F{white}${p_vcs}%#%F{default} '
 RPROMPT='%W %t'     # prompt for right side of screen
 ### END PROMPT SETUP ###
 
