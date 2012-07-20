@@ -16,7 +16,8 @@ syntax on
 "set autowrite		" Automatically save before commands like :next and :make
 "set cindent
 set backspace=indent,eol,start	" more powerful backspacing
-set backup		" keep a backup file
+set backup
+set backupdir=~/.vim/backup
 set backupskip+=*.tmp
 "    set colorcolumn=81      " shows an ugly red bar down this column
 set cursorline
