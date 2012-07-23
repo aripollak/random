@@ -4,8 +4,8 @@
 	co = checkout
 	furcate = branch
 	lg = log --graph
-	lgn = log --graph --name-status
-	lgs = log --graph --stat --summary
+	lgn = log --graph --name-status --find-renames --find-copies
+	lgs = log --graph --stat --summary --find-renames --find-copies
 	lol = log --oneline
 	lolg = log --oneline --graph
 	st = status
