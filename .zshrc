@@ -20,6 +20,7 @@ alias ZshRehash='source ~/.zshrc'
 alias ZshReload='rm -f ~/.zcompdump*; exec zsh -l'
 alias cp='nocorrect cp'       # no spelling correction on cp
 alias d='dirs -v'
+alias gvimr='gvim --remote'
 alias h=history
 alias help=run-help
 # update zsh history file if sharehistory is off;
@@ -50,6 +51,7 @@ alias po=popd
 alias pu=pushd
 alias sr='screen -r'
 alias sudo='nocorrect sudo'
+alias vimr='vim --remote'
 alias zcp='zmv -C'
 alias zln='zmv -L'
 
