@@ -27,3 +27,9 @@
 	tool = gvimdiff
 [rebase]
 	stat = true # shows which files changed when doing a rebase
+[url "git://github.com/"]
+      # Read-only, e.g. gh:aripollak/random
+      insteadOf = gh:
+[url "git@github.com:"]
+      # With write access
+      insteadOf = ghw:
