@@ -25,6 +25,8 @@
 	decorate = short
 [merge]
 	tool = gvimdiff
+[push]
+	default = upstream
 [rebase]
 	stat = true # shows which files changed when doing a rebase
 [url "git://github.com/"]
