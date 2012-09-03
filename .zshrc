@@ -67,8 +67,8 @@ alias kerndist='CONCURRENCY_LEVEL=2 fakeroot make-kpkg kernel_image modules_imag
 alias nostrip='DEB_BUILD_OPTIONS=nostrip'
 alias pdebuild="pdebuild --use-pdebuild-internal"
 alias pdebuildj2="pdebuild --use-pdebuild-internal --debbuildopts -j2"
-alias git-buildsqueeze="PBUILDER_OPTS='--basetgz /var/cache/pbuilder/squeeze.tgz' git-buildpackage"
-alias git-buildpackagej2="PBUILDER_OPTS='--debbuildopts -j2' git-buildpackage"
+alias git-buildsqueeze="git-buildpackage --git-dist=squeeze"
+alias git-buildpackagej2="git-buildpackage -j2"
 
 ### BEGIN PROMPT SETUP ###
 if [ -f /etc/debian_chroot ]; then
