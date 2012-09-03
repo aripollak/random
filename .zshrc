@@ -79,7 +79,7 @@ setopt promptsubst # re-interpolate variables in prompt on every redraw
 if [ -d "/usr/share/zsh/functions/VCS_Info/" ]; then
     autoload -U add-zsh-hook
     autoload -U vcs_info # for VCS info in my prompt
-    zstyle ':vcs_info:*' enable svn hg git
+    zstyle ':vcs_info:*' enable git hg
     vcs_info_precmd() {
 	vcs_info
 	p_vcs="$vcs_info_msg_0_"
