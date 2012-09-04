@@ -121,11 +121,17 @@ export MAIL=/var/mail/$USER
 export PAGER=less
 export PYTHONSTARTUP=~/.pythonrc
 
+# from http://www.reddit.com/r/ruby/comments/wgtqj/how_i_spend_my_time_building_rails_apps/
+export RUBY_HEAP_MIN_SLOTS=800000
+export RUBY_HEAP_FREE_MIN=100000
+export RUBY_HEAP_SLOTS_INCREMENT=300000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=79000000
 
 # Set/unset shell options
 setopt   autocd autolist autopushd autoresume correct correctall
 setopt   extended_glob extended_history
-setopt   hist_expire_dups_first hist_ignore_space histignoredups 
+setopt   hist_expire_dups_first hist_ignore_space histignoredups
 setopt   hist_fcntl_lock 2>/dev/null # only in debian squeeze and higher
 setopt   longlistjobs interactivecomments noclobber notify
 setopt   printeightbit pushdtohome rcquotes sharehistory
