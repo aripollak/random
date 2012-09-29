@@ -110,11 +110,11 @@ esac
 [ -x /usr/bin/lessfile ] && eval $(lessfile)
 export DEBEMAIL=ari@debian.org
 export DEBFULLNAME="Ari Pollak"
-export DEBSIGN_KEYID=B70E403B
 export EDITOR=vim
 export EMAIL=ajp@aripollak.com # for git
 export GREP_OPTIONS="--color=auto --exclude-dir=.svn --exclude-dir=.git \
-    --exclude=*~"
+    --exclude=*~ --exclude=*.o --exclude=*.pyc --exclude=*.sw[op] \
+    --exclude=tags"
 export LESS=-cMR
 export HEBCAL_CITY="Boston"
 export MAIL=/var/mail/$USER
@@ -131,8 +131,7 @@ export RUBY_GC_MALLOC_LIMIT=79000000
 # Set/unset shell options
 setopt   autocd autolist autopushd autoresume correct correctall
 setopt   extended_glob extended_history
-setopt   hist_expire_dups_first hist_ignore_space histignoredups
-setopt   hist_fcntl_lock 2>/dev/null # only in debian squeeze and higher
+setopt   hist_expire_dups_first hist_fcntl_lock hist_ignore_space histignoredups
 setopt   longlistjobs interactivecomments noclobber notify
 setopt   printeightbit pushdtohome rcquotes sharehistory
 unsetopt automenu # don't start completing when I press TAB too many times

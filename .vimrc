@@ -14,7 +14,6 @@ endif
 syntax on
 
 "set autowrite		" Automatically save before commands like :next and :make
-"set cindent
 set backspace=indent,eol,start	" more powerful backspacing
 set backup
 set backupdir=~/.vim/backup
