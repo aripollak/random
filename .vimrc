@@ -20,7 +20,7 @@ set backupdir=~/.vim/backup
 set backupskip+=*.tmp
 "    set colorcolumn=81      " shows an ugly red bar down this column
 set cursorline
-set foldnestmax=2
+set foldnestmax=3
 set formatoptions=crq
 set hidden
 set history=1000
@@ -80,7 +80,7 @@ if has("autocmd")
  autocmd Filetype puppet setlocal et sts=2 sw=2
  autocmd Filetype python setlocal et sts=4 sw=4 foldmethod=indent
  autocmd Filetype python let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
- autocmd Filetype ruby setlocal et sw=2 sts=2
+ autocmd Filetype ruby setlocal et sw=2 sts=2 foldmethod=syntax
  autocmd Filetype sh setlocal et isf-==
  autocmd Filetype svn setlocal nobackup
  autocmd Filetype tex setlocal tw=70
