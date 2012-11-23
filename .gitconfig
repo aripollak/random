@@ -37,3 +37,5 @@
 [url "git@github.com:"]
       # With write access
       insteadOf = ghw:
+[web]
+	browser = /usr/bin/xdg-open
