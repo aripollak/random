@@ -120,6 +120,7 @@ export HEBCAL_CITY="Boston"
 export MAIL=/var/mail/$USER
 export PAGER=less
 export PYTHONSTARTUP=~/.pythonrc
+export REPORTBUGEMAIL=$DEBEMAIL
 
 # from http://www.reddit.com/r/ruby/comments/wgtqj/how_i_spend_my_time_building_rails_apps/
 export RUBY_HEAP_MIN_SLOTS=800000

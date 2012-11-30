@@ -16,6 +16,8 @@
 #	# you probably don't want this if you ever merge any other branches.
 #	# it's probably okay on a per-repository basis.
 #	autosetuprebase = remote
+[browser "xdg-open"]
+	cmd = xdg-open
 [clean]
 	requireForce = true
 [color]
@@ -32,10 +34,10 @@
 [rebase]
 	stat = true # shows which files changed when doing a rebase
 [url "git://github.com/"]
-      # Read-only, e.g. gh:aripollak/random
-      insteadOf = gh:
+	# Read-only, e.g. gh:aripollak/random
+	insteadOf = gh:
 [url "git@github.com:"]
-      # With write access
-      insteadOf = ghw:
+	# With write access
+	insteadOf = ghw:
 [web]
-	browser = /usr/bin/xdg-open
+	browser = xdg-open
