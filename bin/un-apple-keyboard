@@ -1,6 +1,8 @@
 #!/bin/sh
 #
-# Swaps alt/win keys on an Apple Bluetooth keyboard.
+# Swaps alt/win keys on an Apple Bluetooth keyboard under GNOME 3, persisting
+# through reconnects.
+#
 # Set the script to be used with:
 # gsettings set org.gnome.settings-daemon.peripherals.input-devices hotplug-command /path/to/script/un-apple-keyboard
 #
@@ -16,6 +18,8 @@
 # The script should return 0 if the device is to be
 # ignored from future configuration.
 #
+# Script template from:
+# http://git.gnome.org/browse/gnome-settings-daemon/tree/plugins/common/input-device-example.sh
 
 args=`getopt "t:i:" $*`
 
@@ -47,7 +51,6 @@ done
 
 case $type in
     added|present)
-        echo $device
         [ "$device" = "Apple Wireless Keyboard" ] &&
             setxkbmap -option altwin:swap_lalt_lwin -device $id
         ;;
