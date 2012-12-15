@@ -57,10 +57,6 @@ set visualbell
 set wildignore+=*.o,*.pyc
 set wildmode=longest,list " don't automatically cycle through completions
 
-
-" Make p in Visual mode replace the selected text with the "" register.
-"vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
-
 if has("autocmd")
  " Enabled file type detection
  " Use the default filetype settings. If you also want to load indent files
@@ -137,6 +133,8 @@ cmap w!! w !sudo tee %
 
 let g:is_posix=1 " shell scripts are posix-compliant
 let python_highlight_all=1
+let g:ctrlp_open_new_file = 't'
+
 " alias :ConqueTerm to :Term:
 command! -nargs=+ Term ConqueTerm <args>
 command! Zsh ConqueTerm zsh

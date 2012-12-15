@@ -1,3 +1,4 @@
+# vim: set sts=8:ts=8
 [alias]
 	# shows you latest commit on all branches, and upstream info:
 	b = branch -vv
@@ -9,6 +10,7 @@
 	lol = log --oneline
 	lolg = log --oneline --graph
 	st = status
+	sub = submodule
 	wdiff = diff --color-words
 	wshow = show --color-words
 #[branch]
