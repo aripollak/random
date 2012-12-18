@@ -1,14 +1,10 @@
 " Configuration file for vim
+" vim: set et ts=2 sts=2:
 
 set background=dark
 colorscheme desert
-if has("gui_running")
-    set guifont=Monospace\ 10
-elseif &term =~ "xterm"
-    if glob("~/.vim/colors/desertEx.vim")
-	set t_Co=256
-	colorscheme desert256
-    endif
+if &term =~ "xterm"
+  set t_Co=256
 endif
 
 syntax on
@@ -23,6 +19,7 @@ set cursorline
 set foldminlines=5
 set foldnestmax=3
 set formatoptions=crq
+set guifont=Monospace\ 10
 set hidden
 set history=1000
 set hlsearch
@@ -58,33 +55,33 @@ set wildignore+=*.o,*.pyc
 set wildmode=longest,list " don't automatically cycle through completions
 
 if has("autocmd")
- " Enabled file type detection
- " Use the default filetype settings. If you also want to load indent files
- " to automatically do language-dependent indenting add 'indent' as well.
- filetype plugin indent on
+  " Enabled file type detection
+  " Use the default filetype settings. If you also want to load indent files
+  " to automatically do language-dependent indenting add 'indent' as well.
+  filetype plugin indent on
 
- " Highlight trailing whitespace while not in insert mode
- autocmd InsertEnter * match Error /\s\+\%#\@<!$/
- autocmd InsertLeave * match Error /\s\+$/
- autocmd Bufenter *.mdwn setfiletype ikiwiki
- autocmd Bufenter *.mdwn setlocal spell
- autocmd Filetype c setlocal sts=4 sw=4
- autocmd Filetype c++ setlocal sts=4 sw=4
- autocmd Filetype debchangelog setlocal et sts=2 indentexpr=4
- autocmd Filetype git setlocal nobackup
- autocmd Filetype html setlocal tw=79
- autocmd Filetype perl setlocal et sts=4 sw=4
- autocmd Filetype puppet setlocal et sts=2 sw=2
- autocmd Filetype python setlocal et sts=4 sw=4 foldmethod=indent
- autocmd Filetype python let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
- autocmd Filetype ruby setlocal et sw=2 sts=2 foldmethod=syntax
- autocmd Filetype sh setlocal et isf-==
- autocmd Filetype svn setlocal nobackup
- autocmd Filetype tex setlocal tw=70
- autocmd Filetype xml setlocal et sw=2 sts=2
+  " Highlight trailing whitespace while not in insert mode
+  autocmd InsertEnter * match Error /\s\+\%#\@<!$/
+  autocmd InsertLeave * match Error /\s\+$/
+  autocmd Bufenter *.mdwn setfiletype ikiwiki
+  autocmd Bufenter *.mdwn setlocal spell
+  autocmd Filetype c setlocal sts=4 sw=4
+  autocmd Filetype c++ setlocal sts=4 sw=4
+  autocmd Filetype debchangelog setlocal et sts=2 indentexpr=4
+  autocmd Filetype git setlocal nobackup
+  autocmd Filetype html setlocal tw=79
+  autocmd Filetype javascript setlocal et
+  autocmd Filetype perl setlocal et sts=4 sw=4
+  autocmd Filetype puppet setlocal et sts=2 sw=2
+  autocmd Filetype python setlocal et sts=4 sw=4 foldmethod=indent
+  autocmd Filetype ruby setlocal et sw=2 sts=2 foldmethod=syntax
+  autocmd Filetype sh setlocal et isf-==
+  autocmd Filetype svn setlocal nobackup
+  autocmd Filetype tex setlocal tw=70
+  autocmd Filetype xml setlocal et sw=2 sts=2
 
- " Return to last edit position
- autocmd BufReadPost *
+  " Return to last edit position
+  autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
@@ -134,6 +131,8 @@ cmap w!! w !sudo tee %
 let g:is_posix=1 " shell scripts are posix-compliant
 let python_highlight_all=1
 let g:ctrlp_open_new_file = 't'
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
 
 " alias :ConqueTerm to :Term:
 command! -nargs=+ Term ConqueTerm <args>
