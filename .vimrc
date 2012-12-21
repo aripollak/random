@@ -2,10 +2,10 @@
 " vim: set et ts=2 sts=2:
 
 set background=dark
-colorscheme desert
 if &term =~ "xterm"
   set t_Co=256
 endif
+colorscheme desert
 
 syntax on
 
