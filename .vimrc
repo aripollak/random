@@ -121,7 +121,8 @@ inoremap <C-S> <Esc>:update<CR>a
 map <C-\> :nohlsearch<CR>
 " leader is \ by default, so this command is \d:
 map <leader>d :cd %:p:h<CR> " go to directory of current file
-map <leader>n :NERDTreeToggle<CR>
+map <leader>nf :NERDTreeFind<CR>
+map <leader>nn :NERDTreeToggle<CR>
 " toggle paste mode:
 map <leader>o <Esc>:set paste! linebreak!<CR>:call TShowBreak()<CR>:set paste?<CR>
 map <leader>tt :tabnew<CR>
