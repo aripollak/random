@@ -88,6 +88,9 @@ if has("autocmd")
     \ endif
 endif " has ("autocmd")
 
+" abbreviations
+:abbrev ARL ActiveRecord::Base.logger = Logger.new(STDOUT)
+
 " Make cursor keys ignore wrapping in insert or visual mode
 map j gj
 map k gk
