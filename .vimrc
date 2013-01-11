@@ -65,6 +65,7 @@ if has("autocmd")
   autocmd InsertLeave * match Error /\s\+$/
   autocmd Bufenter *.mdwn setfiletype ikiwiki
   autocmd Bufenter *.mdwn setlocal spell
+  autocmd Bufenter *.rabl setfiletype ruby
   autocmd Filetype c setlocal sts=4 sw=4
   autocmd Filetype c++ setlocal sts=4 sw=4
   autocmd Filetype debchangelog setlocal et sts=2 indentexpr=4

@@ -18,6 +18,7 @@ limit core 100M
 # Set up aliases
 alias ZshRehash='source ~/.zshrc'
 alias ZshReload='rm -f ~/.zcompdump*; exec zsh -l'
+alias cdg='cd $(git rev-parse --show-toplevel)'
 alias cp='nocorrect cp'       # no spelling correction on cp
 alias d='dirs -v'
 alias gvimr='gvim --remote'
