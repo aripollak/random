@@ -200,9 +200,6 @@ doc() { cd /usr/share/doc/$1 && ls }
 _doc() { _files -W /usr/share/doc -/ }
 compdef _doc doc
 
-_qstat() { compadd $(qmgr -c 'p s' | grep 'create queue' | cut -d' ' -f3) }
-compdef _qstat qstat
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 [ -f ~/.zshrc.priv ] && source ~/.zshrc.priv
