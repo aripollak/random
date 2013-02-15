@@ -60,9 +60,9 @@ if has("autocmd")
   " to automatically do language-dependent indenting add 'indent' as well.
   filetype plugin indent on
 
-  " Highlight trailing whitespace while not in insert mode
-  autocmd InsertEnter * match Error /\s\+\%#\@<!$/
-  autocmd InsertLeave * match Error /\s\+$/
+  " Highlight long lines over 100 chars
+  highlight ExtraWhitespace ctermbg=red guibg=red
+  autocmd Filetype c,c++,javascript,perl,python,ruby,sh match ExtraWhitespace '\%>100c.\+'
   autocmd Bufenter *.mdwn setfiletype ikiwiki
   autocmd Bufenter *.mdwn setlocal spell
   autocmd Bufenter *.rabl setfiletype ruby
@@ -133,8 +133,9 @@ map <leader>tt :tabnew<CR>
 " :w!! will save the file as root
 cmap w!! w !sudo tee %
 
-let g:is_posix=1 " shell scripts are posix-compliant
 let python_highlight_all=1
+let ruby_space_errors=1
+let g:is_posix=1 " shell scripts are posix-compliant
 let g:ctrlp_open_new_file = 't'
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
