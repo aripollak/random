@@ -104,13 +104,10 @@ map <C-A> <Home>
 "  map <C-F> <Right>
 "  map <C-B> <Left>
 map <C-E> <End>
-map <C-D> <Delete>
 cmap <C-A> <Home>
 cmap <C-E> <End>
-cmap <C-D> <Delete>
 inoremap <C-A> <Home>
 inoremap <C-E> <End>
-inoremap <C-D> <Delete>
 
 function! TShowBreak()
   if &showbreak == ''
@@ -136,6 +133,7 @@ cmap w!! w !sudo tee %
 let python_highlight_all=1
 let ruby_space_errors=1
 let g:is_posix=1 " shell scripts are posix-compliant
+let g:ctrlp_max_window_height = 20
 let g:ctrlp_open_new_file = 't'
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
