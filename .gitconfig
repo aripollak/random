@@ -27,6 +27,8 @@
 	ui = auto
 [core]
 	excludesfile = ~/.gitconfig-ignore
+[diff]
+	renames = copies
 [log]
 	decorate = short
 [merge]
