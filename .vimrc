@@ -75,7 +75,7 @@ if has("autocmd")
   autocmd Filetype perl setlocal et sts=4 sw=4
   autocmd Filetype puppet setlocal et sts=2 sw=2
   autocmd Filetype python setlocal et sts=4 sw=4 foldmethod=indent
-  autocmd Filetype ruby setlocal et sw=2 sts=2 foldmethod=syntax
+  autocmd Filetype ruby setlocal et sw=2 sts=2 foldmethod=indent
   autocmd Filetype sh setlocal et isf-==
   autocmd Filetype svn setlocal nobackup
   autocmd Filetype tex setlocal tw=70
