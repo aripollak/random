@@ -1,5 +1,5 @@
 " Configuration file for vim
-" vim: set et ts=2 sts=2:
+" vim: set et sts=2:
 
 set background=dark
 if &term =~ "xterm"
@@ -9,13 +9,14 @@ colorscheme desert
 
 syntax on
 
-"set autowrite		" Automatically save before commands like :next and :make
+set autoread
 set backspace=indent,eol,start	" more powerful backspacing
 set backup
 set backupdir=~/.vim/backup
 set backupskip+=*.tmp
 "    set colorcolumn=81      " shows an ugly red bar down this column
 set cursorline
+set display+=lastline
 set foldminlines=5
 set foldnestmax=3
 set formatoptions=crq
@@ -26,7 +27,6 @@ set hlsearch
 set ignorecase		" Do case insensitive matching
 set incsearch
 set linebreak
-set listchars=tab:>-,eol:<,precedes:<,extends:>
 set modeline
 set mouse=a
 set noautoindent
@@ -34,6 +34,7 @@ set nocompatible	" Use Vim defaults instead of 100% vi compatibility
 set printoptions=paper:letter
 set ruler		" show the cursor position all the time
 set scrolloff=5
+set shiftround
 set shiftwidth=4 " when using < or >
 set showbreak=>\ 
 set showcmd		" Show (partial) command in status line.
@@ -45,14 +46,19 @@ set softtabstop=4
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-"set tabstop=4
 set tags+=../tags;,../TAGS
-"set textwidth=0		" Don't wrap words by default
 set undodir=~/.vim/backup
 set undofile " omg why is this not on by default
 set visualbell
 set wildignore+=*.o,*.pyc
 set wildmode=longest,list " don't automatically cycle through completions
+
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+  if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
+    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
+  endif
+endif
 
 if has("autocmd")
   " Enabled file type detection
@@ -119,7 +125,10 @@ endfunction
 
 map <C-S> <Esc>:update<CR>
 inoremap <C-S> <Esc>:update<CR>a
-map <C-\> :nohlsearch<CR>
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
 " leader is \ by default, so this command is \d:
 map <leader>d :cd %:p:h<CR> " go to directory of current file
 map <leader>nf :NERDTreeFind<CR>
@@ -133,7 +142,7 @@ cmap w!! w !sudo tee %
 let python_highlight_all=1
 let ruby_space_errors=1
 let g:is_posix=1 " shell scripts are posix-compliant
-let g:ctrlp_max_window_height = 20
+let g:ctrlp_max_height = 20
 let g:ctrlp_open_new_file = 't'
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
