@@ -21,6 +21,7 @@ alias ZshReload='rm -f ~/.zcompdump*; exec zsh -l'
 alias cdg='cd $(git rev-parse --show-toplevel)'
 alias cp='nocorrect cp'       # no spelling correction on cp
 alias d='dirs -v'
+alias fileserver='python -m SimpleHTTPServer 8080' # serves files in current dir
 alias gvimr='gvim --remote'
 alias h=history
 alias help=run-help
@@ -48,8 +49,10 @@ alias mv='nocorrect mv'       # no spelling correction on mv
 # beeps & notifies in xterm titlebar
 alias notify='NO_TITLE=1; echo -e "\a"; print -Pn "\033]2; DONE \007"'
 alias notifyoff='unset NO_TITLE; print -Pn "\033]2;\007"'
+alias psgrep='ps auxw | grep '
 alias po=popd
 alias pu=pushd
+[ -x /usr/bin/trash ] &&  alias rm=trash
 alias sr='screen -r'
 alias sudo='nocorrect sudo'
 alias vimr='vim --remote'
