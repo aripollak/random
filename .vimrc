@@ -74,6 +74,7 @@ if has("autocmd")
   autocmd Bufenter *.rabl setfiletype ruby
   autocmd Filetype c setlocal sts=4 sw=4
   autocmd Filetype c++ setlocal sts=4 sw=4
+  autocmd Filetype coffee setlocal et sw=2 sts=2 foldmethod=indent
   autocmd Filetype debchangelog setlocal et sts=2 indentexpr=4
   autocmd Filetype git setlocal nobackup
   autocmd Filetype html setlocal tw=79
