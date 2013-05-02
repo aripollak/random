@@ -1,0 +1,3 @@
+AwesomePrint.defaults = {
+  sort_keys: true
+}
