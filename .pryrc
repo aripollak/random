@@ -10,3 +10,10 @@ if File.exist?(rails) && ENV['SKIP_RAILS'].nil?
     require 'active_record/railties/console_sandbox'
   end
 end
+
+if defined?(Gem.post_reset_hooks)
+  Gem.post_reset_hooks.reject!{ |hook| hook.source_location.first =~ %r{/bundler/} }
+  Gem::Specification.reset
+  load 'rubygems/custom_require.rb'
+  alias gem require
+end
