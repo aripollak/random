@@ -30,7 +30,8 @@ set linebreak
 set modeline
 set mouse=a
 set noautoindent
-set nocompatible	" Use Vim defaults instead of 100% vi compatibility
+set noballooneval       " disable vim-ruby's annoying tooltip
+set nocompatible        " Use Vim defaults instead of 100% vi compatibility
 set printoptions=paper:letter
 set ruler		" show the cursor position all the time
 set scrolloff=5
