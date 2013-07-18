@@ -53,6 +53,7 @@ alias psgrep='ps auxw | grep '
 alias po=popd
 alias pu=pushd
 [ -x /usr/bin/trash ] &&  alias rm=trash
+alias spring='nocorrect spring' 
 alias sr='screen -r'
 alias sudo='nocorrect sudo'
 alias vimr='vim --remote'
