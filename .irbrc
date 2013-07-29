@@ -2,7 +2,7 @@
 if defined?(Gem.post_reset_hooks)
   Gem.post_reset_hooks.reject!{ |hook| hook.source_location.first =~ %r{/bundler/} }
   Gem::Specification.reset
-  load 'rubygems/custom_require.rb'
+  load 'rubygems/core_ext/kernel_require.rb'
   alias gem require
 end
 require 'irbtools/configure'
