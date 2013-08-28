@@ -204,6 +204,10 @@ doc() { cd /usr/share/doc/$1 && ls }
 _doc() { _files -W /usr/share/doc -/ }
 compdef _doc doc
 
+dev() { cd ~/dev/$1 }
+_dev() { _files -W ~/dev/ -/ }
+compdef _dev dev
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 [ -f ~/.zshrc.priv ] && source ~/.zshrc.priv
