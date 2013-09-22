@@ -1,0 +1,6 @@
+#!/bin/sh -x
+# Installs stuff I like after installing a new version of ruby.
+
+gem update --system
+gem install bundler gem-browse gem-ctags
+

@@ -127,13 +127,10 @@ export PAGER=less
 export PYTHONSTARTUP=~/.pythonrc
 export REPORTBUGEMAIL=$DEBEMAIL
 
-# from http://www.reddit.com/r/ruby/comments/wgtqj/how_i_spend_my_time_building_rails_apps/
+# from https://blog.engineyard.com/2011/tuning-the-garbage-collector-with-ruby-1-9-2
 export RUBY_GC_MALLOC_LIMIT=79000000
 export RUBY_FREE_MIN=100000
 export RUBY_HEAP_MIN_SLOTS=800000
-export RUBY_HEAP_FREE_MIN=100000
-export RUBY_HEAP_SLOTS_INCREMENT=300000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 
 # Set/unset shell options
 setopt   autocd autolist autopushd autoresume correct correctall
@@ -208,7 +205,7 @@ dev() { cd ~/dev/$1 }
 _dev() { _files -W ~/dev/ -/ }
 compdef _dev dev
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[ -d ~/.rbenv ] && PATH="$HOME/.rbenv/bin/:$PATH" && eval "$(rbenv init -)"
 
 [ -f ~/.zshrc.priv ] && source ~/.zshrc.priv
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local # a good place to override p_host
