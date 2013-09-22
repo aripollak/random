@@ -3,4 +3,5 @@
 
 gem update --system
 gem install bundler gem-browse gem-ctags hub spring
+rbenv rehash
 
