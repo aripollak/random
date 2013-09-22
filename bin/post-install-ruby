@@ -2,5 +2,5 @@
 # Installs stuff I like after installing a new version of ruby.
 
 gem update --system
-gem install bundler gem-browse gem-ctags
+gem install bundler gem-browse gem-ctags hub spring
 
