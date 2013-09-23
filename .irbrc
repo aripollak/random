@@ -1,4 +1,6 @@
-# from http://github.com/ConradIrwin/pry-debundle/blob/master/lib/pry-debundle.rb
+IRB.conf[:SAVE_HISTORY] = 1000
+
+from http://github.com/ConradIrwin/pry-debundle/blob/master/lib/pry-debundle.rb
 if defined?(Bundler)
   Gem.post_reset_hooks.reject!{ |hook| hook.source_location.first =~ %r{/bundler/} }
   Gem::Specification.reset
