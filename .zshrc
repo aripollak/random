@@ -1,3 +1,52 @@
+# Autoload zsh modules when they are referenced
+autoload -U zmv
+#zmodload -a zsh/stat stat
+#zmodload -a zsh/zpty zpty
+zmodload -a zsh/zprof zprof
+
+bindkey -e                 # emacs key bindings
+bindkey ' ' magic-space    # also do history expansion on space
+bindkey '^I' complete-word # complete on tab, leave expansion to _expand
+
+autoload      edit-command-line
+zle -N        edit-command-line
+bindkey '\ee' edit-command-line
+
+# Setup new style completion system.
+autoload -U compinit
+compinit
+
+# Completion Styles
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# list of completers to use
+zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
+
+# allow one error for every three characters typed in approximate completer
+zstyle -e ':completion:*:approximate:*' max-errors \
+    'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numeric )'
+
+# insert all expansions for expand completer
+zstyle ':completion:*:expand:*' tag-order all-expansions
+
+# match uppercase from lowercase
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# offer indexes before parameters in subscripts
+zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
+
+# Filename suffixes to ignore during completion (except after rm command)
+zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.o' '*?~' \
+    '*?.old' '*?.bak' '*?.pro'
+
+# ignore completion functions (until the _ignored completer)
+zstyle ':completion:*:functions' ignored-patterns '_*'
+
+# With commands like `rm' it's annoying if one gets offered the same filename
+# again even if it is already on the command line. To avoid that:
+zstyle ':completion:*:rm:*' ignore-line yes
+
 umask 022
 
 # Search path for the cd command
@@ -18,7 +67,7 @@ limit core 100M
 # Set up aliases
 alias ZshRehash='source ~/.zshrc'
 alias ZshReload='rm -f ~/.zcompdump*; exec zsh -l'
-alias cdg='cd $(git rev-parse --show-toplevel)'
+alias cdg='cd $(git rev-parse --show-toplevel)' # go to root of git project
 alias cp='nocorrect cp'       # no spelling correction on cp
 alias d='dirs -v'
 alias fileserver='python -m SimpleHTTPServer 8080' # serves files in current dir
@@ -81,16 +130,14 @@ if [ -f /etc/debian_chroot ]; then
 fi
 
 setopt promptsubst # re-interpolate variables in prompt on every redraw
-if [ -d "/usr/share/zsh/functions/VCS_Info/" ]; then
-    autoload -U add-zsh-hook
-    autoload -U vcs_info # for VCS info in my prompt
-    zstyle ':vcs_info:*' enable git hg
-    vcs_info_precmd() {
-	vcs_info
-	p_vcs="$vcs_info_msg_0_"
-    }
-    add-zsh-hook precmd vcs_info_precmd
-fi
+autoload -U add-zsh-hook
+autoload -U vcs_info # for VCS info in my prompt
+zstyle ':vcs_info:*' enable git hg
+vcs_info_precmd() {
+    vcs_info
+    p_vcs="$vcs_info_msg_0_"
+}
+add-zsh-hook precmd vcs_info_precmd
 
 p_host="%F{green}"
 PROMPT='${debian_chroot}%F{green}%n%F{white}@${p_host}%m%F{white}:%F{cyan}%~%F{white}${p_vcs}%#%F{default} '
@@ -129,8 +176,8 @@ export REPORTBUGEMAIL=$DEBEMAIL
 
 # from https://blog.engineyard.com/2011/tuning-the-garbage-collector-with-ruby-1-9-2
 export RUBY_GC_MALLOC_LIMIT=79000000
-export RUBY_FREE_MIN=100000
-export RUBY_HEAP_MIN_SLOTS=800000
+export RUBY_FREE_MIN=500000
+export RUBY_HEAP_MIN_SLOTS=40000
 
 # Set/unset shell options
 setopt   autocd autolist autopushd autoresume correct correctall
@@ -141,69 +188,22 @@ setopt   printeightbit pushdtohome rcquotes sharehistory
 unsetopt automenu # don't start completing when I press TAB too many times
 unsetopt autoparamslash beep bgnice
 
-# Autoload zsh modules when they are referenced
-autoload -U zmv
-#zmodload -a zsh/stat stat
-#zmodload -a zsh/zpty zpty
-zmodload -a zsh/zprof zprof
+dev() { cd ~/dev/$1 }
+_dev() { _files -W ~/dev/ -/ }
+compdef _dev dev
 
-# bindkey -v               # vi key bindings
-bindkey -e                 # emacs key bindings
-bindkey ' ' magic-space    # also do history expansion on space
-bindkey '^I' complete-word # complete on tab, leave expansion to _expand
-[ -n "${terminfo[kf7]}" ] && bindkey -s "${terminfo[kf7]}" "cd ..; ls\r" # F7
-
-autoload      edit-command-line
-zle -N        edit-command-line
-bindkey '\ee' edit-command-line
-
-# Setup new style completion system.
-autoload -U compinit
-# useful for shared filesystems where you run different OSes/zsh versions
-compinit -d ~/.zcompdump-$OSTYPE-$ZSH_VERSION
-
-# Completion Styles
-
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
-
-# list of completers to use
-zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
-
-# allow one error for every three characters typed in approximate completer
-zstyle -e ':completion:*:approximate:*' max-errors \
-    'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numeric )'
-
-# insert all expansions for expand completer
-zstyle ':completion:*:expand:*' tag-order all-expansions
-
-# match uppercase from lowercase
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# offer indexes before parameters in subscripts
-zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
-
-# Filename suffixes to ignore during completion (except after rm command)
-zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.o' '*?~' \
-    '*?.old' '*?.bak' '*?.pro'
-
-# ignore completion functions (until the _ignored completer)
-zstyle ':completion:*:functions' ignored-patterns '_*'
-
-# With commands like `rm' it's annoying if one gets offered the same filename
-# again even if it is already on the command line. To avoid that:
-zstyle ':completion:*:rm:*' ignore-line yes
-
-
-# Function Usage: doc packagename
-#                 doc pac<TAB>
 doc() { cd /usr/share/doc/$1 && ls }
 _doc() { _files -W /usr/share/doc -/ }
 compdef _doc doc
 
-dev() { cd ~/dev/$1 }
-_dev() { _files -W ~/dev/ -/ }
-compdef _dev dev
+function g {
+  if [[ $# > 0 ]]; then
+    git $@
+  else
+    git status
+  fi
+}
+compdef g=git
 
 [ -d ~/.rbenv ] && PATH="$HOME/.rbenv/bin/:$PATH" && eval "$(rbenv init -)"
 
