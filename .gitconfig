@@ -28,7 +28,9 @@
 [core]
 	excludesfile = ~/.gitconfig-ignore
 [diff]
+	algorithm = patience
 	renames = copies
+	submodule = log
 [log]
 	decorate = short
 [merge]
