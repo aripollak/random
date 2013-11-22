@@ -1,9 +1,10 @@
-# vim: set sts=8:ts=8
+# vim: set sts=8:sw=8:ts=8
 [alias]
 	# shows you latest commit on all branches, and upstream info:
 	b = branch -vv
 	co = checkout
 	furcate = branch
+	grpe = grep
 	lg = log --graph
 	lgn = log --graph --name-status --find-renames --find-copies
 	lgs = log --graph --stat --summary --find-renames --find-copies

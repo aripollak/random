@@ -67,8 +67,7 @@ if has("autocmd")
   " Highlight long lines over 100 chars
   highlight ExtraWhitespace ctermbg=red guibg=red
   autocmd Filetype c,c++,coffee,javascript,perl,python,ruby,sh match ExtraWhitespace '\%>100c.\+'
-  autocmd Bufenter *.mdwn setfiletype ikiwiki
-  autocmd Bufenter *.mdwn setlocal spell
+  autocmd Filetype *.mdwn setfiletype ikiwiki
   autocmd Bufenter *.rabl setfiletype ruby
   autocmd Filetype c setlocal sts=4 sw=4
   autocmd Filetype c++ setlocal sts=4 sw=4
@@ -77,6 +76,7 @@ if has("autocmd")
   autocmd Filetype git setlocal nobackup
   autocmd Filetype html setlocal tw=79
   autocmd Filetype javascript setlocal et
+  autocmd Filetype gitcommit,markdown setlocal spell
   autocmd Filetype perl setlocal et sts=4 sw=4
   autocmd Filetype puppet setlocal et sts=2 sw=2
   autocmd Filetype python setlocal et sts=4 sw=4 foldmethod=indent

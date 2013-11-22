@@ -175,7 +175,7 @@ export PYTHONSTARTUP=~/.pythonrc
 export REPORTBUGEMAIL=$DEBEMAIL
 
 # from https://blog.engineyard.com/2011/tuning-the-garbage-collector-with-ruby-1-9-2
-export RUBY_GC_MALLOC_LIMIT=79000000
+export RUBY_GC_MALLOC_LIMIT=80000000
 export RUBY_FREE_MIN=500000
 export RUBY_HEAP_MIN_SLOTS=40000
 
