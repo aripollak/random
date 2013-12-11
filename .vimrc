@@ -145,6 +145,7 @@ let g:ctrlp_max_height = 20
 let g:ctrlp_open_new_file = 't'
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 " alias :ConqueTerm to :Term:
 command! -nargs=+ Term ConqueTerm <args>
