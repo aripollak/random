@@ -18,7 +18,7 @@ set backupskip+=*.tmp
 set cursorline
 set display+=lastline
 set foldminlines=5
-set foldnestmax=3
+set foldnestmax=4
 set formatoptions=crq
 set guifont=Monospace\ 10
 set hidden
