@@ -174,10 +174,11 @@ export PAGER=less
 export PYTHONSTARTUP=~/.pythonrc
 export REPORTBUGEMAIL=$DEBEMAIL
 
-# from https://blog.engineyard.com/2011/tuning-the-garbage-collector-with-ruby-1-9-2
-export RUBY_GC_MALLOC_LIMIT=80000000
-export RUBY_FREE_MIN=500000
-export RUBY_HEAP_MIN_SLOTS=40000
+# from http://tmm1.net/ruby21-rgengc/
+export RUBY_GC_HEAP_INIT_SLOTS=600000
+export RUBY_GC_HEAP_FREE_SLOTS=600000
+export RUBY_GC_HEAP_GROWTH_FACTOR=1.25
+export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
 
 # Set/unset shell options
 setopt   autocd autolist autopushd autoresume correct correctall
