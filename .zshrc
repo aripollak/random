@@ -62,7 +62,7 @@ WORDCHARS="*?_-.[]~&;!#$%^(){}<>"
 # automatically remove duplicates from these arrays
 typeset -U path cdpath fpath manpath
 
-limit core 100M
+limit core 200M
 
 # Set up aliases
 alias ZshRehash='source ~/.zshrc'
