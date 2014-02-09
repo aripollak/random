@@ -1,6 +1,5 @@
 ulimit -c 1000000
 [ -x "/usr/bin/mpd" ] && mpd /etc/mpd.conf
-xset s off
 
 # from https://github.com/ScottGarman/thinkpad_t440s and
 # https://wiki.archlinux.org/index.php/Touchpad_Synaptics
