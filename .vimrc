@@ -14,6 +14,7 @@ set backspace=indent,eol,start	" more powerful backspacing
 set backup
 set backupdir=~/.vim/backup
 set backupskip+=*.tmp
+set clipboard=unnamedplus
 "    set colorcolumn=81      " shows an ugly red bar down this column
 set cursorline
 set display+=lastline

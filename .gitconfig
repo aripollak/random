@@ -1,7 +1,8 @@
-# vim: set sts=8:sw=8:ts=8
+# vim: sts=8 sw=8 ts=8
 [alias]
 	# shows you latest commit on all branches, and upstream info:
 	b = branch -vv
+	cirand = commit .random -m 'update .random'
 	co = checkout
 	furcate = branch
 	grpe = grep
