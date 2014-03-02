@@ -1,3 +1,4 @@
+rfkill block bluetooth # turn off bluetooth by default
 ulimit -c 1000000
 [ -x "/usr/bin/mpd" ] && mpd /etc/mpd.conf
 
