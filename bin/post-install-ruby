@@ -4,7 +4,7 @@
 
 gem update --system
 gem install bundler gem-browse gem-ctags hookup hub irbtools pry pry-debundle \
-    spring spring-commands-rspec spring-commands-testunit travis
+    spring spring-commands-rspec spring-commands-testunit table_print travis
 rbenv rehash
 gem ctags
 gem rdoc --all

@@ -15,6 +15,7 @@ if defined?(Bundler)
   end
 end
 
+require 'table_print'
 require 'irbtools/configure'
 Irbtools.add_library_callback(:hirb) do
   Hirb.disable
