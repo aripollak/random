@@ -40,6 +40,7 @@
 [push]
 	default = upstream
 [rebase]
+	autosquash = true
 	stat = true # shows which files changed when doing a rebase
 [url "git://github.com/"]
 	# Read-only, e.g. gh:aripollak/random
