@@ -2,8 +2,7 @@ ulimit -c 1000000
 
 # from https://github.com/ScottGarman/thinkpad_t440s and
 # https://wiki.archlinux.org/index.php/Touchpad_Synaptics
-synclient PalmDetect=1 PalmMinWidth=5 PalmMinZ=40
-synclient HorizHysteresis=30 VertHysteresis=30 AreaTopEdge=2400 AreaBottomEdge=4400
+synclient HorizHysteresis=30 VertHysteresis=30 AreaTopEdge=2400
 
 syndaemon -i 0.5 -K -R -d
 xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 8 1
