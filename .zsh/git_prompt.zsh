@@ -28,13 +28,13 @@ parse_git_state() {
   local GIT_STATUS="$(git status --branch --porcelain)"
 
   local NUM_AHEAD="$(echo "$GIT_STATUS" | head -1 |
-    grep '\[ahead [0-9]*\]' | sed -e 's/.*\[ahead \([0-9]*\)\]$/\1/')"
+    grep 'ahead [0-9]*' | sed -e 's/.*ahead \([0-9]*\).*/\1/')"
   if [[ $NUM_AHEAD -gt 0 ]]; then
     GIT_STATE=$GIT_STATE${GIT_PROMPT_AHEAD//NUM/$NUM_AHEAD}
   fi
 
   local NUM_BEHIND="$(echo "$GIT_STATUS" | head -1 |
-    grep '\[behind [0-9]*\]' | sed -e 's/.*\[behind \([0-9]*\)\]$/\1/')"
+    grep 'behind [0-9]*' | sed -e 's/.*behind \([0-9]*\).*/\1/')"
   if [[ $NUM_BEHIND -gt 0 ]]; then
     GIT_STATE=$GIT_STATE${GIT_PROMPT_BEHIND//NUM/$NUM_BEHIND}
   fi
