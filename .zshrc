@@ -129,18 +129,10 @@ if [ -f /etc/debian_chroot ]; then
     debian_chroot="($(cat /etc/debian_chroot))"
 fi
 
-setopt promptsubst # re-interpolate variables in prompt on every redraw
-autoload -U add-zsh-hook
-autoload -U vcs_info # for VCS info in my prompt
-zstyle ':vcs_info:*' enable git hg
-vcs_info_precmd() {
-    vcs_info
-    p_vcs="$vcs_info_msg_0_"
-}
-add-zsh-hook precmd vcs_info_precmd
+source ~/.zsh/git_prompt.zsh
 
 p_host="%F{green}"
-PROMPT='${debian_chroot}%F{green}%n%F{white}@${p_host}%m%F{white}:%F{cyan}%~%F{white}${p_vcs}%#%F{default} '
+PROMPT='${debian_chroot}%F{green}%n%F{white}@${p_host}%m%F{white}:%F{cyan}%~ $(git_prompt_string)%#%F{default} '
 RPROMPT='%W %t'     # prompt for right side of screen
 ### END PROMPT SETUP ###
 
