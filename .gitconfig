@@ -38,7 +38,8 @@
 [merge]
 	tool = gvimdiff
 [push]
-	default = upstream
+	# Default in git 2.0:
+	default = simple
 [rebase]
 	autosquash = true
 	stat = true # shows which files changed when doing a rebase
