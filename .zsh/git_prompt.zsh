@@ -45,7 +45,7 @@ parse_git_state() {
     GIT_STATE=$GIT_STATE$GIT_PROMPT_MERGING
   fi
 
-  if [[ -n $GIT_DIR ]] && [[ -d $GIT_DIR/rebase-merge ]] then
+  if [[ -n $GIT_DIR ]] && [[ -d $GIT_DIR/rebase-apply ]] || [[ -d $GIT_DIR/rebase-merge ]] then
     GIT_STATE=$GIT_STATE$GIT_PROMPT_REBASE
   fi
 
