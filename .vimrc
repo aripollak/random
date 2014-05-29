@@ -136,6 +136,10 @@ map <leader>nn :NERDTreeToggle<CR>
 " toggle paste mode:
 map <leader>o <Esc>:set paste! linebreak!<CR>:call TShowBreak()<CR>:set paste?<CR>
 map <leader>tt :tabnew<CR>
+" For vim-yaml-helper:
+map <leader>yg :YamlGoToKey 
+map <leader>yp :YamlGetFullPath<CR>
+map <leader>yu :YamlGoToParent<CR>
 " :w!! will save the file as root
 cmap w!! w !sudo tee %
 
@@ -144,8 +148,6 @@ let ruby_space_errors=1
 let g:is_posix=1 " shell scripts are posix-compliant
 let g:ctrlp_max_height = 20
 let g:ctrlp_open_new_file = 't'
-let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 " alias :ConqueTerm to :Term:
