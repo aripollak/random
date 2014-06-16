@@ -159,4 +159,5 @@ command! Zsh ConqueTerm zsh
 command! -nargs=1 Width setlocal sw=<args> sts=<args>
 
 runtime ftplugin/man.vim
+runtime plugin/matchit.vim
 call pathogen#infect() " requires https://github.com/tpope/vim-pathogen
