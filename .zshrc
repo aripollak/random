@@ -68,7 +68,7 @@ limit core 200M
 alias ZshRehash='source ~/.zshrc'
 alias ZshReload='rm -f ~/.zcompdump*; exec zsh -l'
 alias cdg='cd $(git rev-parse --show-toplevel)' # go to root of git project
-alias cp='nocorrect cp'       # no spelling correction on cp
+alias cp='nocorrect cp'
 alias d='dirs -v'
 alias fileserver='python -m SimpleHTTPServer 8080' # serves files in current dir
 alias gvimr='gvim --remote'
@@ -81,9 +81,7 @@ alias histoff=' setopt nosharehistory'
 alias histon=' setopt sharehistory'
 alias j=jobs
 alias la='ls -a'
-alias lc='ls --color'
 alias ll='ls -l'
-alias llc='ls -l --color'
 alias ls='ls --color=auto'
 # List only file beginning with "."
 alias lsa='ls -ld .*'
@@ -91,10 +89,10 @@ alias lsa='ls -ld .*'
 alias lsd='ls -ld *(-/DN)'
 alias mad='noglob mad'
 alias mcp='noglob mcp'
-alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
+alias mkdir='nocorrect mkdir'
 alias mln='noglob mln'
 alias mmv='noglob mmv'
-alias mv='nocorrect mv'       # no spelling correction on mv
+alias mv='nocorrect mv'
 # beeps & notifies in xterm titlebar
 alias notify='NO_TITLE=1; echo -e "\a"; print -Pn "\033]2; DONE \007"'
 alias notifyoff='unset NO_TITLE; print -Pn "\033]2;\007"'

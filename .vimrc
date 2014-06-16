@@ -96,6 +96,7 @@ endif " has ("autocmd")
 
 " abbreviations
 abbrev ARL ActiveRecord::Base.logger = Logger.new(STDOUT)
+abbrev binpry require 'pry'; binding.pry
 
 " Make cursor keys ignore wrapping in insert or visual mode
 map j gj
