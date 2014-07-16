@@ -121,7 +121,7 @@ alias nostrip='DEB_BUILD_OPTIONS=nostrip'
 alias pdebuild="pdebuild --use-pdebuild-internal"
 alias pdebuildj2="pdebuild --use-pdebuild-internal --debbuildopts -j2"
 alias git-buildsqueeze="git-buildpackage --git-dist=squeeze"
-alias git-buildpackagej2="git-buildpackage -j2"
+alias git-buildpackagej4="git-buildpackage -j4"
 
 ### BEGIN PROMPT SETUP ###
 if [ -f /etc/debian_chroot ]; then
