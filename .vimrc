@@ -16,7 +16,6 @@ set backupdir=~/.vim/backup
 set backupskip+=*.tmp
 set clipboard=unnamedplus
 "    set colorcolumn=81      " shows an ugly red bar down this column
-set cursorline
 set display+=lastline
 set foldminlines=5
 set foldnestmax=4
