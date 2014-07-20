@@ -62,8 +62,6 @@ if &listchars ==# 'eol:$'
 endif
 
 if has("autocmd")
-  filetype plugin indent on
-
   " Highlight long lines over 100 chars
   highlight ExtraWhitespace ctermbg=red guibg=red
   autocmd Filetype c,c++,coffee,javascript,perl,python,ruby,sh match ExtraWhitespace '\%>100c.\+'
@@ -136,7 +134,6 @@ map <leader>nn :NERDTreeToggle<CR>
 " toggle paste mode:
 map <leader>o <Esc>:set paste! linebreak!<CR>:call TShowBreak()<CR>:set paste?<CR>
 map <leader>tt :tabnew<CR>
-" For vim-yaml-helper:
 map <leader>yg :YamlGoToKey 
 map <leader>yp :YamlGetFullPath<CR>
 map <leader>yu :YamlGoToParent<CR>
@@ -159,4 +156,25 @@ command! -nargs=1 Width setlocal sw=<args> sts=<args>
 
 runtime ftplugin/man.vim
 runtime macros/matchit.vim
-call pathogen#infect() " requires https://github.com/tpope/vim-pathogen
+
+set runtimepath+=~/.vim/bundle/neobundle.vim
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'kana/vim-textobj-user', '0.6.3'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'kien/ctrlp.vim', 'b5d3fe66'
+NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
+NeoBundle 'nelstrom/vim-textobj-rubyblock', '0.0.3'
+NeoBundle 'scrooloose/nerdtree', 'a1433c48'
+NeoBundle 'scrooloose/syntastic', 'e34f421b'
+NeoBundle 'tommcdo/vim-exchange', 'f841536e'
+NeoBundle 'tpope/vim-abolish', 'f0d785d9'
+NeoBundle 'tpope/vim-bundler', 'v2.0'
+NeoBundle 'tpope/vim-commentary', 'v1.2'
+NeoBundle 'tpope/vim-dispatch', 'v1.1'
+NeoBundle 'tpope/vim-endwise', 'v1.2'
+NeoBundle 'tpope/vim-fugitive', 'v2.1'
+NeoBundle 'tpope/vim-rails', 'v5.1'
+call neobundle#end()
+NeoBundleCheck
+filetype plugin indent on
