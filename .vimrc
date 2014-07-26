@@ -30,7 +30,9 @@ set linebreak
 set modeline
 set mouse=a
 set noautoindent
-set noballooneval       " disable vim-ruby's annoying tooltip
+if has("balloon_eval")
+    set noballooneval       " disable vim-ruby's annoying tooltip
+endif
 set nocompatible        " Use Vim defaults instead of 100% vi compatibility
 set printoptions=paper:letter
 set ruler		" show the cursor position all the time
