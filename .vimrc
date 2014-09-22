@@ -85,6 +85,7 @@ if has("autocmd")
   autocmd Filetype svn setlocal nobackup
   autocmd Filetype tex setlocal tw=70
   autocmd Filetype xml setlocal et sw=2 sts=2
+  autocmd Filetype yaml setlocal et sw=2 sts=2
 
   " Return to last edit position
   autocmd BufReadPost *

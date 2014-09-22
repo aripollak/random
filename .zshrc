@@ -174,7 +174,7 @@ export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
 # Set/unset shell options
 setopt   autocd autolist autopushd autoresume correct correctall
 setopt   extended_glob extended_history
-setopt   hist_expire_dups_first hist_fcntl_lock hist_ignore_space histignoredups
+setopt   hist_expire_dups_first hist_ignore_space histignoredups
 setopt   longlistjobs interactivecomments noclobber notify
 setopt   printeightbit pushdtohome rcquotes sharehistory
 unsetopt automenu # don't start completing when I press TAB too many times
