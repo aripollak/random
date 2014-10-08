@@ -172,13 +172,11 @@ export RUBY_GC_HEAP_GROWTH_FACTOR=1.25
 export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
 
 # Set/unset shell options
-setopt   autocd autolist autopushd autoresume correct correctall
-setopt   extended_glob extended_history
-setopt   hist_expire_dups_first hist_ignore_space histignoredups
-setopt   longlistjobs interactivecomments noclobber notify
-setopt   printeightbit pushdtohome rcquotes sharehistory
+setopt   autocd autopushd autoresume correct correctall extended_glob
+setopt   extended_history hist_expire_dups_first hist_ignore_dups hist_ignore_space
+setopt   longlistjobs interactivecomments printeightbit pushdtohome sharehistory
 unsetopt automenu # don't start completing when I press TAB too many times
-unsetopt autoparamslash beep bgnice
+unsetopt autoparamslash beep bgnice clobber
 
 dev() { cd ~/dev/$1 }
 _dev() { _files -W ~/dev/ -/ }
