@@ -3,6 +3,6 @@ ulimit -c 1000000
 synclient PalmDetect=1 HorizHysteresis=30 VertHysteresis=30
 synclient EmulateMidButtonTime=100 # AreaTopEdge=2400
 
-syndaemon -i 0.5 -K -R -d
+syndaemon -i 0.25 -K -R -d
 xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 8 1
 xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 8 2
