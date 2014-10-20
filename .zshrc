@@ -120,7 +120,7 @@ alias kerndist='CONCURRENCY_LEVEL=2 fakeroot make-kpkg kernel_image modules_imag
 alias nostrip='DEB_BUILD_OPTIONS=nostrip'
 alias pdebuild="pdebuild --use-pdebuild-internal"
 alias pdebuildj2="pdebuild --use-pdebuild-internal --debbuildopts -j2"
-alias git-buildsqueeze="git-buildpackage --git-dist=squeeze"
+alias git-buildwheezy="git-buildpackage --git-dist=wheezy"
 alias git-buildpackagej4="git-buildpackage -j4"
 
 ### BEGIN PROMPT SETUP ###
