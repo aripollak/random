@@ -123,8 +123,10 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 " leader is \ by default, so this command is \d:
 map <leader>d :cd %:p:h<CR> " go to directory of current file
-map <leader>nf :NERDTreeFind<CR>
-map <leader>nn :NERDTreeToggle<CR>
+map <leader>nd :edit .<CR>
+map <leader>nn :Explore<CR>
+map <leader>ns :Sexplore<CR>
+map <leader>nt :Texplore<CR>
 " toggle paste mode:
 map <leader>o <Esc>:set paste! linebreak!<CR>:call TShowBreak()<CR>:set paste?<CR>
 map <leader>tt :tabnew<CR>
@@ -139,6 +141,7 @@ let ruby_space_errors=1
 let g:is_posix=1 " shell scripts are posix-compliant
 let g:ctrlp_max_height = 20
 let g:ctrlp_open_new_file = 't'
+let g:netrw_hide=1
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 " alias :ConqueTerm to :Term:
@@ -159,7 +162,6 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'kien/ctrlp.vim', 'b5d3fe66'
 NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
 NeoBundle 'nelstrom/vim-textobj-rubyblock', '0.0.3'
-NeoBundle 'scrooloose/nerdtree', 'a1433c48'
 NeoBundle 'scrooloose/syntastic', 'e34f421b'
 NeoBundle 'tommcdo/vim-exchange', 'f841536e'
 NeoBundle 'tpope/vim-abolish', 'f0d785d9'
