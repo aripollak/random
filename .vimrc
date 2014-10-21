@@ -107,16 +107,6 @@ map <Up> gk
 inoremap <Down> <C-R>=pumvisible() ? "\<lt>Down>" : "\<lt>C-O>gj"<CR>
 inoremap <Up> <C-R>=pumvisible() ? "\<lt>Up>" : "\<lt>C-O>gk"<CR>
 
-" Emacs-style navigation
-map <C-A> <Home>
-"  map <C-F> <Right>
-"  map <C-B> <Left>
-map <C-E> <End>
-cmap <C-A> <Home>
-cmap <C-E> <End>
-inoremap <C-A> <Home>
-inoremap <C-E> <End>
-
 function! TShowBreak()
   if &showbreak == ''
     set showbreak=>\ 
@@ -179,6 +169,7 @@ NeoBundle 'tpope/vim-dispatch', 'v1.1'
 NeoBundle 'tpope/vim-endwise', 'v1.2'
 NeoBundle 'tpope/vim-fugitive', 'v2.1'
 NeoBundle 'tpope/vim-rails', 'v5.1'
+NeoBundle 'tpope/vim-rsi', 'ec39927'
 call neobundle#end()
 NeoBundleCheck
 filetype plugin indent on
