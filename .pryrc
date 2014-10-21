@@ -1,7 +1,7 @@
 # Load rails if present
 rails = File.join Dir.getwd, 'config', 'environment.rb'
 
-if File.exist?(rails) && ENV['SKIP_RAILS'].nil?
+if defined?(Bundler) && File.exist?(rails)
   require rails
   require 'rails/console/app'
   require 'rails/console/helpers'
