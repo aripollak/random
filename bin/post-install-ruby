@@ -3,8 +3,8 @@
 # select the new version with 'rbenv shell VERSION' first.
 
 gem update --system
-gem install bundler bundler-audit foreman gem-browse gem-ctags hookup hub
-    irbtools pry pry-debundle spring spring-commands-rspec \
+gem install bundler bundler-audit foreman gem-browse gem-ctags hookup hub \
+    irbtools pry pry-debundle pry-doc spring spring-commands-rspec \
     spring-commands-testunit table_print travis travis-lint
 rbenv rehash
 gem ctags
