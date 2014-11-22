@@ -75,7 +75,7 @@ if has("autocmd")
   autocmd Filetype coffee setlocal et sw=2 sts=2 foldmethod=indent
   autocmd Filetype debchangelog setlocal et sts=2 indentexpr=4
   autocmd Filetype git setlocal nobackup
-  autocmd Filetype html setlocal tw=79
+  autocmd Filetype html setlocal et sw=2 sts=2 tw=79
   autocmd Filetype javascript setlocal et
   autocmd Filetype gitcommit,markdown setlocal spell
   autocmd Filetype perl setlocal et sts=4 sw=4
