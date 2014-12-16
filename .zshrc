@@ -67,6 +67,11 @@ limit core 200M
 # Set up aliases
 alias ZshRehash='source ~/.zshrc'
 alias ZshReload='rm -f ~/.zcompdump*; exec zsh -l'
+alias acp='apt-cache policy'
+alias acs='apt-cache show'
+alias agi='sudo apt-get install'
+alias agdu='sudo apt-get update && sudo apt-get dist-upgrade'
+alias agu='sudo apt-get update && sudo apt-get upgrade'
 alias cdg='cd $(git rev-parse --show-toplevel)' # go to root of git project
 alias cp='nocorrect cp'
 alias d='dirs -v'
@@ -96,7 +101,7 @@ alias mv='nocorrect mv'
 # beeps & notifies in xterm titlebar
 alias notify='NO_TITLE=1; echo -e "\a"; print -Pn "\033]2; DONE \007"'
 alias notifyoff='unset NO_TITLE; print -Pn "\033]2;\007"'
-alias partest='rake db:migrate; rake db:test:prepare; rake parallel:prepare; test:parallel_with_specs'
+alias partest='rake db:migrate; rake db:test:prepare; rake parallel:prepare; nice rake test:parallel_with_specs'
 alias psgrep='ps auxw | grep '
 alias po=popd
 alias pu=pushd
