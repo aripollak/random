@@ -162,7 +162,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'kien/ctrlp.vim', 'b5d3fe66'
 NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
 NeoBundle 'nelstrom/vim-textobj-rubyblock', '0.0.3'
-NeoBundle 'scrooloose/syntastic', 'e34f421b'
+NeoBundle 'scrooloose/syntastic', '3.5.0'
 NeoBundle 'tommcdo/vim-exchange', 'f841536e'
 NeoBundle 'tpope/vim-abolish', 'f0d785d9'
 NeoBundle 'tpope/vim-bundler', 'v2.0'
@@ -171,7 +171,7 @@ NeoBundle 'tpope/vim-dispatch', 'v1.1'
 NeoBundle 'tpope/vim-endwise', 'v1.2'
 NeoBundle 'tpope/vim-fugitive', 'v2.1'
 NeoBundle 'tpope/vim-rails', 'v5.1'
-NeoBundle 'tpope/vim-rsi', 'ec39927'
+NeoBundle 'tpope/vim-rsi', 'dfc5288'
 call neobundle#end()
 NeoBundleCheck
 filetype plugin indent on
