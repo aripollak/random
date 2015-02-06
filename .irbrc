@@ -15,12 +15,12 @@ if defined?(Bundler)
   end
 end
 
-require 'irb/completion'
-require 'table_print'
-require 'irbtools/configure'
-Irbtools.add_library_callback(:hirb) do
-  Hirb.disable
-  def hirb_enable; Hirb.enable unicode: true; end
-  def hirb_disable; Hirb.disable; end
-end
-Irbtools.start
+# require 'irb/completion'
+# require 'table_print'
+# require 'irbtools/configure'
+# Irbtools.add_library_callback(:hirb) do
+#   Hirb.disable
+#   def hirb_enable; Hirb.enable unicode: true; end
+#   def hirb_disable; Hirb.disable; end
+# end
+# Irbtools.start
