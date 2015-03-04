@@ -2,6 +2,7 @@
 [alias]
 	# shows you latest commit on all branches, and upstream info:
 	b = branch -vv
+	blast = push
 	cirand = commit .random -m 'update .random'
 	co = checkout
 	furcate = branch
