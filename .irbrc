@@ -1,3 +1,4 @@
+IRB.conf[:EVAL_HISTORY] = 200
 IRB.conf[:SAVE_HISTORY] = 1000
 
 # from http://github.com/ConradIrwin/pry-debundle/blob/master/lib/pry-debundle.rb

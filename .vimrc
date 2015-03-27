@@ -169,7 +169,7 @@ NeoBundle 'tpope/vim-bundler', 'v2.0'
 NeoBundle 'tpope/vim-commentary', 'v1.2'
 NeoBundle 'tpope/vim-dispatch', 'v1.1'
 NeoBundle 'tpope/vim-endwise', 'v1.2'
-NeoBundle 'tpope/vim-fugitive', 'v2.1'
+NeoBundle 'tpope/vim-fugitive', 'v2.2'
 NeoBundle 'tpope/vim-rails', 'v5.1'
 NeoBundle 'tpope/vim-rsi', 'dfc5288'
 call neobundle#end()
