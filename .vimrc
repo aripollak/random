@@ -139,6 +139,7 @@ cmap w!! w !sudo tee %
 let python_highlight_all=1
 let ruby_space_errors=1
 let g:is_posix=1 " shell scripts are posix-compliant
+let g:ctrlp_custom_ignore = { 'dir':  '\.git$\|public$\|log\|tmp$', }
 let g:ctrlp_max_height = 20
 let g:ctrlp_open_new_file = 't'
 let g:netrw_hide=1
