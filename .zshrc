@@ -72,6 +72,7 @@ alias acs='apt-cache show'
 alias agi='sudo apt-get install'
 alias agdu='sudo apt-get update && sudo apt-get dist-upgrade'
 alias agu='sudo apt-get update && sudo apt-get upgrade'
+alias be='bundle exec'
 alias cdg='cd $(git rev-parse --show-toplevel)' # go to root of git project
 alias cp='nocorrect cp'
 alias d='dirs -v'
@@ -84,6 +85,7 @@ alias help=run-help
 alias histrefresh=' fc -RI; fc -AI'
 alias histoff=' setopt nosharehistory'
 alias histon=' setopt sharehistory'
+alias hl='heroku local'
 alias j=jobs
 alias la='ls -a'
 alias ll='ls -l'
@@ -174,7 +176,6 @@ export REPORTBUGEMAIL=$DEBEMAIL
 # from http://tmm1.net/ruby21-rgengc/
 export RUBY_GC_HEAP_INIT_SLOTS=600000
 export RUBY_GC_HEAP_FREE_SLOTS=600000
-export RUBY_GC_HEAP_GROWTH_FACTOR=1.25
 export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
 
 # Set/unset shell options
