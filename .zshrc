@@ -124,12 +124,12 @@ alias wikiup='ikiwiki --setup .ikiwiki.setup'
 
 # Debian building stuff
 alias debug='MALLOC_CHECK_=2'
+alias gbp-buildwheezy="gbp buildpackage --git-dist=jessie"
+alias gbp-buildpackagej4="gbp buildpackage -j4"
 alias kerndist='CONCURRENCY_LEVEL=2 fakeroot make-kpkg kernel_image modules_image'
 alias nostrip='DEB_BUILD_OPTIONS=nostrip'
 alias pdebuild="pdebuild --use-pdebuild-internal"
 alias pdebuildj2="pdebuild --use-pdebuild-internal --debbuildopts -j2"
-alias git-buildwheezy="git-buildpackage --git-dist=wheezy"
-alias git-buildpackagej4="git-buildpackage -j4"
 
 ### BEGIN PROMPT SETUP ###
 if [ -f /etc/debian_chroot ]; then
