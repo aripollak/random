@@ -117,6 +117,8 @@ endfunction
 
 map <C-S> <Esc>:update<CR>
 inoremap <C-S> <Esc>:update<CR>a
+map <F9> <Esc>:Dispatch<CR>
+inoremap <F9> <Esc>:Dispatch<CR>a
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
@@ -158,20 +160,21 @@ runtime macros/matchit.vim
 set runtimepath+=~/.vim/bundle/neobundle.vim
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'kana/vim-textobj-user', '0.6.3'
+NeoBundle 'kana/vim-textobj-user', '0.7.1'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'kien/ctrlp.vim', 'b5d3fe66'
 NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
 NeoBundle 'nelstrom/vim-textobj-rubyblock', '0.0.3'
-NeoBundle 'scrooloose/syntastic', '3.5.0'
-NeoBundle 'tommcdo/vim-exchange', 'f841536e'
+NeoBundle 'scrooloose/syntastic', '3.6.0'
+NeoBundle 'tommcdo/vim-exchange', '4589b30'
 NeoBundle 'tpope/vim-abolish', 'f0d785d9'
 NeoBundle 'tpope/vim-bundler', 'v2.0'
 NeoBundle 'tpope/vim-commentary', 'v1.2'
-NeoBundle 'tpope/vim-dispatch', 'v1.1'
+NeoBundle 'tpope/vim-dispatch', '374a3c2'
 NeoBundle 'tpope/vim-endwise', 'v1.2'
-NeoBundle 'tpope/vim-fugitive', 'v2.2'
-NeoBundle 'tpope/vim-rails', 'v5.1'
+NeoBundle 'tpope/vim-flagship', '6eb8ba3'
+NeoBundle 'tpope/vim-fugitive', '1c84437'
+NeoBundle 'tpope/vim-rails', '22b8922'
 NeoBundle 'tpope/vim-rsi', 'dfc5288'
 call neobundle#end()
 NeoBundleCheck
