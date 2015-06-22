@@ -147,10 +147,6 @@ let g:ctrlp_open_new_file = 't'
 let g:netrw_hide=1
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
-" alias :ConqueTerm to :Term:
-command! -nargs=+ Term ConqueTerm <args>
-command! Zsh ConqueTerm zsh
-
 " :Width # will set all width preferences to #
 command! -nargs=1 Width setlocal sw=<args> sts=<args>
 
@@ -172,7 +168,6 @@ NeoBundle 'tpope/vim-bundler', 'v2.0'
 NeoBundle 'tpope/vim-commentary', 'v1.2'
 NeoBundle 'tpope/vim-dispatch', '374a3c2'
 NeoBundle 'tpope/vim-endwise', 'v1.2'
-NeoBundle 'tpope/vim-flagship', '6eb8ba3'
 NeoBundle 'tpope/vim-fugitive', '1c84437'
 NeoBundle 'tpope/vim-rails', '22b8922'
 NeoBundle 'tpope/vim-rsi', 'dfc5288'
