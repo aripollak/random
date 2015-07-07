@@ -36,6 +36,7 @@ if has("balloon_eval")
 endif
 set nocompatible        " Use Vim defaults instead of 100% vi compatibility
 set printoptions=paper:letter
+set re=1                " works around really slow ruby syntax highlighting in schema.rb
 set ruler		" show the cursor position all the time
 set scrolloff=5
 set shiftround
@@ -166,11 +167,13 @@ NeoBundle 'tommcdo/vim-exchange', '4589b30'
 NeoBundle 'tpope/vim-abolish', 'f0d785d9'
 NeoBundle 'tpope/vim-bundler', 'v2.0'
 NeoBundle 'tpope/vim-commentary', 'v1.2'
-NeoBundle 'tpope/vim-dispatch', '374a3c2'
+NeoBundle 'tpope/vim-dispatch', 'c514fe7'
 NeoBundle 'tpope/vim-endwise', 'v1.2'
-NeoBundle 'tpope/vim-fugitive', '1c84437'
+NeoBundle 'tpope/vim-fugitive', '06af328'
 NeoBundle 'tpope/vim-rails', '22b8922'
+NeoBundle 'tpope/vim-repeat', 'v1.1'
 NeoBundle 'tpope/vim-rsi', 'dfc5288'
+NeoBundle 'tpope/vim-surround', 'v2.1'
 call neobundle#end()
 NeoBundleCheck
 filetype plugin indent on
