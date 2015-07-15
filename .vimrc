@@ -159,7 +159,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'kana/vim-textobj-user', '0.7.1'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'kien/ctrlp.vim', 'b5d3fe66'
+NeoBundle 'ctrlpvim/ctrlp.vim', '2ffdd4c'
 NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
 NeoBundle 'nelstrom/vim-textobj-rubyblock', '0.0.3'
 NeoBundle 'scrooloose/syntastic', '3.6.0'

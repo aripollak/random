@@ -77,6 +77,7 @@ alias cdg='cd $(git rev-parse --show-toplevel)' # go to root of git project
 alias cp='nocorrect cp'
 alias d='dirs -v'
 alias fileserver='python -m SimpleHTTPServer 8080' # serves files in current dir
+alias grep='grep --color=auto --exclude-dir=.svn --exclude-dir=.git --exclude=\*~ --exclude=\*.o --exclude=\*.pyc --exclude="*.sw[op]" --exclude=tags'
 alias gvimr='gvim --remote'
 alias h=history
 alias help=run-help
@@ -163,9 +164,6 @@ export DEBEMAIL=ari@debian.org
 export DEBFULLNAME="Ari Pollak"
 export EDITOR=vim
 export EMAIL=ajp@aripollak.com # for git
-export GREP_OPTIONS="--color=auto --exclude-dir=.svn --exclude-dir=.git \
-    --exclude=*~ --exclude=*.o --exclude=*.pyc --exclude=*.sw[op] \
-    --exclude=tags"
 export LESS=-cMR
 export HEBCAL_CITY="Boston"
 export MAIL=/var/mail/$USER
