@@ -156,15 +156,15 @@ runtime macros/matchit.vim
 
 set runtimepath+=~/.vim/bundle/neobundle.vim
 call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundleFetch 'Shougo/neobundle.vim', 'ver.4.0'
 NeoBundle 'kana/vim-textobj-user', '0.7.1'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'ctrlpvim/ctrlp.vim', '2ffdd4c'
 NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
 NeoBundle 'nelstrom/vim-textobj-rubyblock', '0.0.3'
-NeoBundle 'scrooloose/syntastic', '3.6.0'
+NeoBundle 'scrooloose/syntastic', '3.7.0'
 NeoBundle 'tommcdo/vim-exchange', '4589b30'
-NeoBundle 'tpope/vim-abolish', 'f0d785d9'
+NeoBundle 'tpope/vim-abolish', 'v1.1'
 NeoBundle 'tpope/vim-bundler', 'v2.0'
 NeoBundle 'tpope/vim-commentary', 'v1.2'
 NeoBundle 'tpope/vim-dispatch', 'c514fe7'
@@ -173,7 +173,7 @@ NeoBundle 'tpope/vim-fugitive', '06af328'
 NeoBundle 'tpope/vim-rails', 'a5546e8'
 NeoBundle 'tpope/vim-repeat', 'v1.1'
 NeoBundle 'tpope/vim-rsi', 'dfc5288'
-NeoBundle 'tpope/vim-surround', 'v2.1'
+NeoBundle 'tpope/vim-surround', '2d05440'
 call neobundle#end()
 NeoBundleCheck
 filetype plugin indent on
