@@ -12,6 +12,7 @@
 	lgs = log --graph --stat --summary --find-renames --find-copies
 	lol = log --oneline
 	lolg = log --oneline --graph
+	pf = push --force-with-lease
 	st = status
 	sub = submodule
 	wdiff = diff --color-words
