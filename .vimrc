@@ -145,7 +145,7 @@ let g:is_posix=1 " shell scripts are posix-compliant
 let g:ctrlp_custom_ignore = { 'dir':  '\.git$\|public$\|log\|tmp$', }
 let g:ctrlp_max_height = 20
 let g:ctrlp_open_new_file = 't'
-let g:netrw_hide=1
+let g:netrw_hide = 1
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 " :Width # will set all width preferences to #
@@ -167,7 +167,7 @@ NeoBundle 'tommcdo/vim-exchange', '4589b30'
 NeoBundle 'tpope/vim-abolish', 'v1.1'
 NeoBundle 'tpope/vim-bundler', 'v2.0'
 NeoBundle 'tpope/vim-commentary', 'v1.2'
-NeoBundle 'tpope/vim-dispatch', 'c514fe7'
+NeoBundle 'tpope/vim-dispatch', 'eb3e564'
 NeoBundle 'tpope/vim-endwise', 'v1.2'
 NeoBundle 'tpope/vim-fugitive', '06af328'
 NeoBundle 'tpope/vim-rails', 'a5546e8'
