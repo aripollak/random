@@ -116,6 +116,7 @@ function! TShowBreak()
   endif
 endfunction
 
+map <C-P> :FZF<CR>
 map <C-S> <Esc>:update<CR>
 inoremap <C-S> <Esc>:update<CR>a
 map <F9> <Esc>:Dispatch<CR>
@@ -142,9 +143,10 @@ cmap w!! w !sudo tee %
 let python_highlight_all=1
 let ruby_space_errors=1
 let g:is_posix=1 " shell scripts are posix-compliant
-let g:ctrlp_custom_ignore = { 'dir':  '\.git$\|public$\|log\|tmp$', }
-let g:ctrlp_max_height = 20
-let g:ctrlp_open_new_file = 't'
+let $FZF_DEFAULT_COMMAND = 'ag -l'
+let $FZF_DEFAULT_OPTS = '--history=' . $HOME . '/.vim/fzf_history'
+let g:fzf_launcher = 'urxvt -geometry 100x30 -bg black -fg white' .
+  \ ' -fn "xft:Monospace:pixelsize=14" -e sh -c %s'
 let g:netrw_hide = 1
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
@@ -159,7 +161,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim', 'ver.4.0'
 NeoBundle 'kana/vim-textobj-user', '0.7.1'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'ctrlpvim/ctrlp.vim', '2ffdd4c'
+NeoBundle 'junegunn/fzf', '0.11.4', { 'build' : { 'linux' : './install --bin' } }
 NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
 NeoBundle 'nelstrom/vim-textobj-rubyblock', '0.0.3'
 NeoBundle 'scrooloose/syntastic', '3.7.0'
