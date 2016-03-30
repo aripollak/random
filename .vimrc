@@ -1,10 +1,10 @@
 " Configuration file for vim
 " vim: set et sts=2:
 
+if $TERM == "xterm-256color"
+    let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+end
 set background=dark
-if &term =~ "xterm"
-  set t_Co=256
-endif
 colorscheme desert
 
 syntax on
@@ -52,6 +52,7 @@ set softtabstop=4
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tags+=../tags;,../TAGS
+set title
 set undodir=~/.vim/backup
 set undofile " omg why is this not on by default
 set visualbell
@@ -66,6 +67,7 @@ if &listchars ==# 'eol:$'
 endif
 
 if has("autocmd")
+  autocmd! BufWritePost * Neomake
   " Highlight long lines over 100 chars
   highlight ExtraWhitespace ctermbg=red guibg=red
   autocmd Filetype c,c++,coffee,javascript,perl,python,ruby,sh match ExtraWhitespace '\%>100c.\+'
@@ -148,7 +150,7 @@ let $FZF_DEFAULT_OPTS = '--history=' . $HOME . '/.vim/fzf_history'
 let g:fzf_launcher = 'urxvt -geometry 100x30 -bg black -fg white' .
   \ ' -fn "xft:Monospace:pixelsize=14" -e sh -c %s'
 let g:netrw_hide = 1
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:neomake_ruby_enabled_makers = ['rubocop']
 
 " :Width # will set all width preferences to #
 command! -nargs=1 Width setlocal sw=<args> sts=<args>
@@ -159,12 +161,13 @@ runtime macros/matchit.vim
 set runtimepath+=~/.vim/bundle/neobundle.vim
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim', 'ver.4.0'
+NeoBundle 'benekastah/neomake', 'efed015'
 NeoBundle 'kana/vim-textobj-user', '0.7.1'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'junegunn/fzf', '0.11.4', { 'build' : { 'linux' : './install --bin' } }
 NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
 NeoBundle 'nelstrom/vim-textobj-rubyblock', '0.0.3'
-NeoBundle 'scrooloose/syntastic', '3.7.0'
+NeoBundle 'radenling/vim-dispatch-neovim', '85deb47'
 NeoBundle 'tommcdo/vim-exchange', '4589b30'
 NeoBundle 'tpope/vim-abolish', 'v1.1'
 NeoBundle 'tpope/vim-bundler', 'v2.0'
