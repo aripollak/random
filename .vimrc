@@ -70,26 +70,23 @@ if has("autocmd")
   autocmd! BufWritePost * Neomake
   " Highlight long lines over 100 chars
   highlight ExtraWhitespace ctermbg=red guibg=red
-  autocmd Filetype c,c++,coffee,javascript,perl,python,ruby,sh match ExtraWhitespace '\%>100c.\+'
-  autocmd Filetype *.mdwn setfiletype ikiwiki
-  autocmd Bufenter *.rabl setfiletype ruby
-  autocmd Filetype c setlocal sts=4 sw=4
-  autocmd Filetype c++ setlocal sts=4 sw=4
-  autocmd Filetype coffee setlocal et sw=2 sts=2 foldmethod=indent
-  autocmd Filetype debchangelog setlocal et sts=2 indentexpr=4
-  autocmd Filetype git setlocal nobackup
-  autocmd Filetype html setlocal et sw=2 sts=2 tw=79
-  autocmd Filetype javascript setlocal et
-  autocmd Filetype gitcommit,markdown setlocal spell
-  autocmd Filetype perl setlocal et sts=4 sw=4
-  autocmd Filetype puppet setlocal et sts=2 sw=2
-  autocmd Filetype python setlocal et sts=4 sw=4 foldmethod=indent
-  autocmd Filetype ruby setlocal et sw=2 sts=2 foldmethod=indent
-  autocmd Filetype sh setlocal et isf-==
-  autocmd Filetype svn setlocal nobackup
-  autocmd Filetype tex setlocal tw=70
-  autocmd Filetype xml setlocal et sw=2 sts=2
-  autocmd Filetype yaml setlocal et sw=2 sts=2
+  autocmd BufEnter *.mdwn setfiletype ikiwiki
+  autocmd BufEnter *.rabl setfiletype ruby
+  autocmd FileType c,c++,coffee,javascript,perl,python,ruby,sh match ExtraWhitespace '\%>100c.\+'
+  autocmd FileType coffee setlocal et sw=2 sts=2 foldmethod=indent
+  autocmd FileType debchangelog setlocal et sts=2 indentexpr=4
+  autocmd FileType git setlocal nobackup
+  autocmd FileType html setlocal et sw=2 sts=2 tw=79
+  autocmd FileType javascript setlocal et
+  autocmd FileType gitcommit,markdown setlocal spell
+  autocmd FileType python setlocal et sts=4 sw=4 foldmethod=indent
+  autocmd FileType ruby setlocal et sw=2 sts=2 foldmethod=indent
+  autocmd FileType sh setlocal et isf-==
+  autocmd FileType xml setlocal et sw=2 sts=2
+  autocmd FileType yaml setlocal et sw=2 sts=2
+
+  autocmd! BufEnter *_spec.rb let b:dispatch = '-compiler=rails spring rspec %'
+  autocmd! BufEnter *_test.rb let b:dispatch = '-compiler=rails spring testunit %'
 
   " Return to last edit position
   autocmd BufReadPost *
@@ -146,7 +143,7 @@ let python_highlight_all=1
 let ruby_space_errors=1
 let g:is_posix=1 " shell scripts are posix-compliant
 let $FZF_DEFAULT_COMMAND = 'ag -l'
-let $FZF_DEFAULT_OPTS = '--history=' . $HOME . '/.vim/fzf_history'
+let $FZF_DEFAULT_OPTS = '--history=' . $HOME . '/.cache/fzf_history'
 let g:fzf_launcher = 'urxvt -geometry 100x30 -bg black -fg white' .
   \ ' -fn "xft:Monospace:pixelsize=14" -e sh -c %s'
 let g:netrw_hide = 1
