@@ -146,6 +146,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -l'
 let $FZF_DEFAULT_OPTS = '--history=' . $HOME . '/.cache/fzf_history'
 let g:fzf_launcher = 'urxvt -geometry 100x30 -bg black -fg white' .
   \ ' -fn "xft:Monospace:pixelsize=14" -e sh -c %s'
+let g:indent_guides_start_level=2
 let g:netrw_hide = 1
 let g:neomake_ruby_enabled_makers = ['rubocop']
 
@@ -163,6 +164,7 @@ NeoBundle 'kana/vim-textobj-user', '0.7.1'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'junegunn/fzf', '0.11.4', { 'build' : { 'linux' : './install --bin' } }
 NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
+NeoBundle 'nathanaelkane/vim-indent-guides', '705c5fd'
 NeoBundle 'nelstrom/vim-textobj-rubyblock', '0.0.3'
 NeoBundle 'radenling/vim-dispatch-neovim', '85deb47'
 NeoBundle 'tommcdo/vim-exchange', '4589b30'
