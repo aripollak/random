@@ -21,8 +21,9 @@ set foldlevelstart=2
 set foldminlines=5
 set foldnestmax=4
 set formatoptions=crq
+set grepformat=%f:%l:%c:%m
+set grepprg=ag\ --vimgrep
 set guifont=Monospace\ 10
-set hidden
 set history=1000
 set hlsearch
 set ignorecase		" Do case insensitive matching
@@ -139,14 +140,14 @@ map <leader>yu :YamlGoToParent<CR>
 " :w!! will save the file as root
 cmap w!! w !sudo tee %
 
-let python_highlight_all=1
-let ruby_space_errors=1
-let g:is_posix=1 " shell scripts are posix-compliant
+let python_highlight_all = 1
+let ruby_space_errors = 1
+let g:is_posix = 1 " shell scripts are posix-compliant
 let $FZF_DEFAULT_COMMAND = 'ag -l'
 let $FZF_DEFAULT_OPTS = '--history=' . $HOME . '/.cache/fzf_history'
 let g:fzf_launcher = 'urxvt -geometry 100x30 -bg black -fg white' .
   \ ' -fn "xft:Monospace:pixelsize=14" -e sh -c %s'
-let g:indent_guides_start_level=2
+let g:indent_guides_start_level = 2
 let g:netrw_hide = 1
 let g:neomake_ruby_enabled_makers = ['rubocop']
 
