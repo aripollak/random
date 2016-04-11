@@ -20,7 +20,7 @@ set display+=lastline
 set foldlevelstart=2
 set foldminlines=5
 set foldnestmax=4
-set formatoptions=crq
+set formatoptions+=j
 set grepformat=%f:%l:%c:%m
 set grepprg=ag\ --vimgrep
 set guifont=Monospace\ 10
@@ -36,6 +36,7 @@ if has("balloon_eval")
     set noballooneval       " disable vim-ruby's annoying tooltip
 endif
 set nocompatible        " Use Vim defaults instead of 100% vi compatibility
+set nojoinspaces
 set printoptions=paper:letter
 set re=1                " works around really slow ruby syntax highlighting in schema.rb
 set ruler		" show the cursor position all the time
@@ -75,11 +76,11 @@ if has("autocmd")
   autocmd BufEnter *.rabl setfiletype ruby
   autocmd FileType c,c++,coffee,javascript,perl,python,ruby,sh match ExtraWhitespace '\%>100c.\+'
   autocmd FileType coffee setlocal et sw=2 sts=2 foldmethod=indent
-  autocmd FileType debchangelog setlocal et sts=2 indentexpr=4
-  autocmd FileType git setlocal nobackup
-  autocmd FileType html setlocal et sw=2 sts=2 tw=79
+  autocmd FileType debchangelog setlocal et nobackup spell sts=2 indentexpr=4
+  autocmd FileType gitcommit setlocal nobackup spell
+  autocmd FileType html setlocal et sw=2 sts=2
   autocmd FileType javascript setlocal et
-  autocmd FileType gitcommit,markdown setlocal spell
+  autocmd FileType markdown setlocal spell
   autocmd FileType python setlocal et sts=4 sw=4 foldmethod=indent
   autocmd FileType ruby setlocal et sw=2 sts=2 foldmethod=indent
   autocmd FileType sh setlocal et isf-==
