@@ -10,7 +10,7 @@ colorscheme desert
 syntax on
 
 set autoread
-set backspace=indent,eol,start	" more powerful backspacing
+set backspace=indent,eol,start  " more powerful backspacing
 set backup
 set backupdir=~/.vim/backup
 set backupskip+=*.tmp
@@ -26,7 +26,7 @@ set grepprg=ag\ --vimgrep
 set guifont=Monospace\ 10
 set history=1000
 set hlsearch
-set ignorecase		" Do case insensitive matching
+set ignorecase          " Do case insensitive matching
 set incsearch
 set linebreak
 set modeline
@@ -39,13 +39,13 @@ set nocompatible        " Use Vim defaults instead of 100% vi compatibility
 set nojoinspaces
 set printoptions=paper:letter
 set re=1                " works around really slow ruby syntax highlighting in schema.rb
-set ruler		" show the cursor position all the time
+set ruler               " show the cursor position all the time
 set scrolloff=5
 set shiftround
-set shiftwidth=4 " when using < or >
+set shiftwidth=4        " when using < or >
 set showbreak=>\ 
-set showcmd		" Show (partial) command in status line.
-set showmatch		" Show matching brackets.
+set showcmd             " Show (partial) command in status line.
+set showmatch           " Show matching brackets.
 set showmode
 set sidescroll=10
 set smartcase " only ignore case when pattern contains just lowercase letters
@@ -61,11 +61,9 @@ set visualbell
 set wildignore+=*.o,*.pyc
 set wildmode=longest,list " don't automatically cycle through completions
 
-if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-  if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
-    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
-  endif
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
+  let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
 endif
 
 if has("autocmd")
@@ -82,8 +80,9 @@ if has("autocmd")
   autocmd FileType javascript setlocal et
   autocmd FileType markdown setlocal spell
   autocmd FileType python setlocal et sts=4 sw=4 foldmethod=indent
-  autocmd FileType ruby setlocal et sw=2 sts=2 foldmethod=indent
+  autocmd FileType ruby setlocal et sw=2 sts=2 tw=100 foldmethod=indent
   autocmd FileType sh setlocal et isf-==
+  autocmd FileType vim setlocal et sw=2 sts=2
   autocmd FileType xml setlocal et sw=2 sts=2
   autocmd FileType yaml setlocal et sw=2 sts=2
 

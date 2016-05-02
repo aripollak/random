@@ -40,7 +40,9 @@
 [log]
 	decorate = short
 [merge]
-	tool = gvimdiff
+	tool = vimdiff
+[mergetool "vimdiff"]
+	path = nvim
 [push]
 	# Remove after git 2.0, which makes default=simple
 	default = upstream
