@@ -29,11 +29,12 @@ set hlsearch
 set ignorecase          " Do case insensitive matching
 set incsearch
 set linebreak
+set matchtime=2
 set modeline
 set mouse=a
 set noautoindent
 if has("balloon_eval")
-    set noballooneval       " disable vim-ruby's annoying tooltip
+  set noballooneval       " disable vim-ruby's annoying tooltip
 endif
 set nocompatible        " Use Vim defaults instead of 100% vi compatibility
 set nojoinspaces
@@ -140,8 +141,14 @@ map <leader>yu :YamlGoToParent<CR>
 " :w!! will save the file as root
 cmap w!! w !sudo tee %
 
+function! AirlineThemePatch(palette)
+  let g:airline#themes#dark#palette.inactive.airline_c[1] = '#202020'
+endfunction
+
 let python_highlight_all = 1
 let ruby_space_errors = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme_patch_func = 'AirlineThemePatch'
 let g:is_posix = 1 " shell scripts are posix-compliant
 let $FZF_DEFAULT_COMMAND = 'ag -l'
 let $FZF_DEFAULT_OPTS = '--history=' . $HOME . '/.cache/fzf_history'
@@ -163,7 +170,7 @@ NeoBundleFetch 'Shougo/neobundle.vim', 'ver.4.0'
 NeoBundle 'benekastah/neomake', 'efed015'
 NeoBundle 'kana/vim-textobj-user', '0.7.1'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'junegunn/fzf', '0.11.4', { 'build' : { 'linux' : './install --bin' } }
+NeoBundle 'junegunn/fzf', '0.12.1', { 'build' : { 'linux' : './install --bin' } }
 NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
 NeoBundle 'nathanaelkane/vim-indent-guides', '705c5fd'
 NeoBundle 'nelstrom/vim-textobj-rubyblock', '0.0.3'
@@ -179,6 +186,7 @@ NeoBundle 'tpope/vim-rails', 'a5546e8'
 NeoBundle 'tpope/vim-repeat', 'v1.1'
 NeoBundle 'tpope/vim-rsi', 'dfc5288'
 NeoBundle 'tpope/vim-surround', '2d05440'
+NeoBundle 'vim-airline/vim-airline', '811e515'
 call neobundle#end()
 NeoBundleCheck
 filetype plugin indent on

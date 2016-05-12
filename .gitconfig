@@ -43,9 +43,6 @@
 	tool = vimdiff
 [mergetool "vimdiff"]
 	path = nvim
-[push]
-	# Remove after git 2.0, which makes default=simple
-	default = upstream
 [rebase]
 	autosquash = true
 	stat = true # shows which files changed when doing a rebase
