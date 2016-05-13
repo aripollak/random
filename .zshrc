@@ -1,10 +1,11 @@
+# vim: set noet sw=0 sts=0:
 # Autoload zsh modules when they are referenced
 autoload -U zmv
 #zmodload -a zsh/stat stat
 #zmodload -a zsh/zpty zpty
 zmodload -a zsh/zprof zprof
 
-bindkey -e                 # emacs key bindings
+bindkey -e # emacs key bindings
 bindkey ' ' magic-space    # also do history expansion on space
 bindkey '^I' complete-word # complete on tab, leave expansion to _expand
 
@@ -25,7 +26,7 @@ zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
 
 # allow one error for every three characters typed in approximate completer
 zstyle -e ':completion:*:approximate:*' max-errors \
-    'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numeric )'
+	'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numeric )'
 
 # insert all expansions for expand completer
 zstyle ':completion:*:expand:*' tag-order all-expansions
@@ -38,7 +39,7 @@ zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 
 # Filename suffixes to ignore during completion (except after rm command)
 zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.o' '*?~' \
-    '*?.old' '*?.bak' '*?.pro'
+	'*?.old' '*?.bak' '*?.pro'
 
 # ignore completion functions (until the _ignored completer)
 zstyle ':completion:*:functions' ignored-patterns '_*'
@@ -135,7 +136,7 @@ alias pdebuildj2="pdebuild --use-pdebuild-internal --debbuildopts -j2"
 
 ### BEGIN PROMPT SETUP ###
 if [ -f /etc/debian_chroot ]; then
-    debian_chroot="($(cat /etc/debian_chroot))"
+	debian_chroot="($(cat /etc/debian_chroot))"
 fi
 
 source ~/.zsh/git_prompt.zsh
@@ -150,7 +151,7 @@ case $TERM in
 	xterm*|rxvt*)
 		# Run before a command is executed - puts shortened
 		# version into term title
-  		function precmd {
+		function precmd {
 			[ -n "$NO_TITLE" ] && return
 			print -Pn "\033]2; $USER@%m - %~\007"
 		}
@@ -182,7 +183,7 @@ setopt   autocd autopushd autoresume correct correctall extended_glob
 setopt   extended_history hist_expire_dups_first hist_ignore_dups hist_ignore_space
 setopt   longlistjobs interactivecomments printeightbit pushdtohome sharehistory
 unsetopt automenu # don't start completing when I press TAB too many times
-unsetopt autoparamslash beep bgnice clobber
+unsetopt autoparamslash beep bgnice clobber nomatch
 
 dev() { cd ~/dev/$1 }
 _dev() { _files -W ~/dev/ -/ }
@@ -193,11 +194,11 @@ _doc() { _files -W /usr/share/doc -/ }
 compdef _doc doc
 
 function g {
-  if [[ $# > 0 ]]; then
-    git $@
-  else
-    git status
-  fi
+	if [[ $# > 0 ]]; then
+		git $@
+	else
+		git status
+	fi
 }
 compdef g=git
 

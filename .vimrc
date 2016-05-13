@@ -1,8 +1,7 @@
-" Configuration file for vim
-" vim: set et sts=2:
-
+" vim: set et sts=2 sw=2:
 if $TERM == "xterm-256color"
-    let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+  let g:airline_powerline_fonts = 1
 end
 set background=dark
 colorscheme desert
@@ -43,14 +42,12 @@ set re=1                " works around really slow ruby syntax highlighting in s
 set ruler               " show the cursor position all the time
 set scrolloff=5
 set shiftround
-set shiftwidth=4        " when using < or >
 set showbreak=>\ 
 set showcmd             " Show (partial) command in status line.
 set showmatch           " Show matching brackets.
 set showmode
 set sidescroll=10
 set smartcase " only ignore case when pattern contains just lowercase letters
-set softtabstop=4
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
@@ -74,18 +71,18 @@ if has("autocmd")
   autocmd BufEnter *.mdwn setfiletype ikiwiki
   autocmd BufEnter *.rabl setfiletype ruby
   autocmd FileType c,c++,coffee,javascript,perl,python,ruby,sh match ExtraWhitespace '\%>100c.\+'
-  autocmd FileType coffee setlocal et sw=2 sts=2 foldmethod=indent
+  autocmd FileType coffee setlocal et sts=2 sw=2 foldmethod=indent
   autocmd FileType debchangelog setlocal et nobackup spell sts=2 indentexpr=4
   autocmd FileType gitcommit setlocal nobackup spell
-  autocmd FileType html setlocal et sw=2 sts=2
+  autocmd FileType html setlocal et sts=2 sw=2
   autocmd FileType javascript setlocal et
   autocmd FileType markdown setlocal spell
   autocmd FileType python setlocal et sts=4 sw=4 foldmethod=indent
-  autocmd FileType ruby setlocal et sw=2 sts=2 tw=100 foldmethod=indent
+  autocmd FileType ruby setlocal et sts=2 sw=2 tw=100 foldmethod=indent
   autocmd FileType sh setlocal et isf-==
-  autocmd FileType vim setlocal et sw=2 sts=2
-  autocmd FileType xml setlocal et sw=2 sts=2
-  autocmd FileType yaml setlocal et sw=2 sts=2
+  autocmd FileType vim setlocal et sts=2 sw=2
+  autocmd FileType xml setlocal et sts=2 sw=2
+  autocmd FileType yaml setlocal et sts=2 sw=2
 
   autocmd! BufEnter *_spec.rb let b:dispatch = '-compiler=rails spring rspec %'
   autocmd! BufEnter *_test.rb let b:dispatch = '-compiler=rails spring testunit %'
@@ -128,6 +125,7 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 " leader is \ by default, so this command is \d:
 map <leader>d :cd %:p:h<CR> " go to directory of current file
+map <leader>l :set list!<CR>:set list?<CR>
 map <leader>nd :edit .<CR>
 map <leader>nn :Explore<CR>
 map <leader>ns :Sexplore<CR>
@@ -135,7 +133,7 @@ map <leader>nt :Texplore<CR>
 " toggle paste mode:
 map <leader>o <Esc>:set paste! linebreak!<CR>:call TShowBreak()<CR>:set paste?<CR>
 map <leader>tt :tabnew<CR>
-map <leader>yg :YamlGoToKey 
+map <leader>yg :YamlGoToKey
 map <leader>yp :YamlGetFullPath<CR>
 map <leader>yu :YamlGoToParent<CR>
 " :w!! will save the file as root
@@ -147,7 +145,6 @@ endfunction
 
 let python_highlight_all = 1
 let ruby_space_errors = 1
-let g:airline_powerline_fonts = 1
 let g:airline_theme_patch_func = 'AirlineThemePatch'
 let g:is_posix = 1 " shell scripts are posix-compliant
 let $FZF_DEFAULT_COMMAND = 'ag -l'
