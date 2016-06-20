@@ -149,8 +149,6 @@ let g:airline_theme_patch_func = 'AirlineThemePatch'
 let g:is_posix = 1 " shell scripts are posix-compliant
 let $FZF_DEFAULT_COMMAND = 'ag -l'
 let $FZF_DEFAULT_OPTS = '--history=' . $HOME . '/.cache/fzf_history'
-let g:fzf_launcher = 'urxvt -geometry 100x30 -bg black -fg white' .
-  \ ' -fn "xft:Monospace:pixelsize=14" -e sh -c %s'
 let g:indent_guides_start_level = 2
 let g:netrw_hide = 1
 let g:neomake_ruby_enabled_makers = ['rubocop']
@@ -167,7 +165,7 @@ NeoBundleFetch 'Shougo/neobundle.vim', 'ver.4.0'
 NeoBundle 'benekastah/neomake', 'efed015'
 NeoBundle 'kana/vim-textobj-user', '0.7.1'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'junegunn/fzf', '0.12.1', { 'build' : { 'linux' : './install --bin' } }
+NeoBundle 'junegunn/fzf', '0.12.2', { 'build' : { 'linux' : './install --bin' } }
 NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
 NeoBundle 'nathanaelkane/vim-indent-guides', '705c5fd'
 NeoBundle 'nelstrom/vim-textobj-rubyblock', '0.0.3'
