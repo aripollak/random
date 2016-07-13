@@ -125,6 +125,11 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 " leader is \ by default, so this command is \d:
 map <leader>d :cd %:p:h<CR> " go to directory of current file
+map <leader>fa :FzfAg 
+map <leader>fb :FzfBuffers<CR>
+map <leader>fh :FzfHistory<CR>
+map <leader>ft :FzfTags<CR>
+map <leader>fw :FzfWindows<CR>
 map <leader>l :set list!<CR>:set list?<CR>
 map <leader>nd :edit .<CR>
 map <leader>nn :Explore<CR>
@@ -146,10 +151,11 @@ endfunction
 let python_highlight_all = 1
 let ruby_space_errors = 1
 let g:airline_theme_patch_func = 'AirlineThemePatch'
-let g:is_posix = 1 " shell scripts are posix-compliant
+let g:fzf_command_prefix = 'Fzf'
 let $FZF_DEFAULT_COMMAND = 'ag -l'
-let $FZF_DEFAULT_OPTS = '--history=' . $HOME . '/.cache/fzf_history'
+let $FZF_DEFAULT_OPTS = '--multi --history=' . $HOME . '/.cache/fzf_history'
 let g:indent_guides_start_level = 2
+let g:is_posix = 1 " shell scripts are posix-compliant
 let g:netrw_hide = 1
 let g:neomake_ruby_enabled_makers = ['rubocop']
 
@@ -165,7 +171,8 @@ NeoBundleFetch 'Shougo/neobundle.vim', 'ver.4.0'
 NeoBundle 'benekastah/neomake', 'efed015'
 NeoBundle 'kana/vim-textobj-user', '0.7.1'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'junegunn/fzf', '0.12.2', { 'build' : { 'linux' : './install --bin' } }
+NeoBundle 'junegunn/fzf', '0.13.2', { 'build' : { 'linux' : './install --bin' } }
+NeoBundle 'junegunn/fzf.vim', '0.12.2', 'e0182d3'
 NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
 NeoBundle 'nathanaelkane/vim-indent-guides', '705c5fd'
 NeoBundle 'nelstrom/vim-textobj-rubyblock', '0.0.3'

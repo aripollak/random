@@ -1,4 +1,1 @@
 ulimit -c 1000000
-
-synclient PalmDetect=1 HorizHysteresis=30 VertHysteresis=30
-synclient EmulateMidButtonTime=100 # AreaTopEdge=2400
