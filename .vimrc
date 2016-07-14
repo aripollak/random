@@ -172,7 +172,7 @@ NeoBundle 'benekastah/neomake', 'efed015'
 NeoBundle 'kana/vim-textobj-user', '0.7.1'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'junegunn/fzf', '0.13.2', { 'build' : { 'linux' : './install --bin' } }
-NeoBundle 'junegunn/fzf.vim', '0.12.2', 'e0182d3'
+NeoBundle 'junegunn/fzf.vim', 'e0182d3'
 NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
 NeoBundle 'nathanaelkane/vim-indent-guides', '705c5fd'
 NeoBundle 'nelstrom/vim-textobj-rubyblock', '0.0.3'
