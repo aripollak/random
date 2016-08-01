@@ -195,11 +195,12 @@ compdef _doc doc
 
 function g {
 	if [[ $# > 0 ]]; then
-		git $@
+		nocorrect git $@
 	else
 		git status
 	fi
 }
+alias g='nocorrect g' # turn off correction so it doesn't constantly complain about git aliases
 compdef g=git
 
 [ -d ~/.rbenv ] && PATH="$HOME/.rbenv/bin/:$PATH" && eval "$(rbenv init -)"

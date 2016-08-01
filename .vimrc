@@ -168,7 +168,7 @@ runtime macros/matchit.vim
 set runtimepath+=~/.vim/bundle/neobundle.vim
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim', 'ver.4.0'
-NeoBundle 'benekastah/neomake', 'efed015'
+NeoBundle 'neomake/neomake', '697c514'
 NeoBundle 'kana/vim-textobj-user', '0.7.1'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'junegunn/fzf', '0.13.2', { 'build' : { 'linux' : './install --bin' } }
@@ -188,7 +188,7 @@ NeoBundle 'tpope/vim-rails', 'a5546e8'
 NeoBundle 'tpope/vim-repeat', 'v1.1'
 NeoBundle 'tpope/vim-rsi', 'dfc5288'
 NeoBundle 'tpope/vim-surround', '2d05440'
-NeoBundle 'vim-airline/vim-airline', '811e515'
+NeoBundle 'vim-airline/vim-airline', '4d0c4f6'
 call neobundle#end()
 NeoBundleCheck
 filetype plugin indent on
