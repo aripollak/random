@@ -170,6 +170,7 @@ export LESS=-cMR
 export HEBCAL_CITY="Boston"
 export MAIL=/var/mail/$USER
 export PAGER=less
+export PARALLEL_TEST_FIRST_IS_1=true
 export PYTHONSTARTUP=~/.pythonrc
 export REPORTBUGEMAIL=$DEBEMAIL
 
