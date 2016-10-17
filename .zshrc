@@ -164,7 +164,7 @@ esac
 [ -x /usr/bin/lessfile ] && eval $(lessfile)
 export DEBEMAIL=ari@debian.org
 export DEBFULLNAME="Ari Pollak"
-[ -x /urs/bin/nvim ] && export EDITOR=nvim
+[ -x /usr/bin/nvim ] && export EDITOR=nvim
 export EMAIL=ajp@aripollak.com # for git
 export LESS=-cMR
 export HEBCAL_CITY="Boston"
