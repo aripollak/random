@@ -68,11 +68,11 @@ limit core 200M
 # Set up aliases
 alias ZshRehash='source ~/.zshrc'
 alias ZshReload='rm -f ~/.zcompdump*; exec zsh -l'
-alias acp='apt-cache policy'
-alias acs='apt-cache show'
-alias agi='sudo apt-get install'
-alias agdu='sudo apt-get update && sudo apt-get dist-upgrade'
-alias agu='sudo apt-get update && sudo apt-get upgrade'
+alias aptp='apt policy'
+alias apts='apt show'
+alias apti='sudo apt install'
+alias aptdu='sudo apt && sudo apt full-upgrade'
+alias aptu='sudo apt update && sudo apt upgrade'
 alias be='nocorrect bundle exec'
 alias cdg='cd $(git rev-parse --show-toplevel)' # go to root of git project
 alias cp='nocorrect cp'
