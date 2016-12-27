@@ -106,7 +106,7 @@ alias mv='nocorrect mv'
 # beeps & notifies in xterm titlebar
 alias notify='NO_TITLE=1; echo -e "\a"; print -Pn "\033]2; DONE \007"'
 alias notifyoff='unset NO_TITLE; print -Pn "\033]2;\007"'
-alias partest='rake db:migrate; rake db:test:prepare; rake parallel:prepare; nice rake test:parallel_with_specs'
+alias partest='be rake db:migrate; be rake db:test:prepare; be rake parallel:prepare; be nice rake test:parallel_with_specs'
 alias psgrep='ps auxw | grep '
 alias po=popd
 alias pu=pushd

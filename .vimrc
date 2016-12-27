@@ -73,7 +73,7 @@ if has("autocmd")
   autocmd FileType c,c++,coffee,javascript,perl,python,ruby,sh match ExtraWhitespace '\%>100c.\+'
   autocmd FileType coffee setlocal et sts=2 sw=2 foldmethod=indent
   autocmd FileType debchangelog setlocal et nobackup spell sts=2 indentexpr=4
-  autocmd FileType gitcommit setlocal nobackup spell
+  autocmd FileType gitcommit setlocal nobackup spell sts=2 sw=2 tw=72
   autocmd FileType html setlocal et sts=2 sw=2
   autocmd FileType javascript setlocal et
   autocmd FileType markdown setlocal spell
