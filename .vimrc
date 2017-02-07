@@ -72,9 +72,9 @@ if has("autocmd")
   autocmd BufEnter *.rabl setfiletype ruby
   autocmd FileType c,c++,coffee,javascript,perl,python,ruby,sh match ExtraWhitespace '\%>100c.\+'
   autocmd FileType coffee setlocal et sts=2 sw=2 foldmethod=indent
+  autocmd FileType css,html,scss setlocal et sts=2 sw=2
   autocmd FileType debchangelog setlocal et nobackup spell sts=2 indentexpr=4
   autocmd FileType gitcommit setlocal nobackup spell sts=2 sw=2 tw=72
-  autocmd FileType html setlocal et sts=2 sw=2
   autocmd FileType javascript setlocal et
   autocmd FileType markdown setlocal spell
   autocmd FileType python setlocal et sts=4 sw=4 foldmethod=indent
@@ -162,34 +162,31 @@ let g:neomake_ruby_enabled_makers = ['rubocop']
 " :Width # will set all width preferences to #
 command! -nargs=1 Width setlocal sw=<args> sts=<args>
 
-runtime ftplugin/man.vim
-runtime macros/matchit.vim
-
 set runtimepath+=~/.vim/bundle/neobundle.vim
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim', 'ver.4.0'
 NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'neomake/neomake', '697c514'
+NeoBundle 'neomake/neomake', '22e59c4'
 NeoBundle 'kana/vim-textobj-user', '0.7.1'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'junegunn/fzf', '0.15.8', { 'build' : { 'linux' : './install --bin' } }
+NeoBundle 'junegunn/fzf', '0.16.3', { 'build' : { 'linux' : './install --bin' } }
 NeoBundle 'junegunn/fzf.vim', '2066643'
 NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
 NeoBundle 'nathanaelkane/vim-indent-guides', '705c5fd'
 NeoBundle 'nelstrom/vim-textobj-rubyblock', '0.0.3'
-NeoBundle 'radenling/vim-dispatch-neovim', '85deb47'
+NeoBundle 'radenling/vim-dispatch-neovim', 'c8c4e21'
 NeoBundle 'tommcdo/vim-exchange', '4589b30'
 NeoBundle 'tpope/vim-abolish', 'v1.1'
-NeoBundle 'tpope/vim-bundler', 'v2.0'
+NeoBundle 'tpope/vim-bundler', 'b42217a'
 NeoBundle 'tpope/vim-commentary', '73e0d9a'
-NeoBundle 'tpope/vim-dispatch', 'eb3e564'
+NeoBundle 'tpope/vim-dispatch', '1.4'
 NeoBundle 'tpope/vim-endwise', 'v1.2'
 NeoBundle 'tpope/vim-fugitive', '06af328'
 NeoBundle 'tpope/vim-rails', 'a5546e8'
 NeoBundle 'tpope/vim-repeat', 'v1.1'
 NeoBundle 'tpope/vim-rsi', 'dfc5288'
 NeoBundle 'tpope/vim-surround', '2d05440'
-NeoBundle 'vim-airline/vim-airline', '4d0c4f6'
+NeoBundle 'vim-airline/vim-airline', '7df411d'
 call neobundle#end()
 NeoBundleCheck
 filetype plugin indent on
