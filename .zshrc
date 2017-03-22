@@ -69,9 +69,10 @@ alias ZshReload='rm -f ~/.zcompdump*; exec zsh -l'
 alias aptp='apt policy'
 alias apts='apt show'
 alias apti='sudo apt install'
-alias aptfu='sudo apt update && sudo apt full-upgrade'
+alias aptfu='sudo apt full-upgrade'
 alias aptu='sudo apt update && sudo apt upgrade'
 alias be='nocorrect bundle exec'
+alias by='byobu'
 alias cdg='cd $(git rev-parse --show-toplevel)' # go to root of git project
 alias cp='nocorrect cp'
 alias d='dirs -v'
@@ -104,13 +105,12 @@ alias mv='nocorrect mv'
 # beeps & notifies in xterm titlebar
 alias notify='NO_TITLE=1; echo -e "\a"; print -Pn "\033]2; DONE \007"'
 alias notifyoff='unset NO_TITLE; print -Pn "\033]2;\007"'
-alias partest='be rake db:migrate; be rake db:test:prepare; be rake parallel:prepare; be nice rake test:parallel_with_specs'
+alias partest='be rake db:migrate; be rake db:test:prepare; be rake parallel:prepare; be nice eatmydata rake test:parallel_with_specs'
 alias psgrep='ps auxw | grep '
 alias po=popd
 alias pu=pushd
 [ -x /usr/bin/trash ] && alias rm=trash
 alias s='nocorrect spring'
-alias sr='screen -r'
 alias sudo='nocorrect sudo'
 alias rpry='bundle exec pry'
 alias vimr='vim --remote'
