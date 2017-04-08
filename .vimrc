@@ -117,8 +117,8 @@ endfunction
 map <C-P> :FZF<CR>
 map <C-S> <Esc>:update<CR>
 inoremap <C-S> <Esc>:update<CR>a
-map <F9> <Esc>:Dispatch<CR>
-inoremap <F9> <Esc>:Dispatch<CR>a
+map <F10> <Esc>:Dispatch<CR>
+inoremap <F10> <Esc>:Dispatch<CR>a
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
@@ -179,7 +179,7 @@ NeoBundle 'tommcdo/vim-exchange', '4589b30'
 NeoBundle 'tpope/vim-abolish', 'v1.1'
 NeoBundle 'tpope/vim-bundler', 'b42217a'
 NeoBundle 'tpope/vim-commentary', '73e0d9a'
-NeoBundle 'tpope/vim-dispatch', '1.4'
+NeoBundle 'tpope/vim-dispatch', 'dafa941'
 NeoBundle 'tpope/vim-endwise', 'v1.2'
 NeoBundle 'tpope/vim-fugitive', '06af328'
 NeoBundle 'tpope/vim-rails', 'a5546e8'
