@@ -166,7 +166,7 @@ set runtimepath+=~/.vim/bundle/neobundle.vim
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim', 'ver.4.0'
 NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'neomake/neomake', '22e59c4'
+NeoBundle 'neomake/neomake', 'ccc36f9'
 NeoBundle 'kana/vim-textobj-user', '0.7.1'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'junegunn/fzf', '0.16.3', { 'build' : { 'linux' : './install --bin' } }
