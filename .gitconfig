@@ -46,6 +46,8 @@
 [rebase]
 	autosquash = true
 	stat = true # shows which files changed when doing a rebase
+[user]
+	name = Ari Pollak
 [url "git://github.com/"]
 	# Read-only, e.g. gh:aripollak/random
 	insteadOf = gh:
