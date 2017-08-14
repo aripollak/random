@@ -21,4 +21,4 @@ while true; do
 done
 
 echo "Pinging. Press Ctrl+C to exit."
-ping $@ | perl -ne "$|=1; print $perl_command" | festival --tts
+ping $@ | perl -ne "$|=1; print $perl_command" | espeak-ng
