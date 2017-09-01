@@ -75,7 +75,7 @@ if has("autocmd")
   autocmd FileType css,html,scss setlocal et sts=2 sw=2
   autocmd FileType debchangelog setlocal et nobackup spell sts=2 indentexpr=4
   autocmd FileType gitcommit setlocal nobackup spell sts=2 sw=2 tw=72
-  autocmd FileType javascript setlocal et
+  autocmd FileType javascript setlocal et sts=2 sw=2
   autocmd FileType markdown setlocal spell
   autocmd FileType python setlocal et sts=4 sw=4 foldmethod=indent
   autocmd FileType ruby setlocal et sts=2 sw=2 tw=100 foldmethod=indent
@@ -141,6 +141,7 @@ map <leader>tt :tabnew<CR>
 map <leader>yg :YamlGoToKey
 map <leader>yp :YamlGetFullPath<CR>
 map <leader>yu :YamlGoToParent<CR>
+map <leader>z :!zeal "<cword>"&<CR><CR>
 " :w!! will save the file as root
 cmap w!! w !sudo tee %
 
@@ -169,8 +170,8 @@ NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'neomake/neomake', 'ccc36f9'
 NeoBundle 'kana/vim-textobj-user', '0.7.1'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'junegunn/fzf', '0.16.3', { 'build' : { 'linux' : './install --bin' } }
-NeoBundle 'junegunn/fzf.vim', '2066643'
+NeoBundle 'junegunn/fzf', '0.17.0', { 'build' : { 'linux' : './install --bin' } }
+NeoBundle 'junegunn/fzf.vim', '39f0c2d'
 NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
 NeoBundle 'nathanaelkane/vim-indent-guides', '705c5fd'
 NeoBundle 'nelstrom/vim-textobj-rubyblock', '0.0.3'
