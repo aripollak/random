@@ -15,5 +15,5 @@ if(!username) throw 'expected Twitter username name as first argument';
 let subtitle = '@' + username + ' (twitter-notify.js)';
 
 latestTweets(username, (err, tweets) => {
-  childProcess.execFile('notify-send', [tweets[0].content, subtitle]);
+  childProcess.execFile('notify-send', ['-i', 'emblem-favorite', tweets[0].content, subtitle]);
 });
