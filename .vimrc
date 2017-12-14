@@ -1,5 +1,5 @@
 " vim: set et sts=2 sw=2:
-if $TERM =~ ".*-256color" && has("termguicolors")
+if ($TERM =~ ".*-256color" || $TERM == "screen") && has("termguicolors")
   set termguicolors
   let g:airline_powerline_fonts = 1
 end
