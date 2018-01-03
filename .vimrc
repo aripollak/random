@@ -65,7 +65,6 @@ if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
 endif
 
 if has("autocmd")
-  autocmd! BufWritePost * Neomake
   " Highlight long lines over 100 chars
   highlight ExtraWhitespace ctermbg=red guibg=red
   autocmd BufEnter *.mdwn setfiletype ikiwiki
@@ -158,7 +157,9 @@ let $FZF_DEFAULT_OPTS = '--multi --history=' . $HOME . '/.cache/fzf_history'
 let g:indent_guides_start_level = 2
 let g:is_posix = 1 " shell scripts are posix-compliant
 let g:netrw_hide = 1
-let g:neomake_ruby_enabled_makers = ['rubocop']
+let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
+let g:neomake_javascript_eslint_exe = $PWD . '/node_modules/.bin/eslint'
+let g:neomake_javascript_flow_exe = $PWD . '/node_modules/.bin/flow'
 
 " :Width # will set all width preferences to #
 command! -nargs=1 Width setlocal sw=<args> sts=<args>
@@ -167,7 +168,7 @@ set runtimepath+=~/.vim/bundle/neobundle.vim
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim', 'ver.4.0'
 NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'neomake/neomake', 'ccc36f9'
+NeoBundle 'neomake/neomake', 'b8a3963'
 NeoBundle 'kana/vim-textobj-user', '0.7.1'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'junegunn/fzf', '0.17.0', { 'build' : { 'linux' : './install --bin' } }
@@ -191,3 +192,4 @@ NeoBundle 'vim-airline/vim-airline', '7df411d'
 call neobundle#end()
 NeoBundleCheck
 filetype plugin indent on
+call neomake#configure#automake('w')
