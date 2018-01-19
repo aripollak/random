@@ -160,6 +160,7 @@ let g:netrw_hide = 1
 let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
 let g:neomake_javascript_eslint_exe = $PWD . '/node_modules/.bin/eslint'
 let g:neomake_javascript_flow_exe = $PWD . '/node_modules/.bin/flow'
+let g:rails_ctags_arguments = ['--languages=JavaScript,Ruby', '--exclude=node_modules', '--exclude=vendor']
 
 " :Width # will set all width preferences to #
 command! -nargs=1 Width setlocal sw=<args> sts=<args>
@@ -184,7 +185,7 @@ NeoBundle 'tpope/vim-commentary', '73e0d9a'
 NeoBundle 'tpope/vim-dispatch', 'dafa941'
 NeoBundle 'tpope/vim-endwise', 'v1.2'
 NeoBundle 'tpope/vim-fugitive', '06af328'
-NeoBundle 'tpope/vim-rails', 'a5546e8'
+NeoBundle 'tpope/vim-rails', '0abcda9'
 NeoBundle 'tpope/vim-repeat', 'v1.1'
 NeoBundle 'tpope/vim-rsi', 'dfc5288'
 NeoBundle 'tpope/vim-surround', '2d05440'
