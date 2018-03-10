@@ -160,6 +160,7 @@ let g:netrw_hide = 1
 let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
 let g:neomake_javascript_eslint_exe = $PWD . '/node_modules/.bin/eslint'
 let g:neomake_javascript_flow_exe = $PWD . '/node_modules/.bin/flow'
+let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:rails_ctags_arguments = ['--languages=JavaScript,Ruby', '--exclude=node_modules', '--exclude=vendor']
 
 " :Width # will set all width preferences to #
