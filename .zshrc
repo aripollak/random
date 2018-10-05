@@ -202,9 +202,6 @@ function g {
 alias g='nocorrect g' # turn off correction so it doesn't constantly complain about git aliases
 compdef g=git
 
-# heroku autocomplete setup
-CLI_ENGINE_AC_ZSH_SETUP_PATH=/home/ari/.cache/heroku/completions/zsh_setup && test -f $CLI_ENGINE_AC_ZSH_SETUP_PATH && source $CLI_ENGINE_AC_ZSH_SETUP_PATH
-
 [ -d ~/.rbenv ] && PATH="$HOME/.rbenv/bin/:$PATH" && eval "$(rbenv init -)"
 
 [ -f ~/.zshrc.priv ] && source ~/.zshrc.priv
