@@ -83,9 +83,6 @@ if has("autocmd")
   autocmd FileType xml setlocal et sts=2 sw=2
   autocmd FileType yaml setlocal et sts=2 sw=2
 
-  autocmd! BufEnter *_spec.rb let b:dispatch = '-compiler=rails spring rspec %'
-  autocmd! BufEnter *_test.rb let b:dispatch = '-compiler=rails spring testunit %'
-
   " Return to last edit position
   autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -157,9 +154,6 @@ let $FZF_DEFAULT_OPTS = '--multi --history=' . $HOME . '/.cache/fzf_history'
 let g:indent_guides_start_level = 2
 let g:is_posix = 1 " shell scripts are posix-compliant
 let g:netrw_hide = 1
-let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
-let g:neomake_javascript_eslint_exe = $PWD . '/node_modules/.bin/eslint'
-let g:neomake_javascript_flow_exe = $PWD . '/node_modules/.bin/flow'
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:rails_ctags_arguments = ['--languages=JavaScript,Ruby', '--exclude=node_modules', '--exclude=vendor']
 
@@ -172,7 +166,6 @@ NeoBundleFetch 'Shougo/neobundle.vim', 'ver.4.0'
 NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'neomake/neomake', 'b8a3963'
 NeoBundle 'kana/vim-textobj-user', '0.7.1'
-NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'junegunn/fzf', '0.17.0', { 'build' : { 'linux' : './install --bin' } }
 NeoBundle 'junegunn/fzf.vim', '39f0c2d'
 NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
