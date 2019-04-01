@@ -91,7 +91,6 @@ alias hl='heroku local'
 alias j=jobs
 alias la='ls -a'
 alias ll='ls -l'
-alias ls='ls --color=auto'
 # List only file beginning with "."
 alias lsa='ls -ld .*'
 # List only directories and symbolic links that point to directories
@@ -160,6 +159,7 @@ esac
 # Some environment variables
 [ -x /usr/bin/dircolors ] && eval $(dircolors)
 [ -x /usr/bin/lessfile ] && eval $(lessfile)
+export CLICOLOR=1
 export DEBEMAIL=ari@debian.org
 export DEBFULLNAME="Ari Pollak"
 [ -x /usr/bin/nvim ] && export EDITOR=nvim
