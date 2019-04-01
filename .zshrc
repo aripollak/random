@@ -87,7 +87,6 @@ alias help=run-help
 alias histrefresh=' fc -RI; fc -AI'
 alias histoff=' setopt nosharehistory'
 alias histon=' setopt sharehistory'
-alias hl='heroku local'
 alias j=jobs
 alias la='ls -a'
 alias ll='ls -l'
