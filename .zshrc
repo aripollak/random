@@ -162,7 +162,7 @@ esac
 export CLICOLOR=1
 export DEBEMAIL=ari@debian.org
 export DEBFULLNAME="Ari Pollak"
-[ -x /usr/bin/nvim ] && export EDITOR=nvim
+[ -x =nvim ] && export EDITOR=nvim
 export EMAIL=ajp@aripollak.com # for git
 export LESS=-cMR
 export HEBCAL_CITY="Boston"

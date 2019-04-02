@@ -160,31 +160,29 @@ let g:rails_ctags_arguments = ['--languages=JavaScript,Ruby', '--exclude=node_mo
 " :Width # will set all width preferences to #
 command! -nargs=1 Width setlocal sw=<args> sts=<args>
 
-set runtimepath+=~/.vim/bundle/neobundle.vim
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim', 'ver.4.0'
-NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'neomake/neomake', 'b8a3963'
-NeoBundle 'kana/vim-textobj-user', '0.7.1'
-NeoBundle 'junegunn/fzf', '0.17.0', { 'build' : { 'linux' : './install --bin' } }
-NeoBundle 'junegunn/fzf.vim', '39f0c2d'
-NeoBundle 'lmeijvogel/vim-yaml-helper', '59549c3d'
-NeoBundle 'nathanaelkane/vim-indent-guides', '705c5fd'
-NeoBundle 'nelstrom/vim-textobj-rubyblock', '0.0.3'
-NeoBundle 'radenling/vim-dispatch-neovim', 'c8c4e21'
-NeoBundle 'tommcdo/vim-exchange', '4589b30'
-NeoBundle 'tpope/vim-abolish', 'v1.1'
-NeoBundle 'tpope/vim-bundler', 'b42217a'
-NeoBundle 'tpope/vim-commentary', '73e0d9a'
-NeoBundle 'tpope/vim-dispatch', 'dafa941'
-NeoBundle 'tpope/vim-endwise', 'v1.2'
-NeoBundle 'tpope/vim-fugitive', '06af328'
-NeoBundle 'tpope/vim-rails', '0abcda9'
-NeoBundle 'tpope/vim-repeat', 'v1.1'
-NeoBundle 'tpope/vim-rsi', 'dfc5288'
-NeoBundle 'tpope/vim-surround', '2d05440'
-NeoBundle 'vim-airline/vim-airline', '7df411d'
-call neobundle#end()
-NeoBundleCheck
+silent! call plug#begin('~/.vim/plugged')
+if exists('g:loaded_plug')
+  Plug 'neomake/neomake', { 'commit': 'b8a3963' }
+  Plug 'kana/vim-textobj-user', { 'tag': '0.7.1' }
+  Plug 'junegunn/fzf', { 'tag': '0.18.0', 'do': './install --bin' }
+  Plug 'junegunn/fzf.vim', { 'commit': '39f0c2d' }
+  Plug 'lmeijvogel/vim-yaml-helper', { 'commit': '59549c3d' }
+  Plug 'nathanaelkane/vim-indent-guides', { 'commit': '705c5fd' }
+  Plug 'nelstrom/vim-textobj-rubyblock', { 'tag': '0.0.3' }
+  Plug 'tommcdo/vim-exchange', { 'commit': '4589b30' }
+  Plug 'tpope/vim-abolish', { 'tag': 'v1.1' }
+  Plug 'tpope/vim-bundler', { 'commit': 'b42217a' }
+  Plug 'tpope/vim-commentary', { 'commit': '73e0d9a' }
+  Plug 'tpope/vim-dispatch', { 'commit': 'bd0b87d' }
+  Plug 'tpope/vim-endwise', { 'tag': 'v1.2' }
+  Plug 'tpope/vim-fugitive', { 'commit': '06af328' }
+  Plug 'tpope/vim-rails', { 'commit': '0abcda9' }
+  Plug 'tpope/vim-repeat', { 'tag': 'v1.1' }
+  Plug 'tpope/vim-rsi', { 'commit': 'dfc5288' }
+  Plug 'tpope/vim-surround', { 'commit': '2d05440' }
+  Plug 'vim-airline/vim-airline', { 'commit': '7df411d' }
+  call plug#end()
+  call neomake#configure#automake('w')
+endif
+
 filetype plugin indent on
-call neomake#configure#automake('w')
