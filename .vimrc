@@ -152,7 +152,6 @@ let g:fzf_command_prefix = 'Fzf'
 let $FZF_DEFAULT_COMMAND = 'ag -l'
 let $FZF_DEFAULT_OPTS = '--multi --history=' . $HOME . '/.cache/fzf_history'
 let g:indent_guides_start_level = 2
-let g:is_posix = 1 " shell scripts are posix-compliant
 let g:netrw_hide = 1
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:rails_ctags_arguments = ['--languages=JavaScript,Ruby', '--exclude=node_modules', '--exclude=vendor']
