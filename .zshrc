@@ -76,6 +76,7 @@ alias by='byobu'
 alias cdg='cd $(git rev-parse --show-toplevel)' # go to root of git project
 alias cp='nocorrect cp'
 alias d='dirs -v'
+alias devclone='cd ~/dev && git clone '
 alias doco='docker-compose'
 alias fgrep='grep -F' # to pick up grep alias
 alias fileserver='python -m SimpleHTTPServer 8080' # serves files in current dir
@@ -150,7 +151,7 @@ case $TERM in
 		# version into term title
 		function precmd {
 			[ -n "$NO_TITLE" ] && return
-			print -Pn "\033]2; $USER@%m - %~\007"
+			print -Pn "\e]0; $USER@%m - %~\a"
 		}
 		precmd
 		;;
