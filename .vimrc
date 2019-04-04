@@ -172,14 +172,14 @@ if exists('g:loaded_plug')
   Plug 'tpope/vim-abolish', { 'tag': 'v1.1' }
   Plug 'tpope/vim-bundler', { 'commit': 'b42217a' }
   Plug 'tpope/vim-commentary', { 'commit': '73e0d9a' }
-  Plug 'tpope/vim-dispatch', { 'commit': 'bd0b87d' }
+  Plug 'tpope/vim-dispatch', { 'commit': '178acd0' }
   Plug 'tpope/vim-endwise', { 'tag': 'v1.2' }
-  Plug 'tpope/vim-fugitive', { 'commit': '06af328' }
+  Plug 'tpope/vim-fugitive', { 'commit': 'bd0b87d' }
   Plug 'tpope/vim-rails', { 'commit': '0abcda9' }
   Plug 'tpope/vim-repeat', { 'tag': 'v1.1' }
   Plug 'tpope/vim-rsi', { 'commit': 'dfc5288' }
   Plug 'tpope/vim-surround', { 'commit': '2d05440' }
-  Plug 'vim-airline/vim-airline', { 'commit': '7df411d' }
+  Plug 'vim-airline/vim-airline', { 'commit': '86e73ca' }
   call plug#end()
   call neomake#configure#automake('w')
 endif

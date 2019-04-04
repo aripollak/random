@@ -53,7 +53,7 @@ umask 022
 # Search path for the cd command
 #cdpath=(.. ~ ~/src ~/zsh)
 
-export PATH="$PATH:/usr/games:$HOME/bin:/usr/sbin:/sbin"
+export PATH="$PATH:/usr/games:$HOME/bin:$HOME/go/bin:/usr/sbin:/sbin"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=5500
