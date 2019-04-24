@@ -69,6 +69,7 @@ if has("autocmd")
   highlight ExtraWhitespace ctermbg=red guibg=red
   autocmd BufEnter *.mdwn setfiletype ikiwiki
   autocmd BufEnter *.rabl setfiletype ruby
+  autocmd FocusGained * checktime " work around https://github.com/neovim/neovim/issues/1936
   autocmd FileType c,c++,coffee,javascript,perl,python,ruby,sh match ExtraWhitespace '\%>100c.\+'
   autocmd FileType coffee setlocal et sts=2 sw=2 foldmethod=indent
   autocmd FileType css,html,scss setlocal et sts=2 sw=2
@@ -161,13 +162,16 @@ command! -nargs=1 Width setlocal sw=<args> sts=<args>
 
 silent! call plug#begin('~/.vim/plugged')
 if exists('g:loaded_plug')
-  Plug 'neomake/neomake', { 'commit': 'b8a3963' }
-  Plug 'kana/vim-textobj-user', { 'tag': '0.7.1' }
   Plug 'junegunn/fzf', { 'tag': '0.18.0', 'do': './install --bin' }
   Plug 'junegunn/fzf.vim', { 'commit': '39f0c2d' }
+  Plug 'kana/vim-textobj-user', { 'tag': '0.7.6' }
+  Plug 'kchmck/vim-coffee-script'
   Plug 'lmeijvogel/vim-yaml-helper', { 'commit': '59549c3d' }
+  Plug 'michaeljsmith/vim-indent-object'
   Plug 'nathanaelkane/vim-indent-guides', { 'commit': '705c5fd' }
   Plug 'nelstrom/vim-textobj-rubyblock', { 'tag': '0.0.3' }
+  Plug 'neomake/neomake', { 'commit': 'b8a3963' }
+  Plug 'radenling/vim-dispatch-neovim'
   Plug 'tommcdo/vim-exchange', { 'commit': '4589b30' }
   Plug 'tpope/vim-abolish', { 'tag': 'v1.1' }
   Plug 'tpope/vim-bundler', { 'commit': 'b42217a' }
