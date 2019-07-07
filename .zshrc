@@ -144,7 +144,6 @@ PROMPT='${debian_chroot}%F{green}%n%F{white}@${p_host}%m%F{white}:%F{cyan}%~ $(g
 RPROMPT='%W %t'     # prompt for right side of screen
 ### END PROMPT SETUP ###
 
-
 case $TERM in
 	xterm*|rxvt*)
 		# Run before a command is executed - puts shortened
@@ -157,8 +156,12 @@ case $TERM in
 		;;
 esac
 
+if [ -x /usr/bin/dircolors ]; then
+	eval $(dircolors)
+	alias ls='ls --color=auto'
+fi
+
 # Some environment variables
-[ -x /usr/bin/dircolors ] && eval $(dircolors)
 [ -x /usr/bin/lessfile ] && eval $(lessfile)
 export CLICOLOR=1
 export DEBEMAIL=ari@debian.org
