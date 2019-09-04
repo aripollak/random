@@ -76,6 +76,7 @@ if has("autocmd")
   autocmd FileType debchangelog setlocal et nobackup spell sts=2 indentexpr=4
   autocmd FileType gitcommit setlocal nobackup spell sts=2 sw=2 tw=72
   autocmd FileType javascript setlocal et sts=2 sw=2
+  autocmd FileType json setlocal et sts=2 sw=2
   autocmd FileType markdown setlocal spell
   autocmd FileType python setlocal et sts=4 sw=4 foldmethod=indent
   autocmd FileType ruby setlocal et sts=2 sw=2 tw=100 foldmethod=indent
@@ -178,8 +179,9 @@ if exists('g:loaded_plug')
   Plug 'tpope/vim-commentary', { 'commit': '73e0d9a' }
   Plug 'tpope/vim-dispatch', { 'commit': '178acd0' }
   Plug 'tpope/vim-endwise', { 'tag': 'v1.2' }
-  Plug 'tpope/vim-fugitive', { 'commit': 'bd0b87d' }
+  Plug 'tpope/vim-fugitive', { 'tag': 'v3.0' }
   Plug 'tpope/vim-rails', { 'commit': '0abcda9' }
+  Plug 'tpope/vim-rhubarb'
   Plug 'tpope/vim-repeat', { 'tag': 'v1.1' }
   Plug 'tpope/vim-rsi', { 'commit': 'dfc5288' }
   Plug 'tpope/vim-surround', { 'commit': '2d05440' }

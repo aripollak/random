@@ -53,7 +53,7 @@ umask 022
 # Search path for the cd command
 #cdpath=(.. ~ ~/src ~/zsh)
 
-export PATH="$PATH:/usr/games:$HOME/bin:$HOME/go/bin:/usr/sbin:/sbin"
+export PATH="$PATH:/usr/games:$HOME/bin:/usr/sbin:/sbin"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=5500
@@ -103,8 +103,8 @@ alias mln='noglob mln'
 alias mmv='noglob mmv'
 alias mv='nocorrect mv'
 # beeps & notifies in xterm titlebar
-alias notify='NO_TITLE=1; echo -e "\a"; print -Pn "\033]2; DONE \007"'
-alias notifyoff='unset NO_TITLE; print -Pn "\033]2;\007"'
+alias notify='NO_TITLE=1; echo -e "\a"; print -Pn "\e]0; DONE \a"'
+alias notifyoff='unset NO_TITLE; print -Pn "\e]0;\a"'
 alias partest='be rake db:migrate; be rake db:test:prepare; be rake parallel:prepare; be nice eatmydata rake test:parallel_with_specs'
 alias psgrep='ps auxw | grep '
 alias po=popd

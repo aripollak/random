@@ -4,6 +4,7 @@
 	b = branch -vv
 	blast = push
 	cirand = commit .random -m 'update .random'
+	cm = commit
 	co = checkout
 	diffs = diff --stat --summary --find-renames --find-copies
 	furcate = branch
@@ -16,6 +17,7 @@
 	pf = push --force-with-lease
 	shows = show --stat --summary --find-copies
 	st = status
+	sw = switch
 	sub = submodule
 	wdiff = diff --color-words
 	wshow = show --color-words
@@ -33,6 +35,7 @@
 	ui = auto
 [core]
 	excludesfile = ~/.gitconfig-ignore
+	hooksPath = ~/.githooks
 [diff]
 	algorithm = patience
 	renames = copies
