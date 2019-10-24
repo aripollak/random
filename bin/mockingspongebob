@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+
+# Based on a script by https://github.com/zacharydfriedlander
+# Usage:
+# echo "alternating capital letters" | ./mockingspongebob 
+#   or
+# ./mockingspongebob FILENAME > NEWFILENAME  
+
+from random import choice
+from fileinput import input
+
+output = (''.join(choice([c.upper(), c.lower()]))
+          for line in input()
+          for c in line)
+print(''.join(output))
