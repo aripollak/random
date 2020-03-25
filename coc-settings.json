@@ -1,0 +1,9 @@
+{
+  "eslint.autoFixOnSave": true,
+  "javascript.validate.enable": false,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "coc.preferences.rootPatterns": ["package.json", ".git", ".hg"],
+  "list.source.grep.args": ["--engine=auto"],
+  "list.source.grep.excludePatterns": [".gitignore"]
+}

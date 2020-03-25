@@ -49,6 +49,8 @@
 [rebase]
 	autosquash = true
 	stat = true # shows which files changed when doing a rebase
+[status]
+	submoduleSummary = true
 [user]
 	name = Ari Pollak
 [url "git://github.com/"]
