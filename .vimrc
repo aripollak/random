@@ -190,6 +190,7 @@ command! -nargs=1 Width setlocal sw=<args> sts=<args>
 
 silent! call plug#begin('~/.vim/plugged')
 if exists('g:loaded_plug')
+  Plug 'gko/vim-coloresque', { 'commit': 'b6d26b0' }
   Plug 'kana/vim-textobj-user', { 'tag': '0.7.6' }
   Plug 'lmeijvogel/vim-yaml-helper', { 'commit': '59549c3d' }
   Plug 'michaeljsmith/vim-indent-object'
