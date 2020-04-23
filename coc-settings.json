@@ -5,5 +5,10 @@
   "python.linting.flake8Enabled": true,
   "coc.preferences.rootPatterns": ["package.json", ".git", ".hg"],
   "list.source.grep.args": ["--engine=auto"],
-  "list.source.grep.excludePatterns": [".gitignore"]
+  "list.source.grep.excludePatterns": [".gitignore"],
+  "yaml.schemas": {
+    "http://json.schemastore.org/circleciconfig": ".circleci/config.yml",
+    "http://json.schemastore.org/travis": ".travis.yml"
+  }
 }
+

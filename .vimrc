@@ -15,7 +15,6 @@ set backup
 set backupdir=~/.vim/backup
 set backupskip+=*.tmp
 set clipboard=unnamedplus
-"    set colorcolumn=81      " shows an ugly red bar down this column
 set display+=lastline
 set foldlevelstart=2
 set foldminlines=5
@@ -66,12 +65,8 @@ if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
 endif
 
 if has("autocmd")
-  " Highlight long lines over 100 chars
-  highlight ExtraWhitespace ctermbg=red guibg=red
   autocmd BufEnter *.mdwn setfiletype ikiwiki
-  autocmd BufEnter *.rabl setfiletype ruby
   autocmd FocusGained * checktime " work around https://github.com/neovim/neovim/issues/1936
-  autocmd FileType c,c++,coffee,javascript,perl,python,ruby,sh match ExtraWhitespace '\%>100c.\+'
   autocmd FileType coffee setlocal et sts=2 sw=2 foldmethod=indent
   autocmd FileType css,html,scss setlocal et sts=2 sw=2
   autocmd FileType debchangelog setlocal et nobackup spell sts=2 indentexpr=4
@@ -132,6 +127,7 @@ map <leader>ft :CocList tags<CR>
 map <leader>fw :CocList windows<CR>
 map <leader>l :set list!<CR>:set list?<CR>
 map <leader>nd :edit .<CR>
+map <leader>ne :Ntree<CR>
 map <leader>nn :Explore<CR>
 map <leader>ns :Sexplore<CR>
 map <leader>nt :Texplore<CR>
@@ -150,7 +146,9 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <leader>ac <Plug>(coc-codeaction)
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>a <Plug>(coc-codeaction-selected)
+xmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>re <Plug>(coc-rename)
 " Introduce function text object
 xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
@@ -203,13 +201,13 @@ if exists('g:loaded_plug')
   Plug 'tpope/vim-bundler', { 'commit': 'b42217a' }
   Plug 'tpope/vim-commentary', { 'commit': '73e0d9a' }
   Plug 'tpope/vim-dispatch', { 'commit': '3757dda' }
-  Plug 'tpope/vim-endwise', { 'tag': 'v1.2' }
-  Plug 'tpope/vim-fugitive', { 'tag': 'v3.0' }
-  Plug 'tpope/vim-rails', { 'commit': '0abcda9' }
+  Plug 'tpope/vim-endwise', { 'commit': 'bf90d8b' }
+  Plug 'tpope/vim-fugitive', { 'commit': '0e35c9b' }
+  Plug 'tpope/vim-rails', { 'commit': '184d12e' }
   Plug 'tpope/vim-rhubarb'
   Plug 'tpope/vim-repeat', { 'tag': 'v1.1' }
   Plug 'tpope/vim-rsi', { 'commit': 'dfc5288' }
-  Plug 'tpope/vim-surround', { 'commit': '2d05440' }
+  Plug 'tpope/vim-surround', { 'commit': 'f51a26d' }
   Plug 'vim-airline/vim-airline', { 'tag': 'v0.11' }
   call plug#end()
 endif
