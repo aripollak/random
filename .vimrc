@@ -15,6 +15,7 @@ set backup
 set backupdir=~/.vim/backup
 set backupskip+=*.tmp
 set clipboard=unnamedplus
+set conceallevel=2
 set display+=lastline
 set foldlevelstart=2
 set foldminlines=5
@@ -175,11 +176,11 @@ endfunction
 
 let python_highlight_all = 1
 let ruby_space_errors = 1
-let g:indent_guides_start_level = 2
 let g:airline#extensions#branch#format = 2
 let g:airline#extensions#default#section_truncate_width = {
     \ 'b': 90, 'x': 90, 'y': 90, 'z': 45, 'warning': 80, 'error': 80, }
 let g:airline_highlighting_cache = 1
+let g:indent_bar_set_conceal = 0
 let g:netrw_hide = 1
 let g:rails_ctags_arguments = ['--languages=JavaScript,Ruby', '--exclude=node_modules', '--exclude=vendor']
 
@@ -189,10 +190,10 @@ command! -nargs=1 Width setlocal sw=<args> sts=<args>
 silent! call plug#begin('~/.vim/plugged')
 if exists('g:loaded_plug')
   Plug 'gko/vim-coloresque', { 'commit': 'b6d26b0' }
+  Plug 'juniway/indent-bar'
   Plug 'kana/vim-textobj-user', { 'tag': '0.7.6' }
   Plug 'lmeijvogel/vim-yaml-helper', { 'commit': '59549c3d' }
   Plug 'michaeljsmith/vim-indent-object'
-  Plug 'nathanaelkane/vim-indent-guides', { 'commit': '705c5fd' }
   Plug 'nelstrom/vim-textobj-rubyblock', { 'tag': '0.0.3' }
   Plug 'neoclide/coc.nvim', { 'branch':  'release' }
   Plug 'sheerun/vim-polyglot'
