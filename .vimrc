@@ -27,6 +27,9 @@ set guifont=Monospace\ 10
 set history=1000
 set hlsearch
 set ignorecase          " Do case insensitive matching
+if exists("&inccommand")
+  set inccommand=split
+endif
 set incsearch
 set linebreak
 set matchtime=2
@@ -72,11 +75,11 @@ if has("autocmd")
   autocmd FileType css,html,scss setlocal et sts=2 sw=2
   autocmd FileType debchangelog setlocal et nobackup spell sts=2 indentexpr=4
   autocmd FileType gitcommit setlocal nobackup spell sts=2 sw=2 tw=72
-  autocmd FileType javascript setlocal et sts=2 sw=2
+  autocmd FileType javascript,typescript,typescriptreact setlocal et sts=2 sw=2
   autocmd FileType json setlocal et sts=2 sw=2
   autocmd FileType markdown setlocal spell
   autocmd FileType python setlocal et sts=4 sw=4 foldmethod=indent
-  autocmd FileType ruby setlocal et sts=2 sw=2 tw=100 foldmethod=indent
+  autocmd FileType ruby,rspec setlocal et sts=2 sw=2 tw=100 foldmethod=indent
   autocmd FileType sh setlocal et isf-==
   autocmd FileType vim setlocal et sts=2 sw=2
   autocmd FileType xml setlocal et sts=2 sw=2
@@ -121,6 +124,7 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 " leader is \ by default, so this command is \d:
 map <leader>d :cd %:p:h<CR> " go to directory of current file
+map <leader>cs :CocSearch --smart-case 
 map <leader>fb :CocList buffers<CR>
 map <leader>fg :CocList grep -S 
 map <leader>fh :CocList mru<CR>
@@ -155,14 +159,15 @@ xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <space>y  :<C-u>CocList -A --normal yank<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -189,14 +194,15 @@ command! -nargs=1 Width setlocal sw=<args> sts=<args>
 
 silent! call plug#begin('~/.vim/plugged')
 if exists('g:loaded_plug')
-  Plug 'gko/vim-coloresque', { 'commit': 'b6d26b0' }
+  Plug 'gko/vim-coloresque', { 'commit': 'e12a500' }
+  Plug 'HerringtonDarkholme/yats.vim'
   Plug 'juniway/indent-bar'
   Plug 'kana/vim-textobj-user', { 'tag': '0.7.6' }
   Plug 'lmeijvogel/vim-yaml-helper', { 'commit': '59549c3d' }
   Plug 'michaeljsmith/vim-indent-object'
+  Plug 'MaxMEllon/vim-jsx-pretty'
   Plug 'nelstrom/vim-textobj-rubyblock', { 'tag': '0.0.3' }
   Plug 'neoclide/coc.nvim', { 'branch':  'release' }
-  Plug 'sheerun/vim-polyglot'
   Plug 'tommcdo/vim-exchange', { 'commit': '4589b30' }
   Plug 'tpope/vim-abolish', { 'tag': 'v1.1' }
   Plug 'tpope/vim-bundler', { 'commit': 'b42217a' }
@@ -209,7 +215,8 @@ if exists('g:loaded_plug')
   Plug 'tpope/vim-repeat', { 'tag': 'v1.1' }
   Plug 'tpope/vim-rsi', { 'commit': 'dfc5288' }
   Plug 'tpope/vim-surround', { 'commit': 'f51a26d' }
-  Plug 'vim-airline/vim-airline', { 'tag': 'v0.11' }
+  Plug 'vim-airline/vim-airline', { 'commit': '19d1990' }
+  Plug 'yuezk/vim-js'
   call plug#end()
 endif
 

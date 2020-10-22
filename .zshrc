@@ -176,11 +176,6 @@ export PARALLEL_TEST_FIRST_IS_1=true
 export PYTHONSTARTUP=~/.pythonrc
 export REPORTBUGEMAIL=$DEBEMAIL
 
-# from http://tmm1.net/ruby21-rgengc/
-export RUBY_GC_HEAP_INIT_SLOTS=600000
-export RUBY_GC_HEAP_FREE_SLOTS=600000
-export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
-
 # Set/unset shell options
 setopt   autocd autopushd autoresume correct extended_glob
 setopt   extended_history hist_expire_dups_first hist_ignore_dups hist_ignore_space

@@ -35,7 +35,6 @@
 	ui = auto
 [core]
 	excludesfile = ~/.gitconfig-ignore
-	hooksPath = ~/.githooks
 [diff]
 	algorithm = patience
 	renames = copies

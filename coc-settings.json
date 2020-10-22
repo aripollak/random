@@ -1,11 +1,17 @@
 {
+  "yank.list.maxsize": 50,
   "eslint.autoFixOnSave": true,
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript"],
   "javascript.validate.enable": false,
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
+  "coc.preferences.jumpCommand": "tab drop",
   "coc.preferences.rootPatterns": ["package.json", ".git", ".hg"],
   "list.source.grep.args": ["--engine=auto"],
   "list.source.grep.excludePatterns": [".gitignore"],
+  "list.insertMappings": {
+    "<C-t>": "action:tabe"
+  },
   "yaml.schemas": {
     "http://json.schemastore.org/circleciconfig": ".circleci/config.yml",
     "http://json.schemastore.org/travis": ".travis.yml"
