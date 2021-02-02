@@ -66,6 +66,7 @@ typeset -U path cdpath fpath manpath
 # Set up aliases
 alias ZshRehash='source ~/.zshrc'
 alias ZshReload='rm -f ~/.zcompdump*; exec zsh -l'
+alias aptar='apt autoremove'
 alias aptp='apt policy'
 alias apts='apt show'
 alias apti='sudo apt install'
