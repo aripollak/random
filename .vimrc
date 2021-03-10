@@ -22,7 +22,7 @@ set foldminlines=5
 set foldnestmax=4
 set formatoptions+=j
 set grepformat=%f:%l:%c:%m
-set grepprg=rg\ --vimgrep\ --engine=auto
+set grepprg=rg\ --vimgrep
 set guifont=Monospace\ 10
 set history=1000
 set hlsearch
