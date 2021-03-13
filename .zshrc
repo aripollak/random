@@ -1,8 +1,6 @@
 # vim: set noet sw=0 sts=0:
 # Autoload zsh modules when they are referenced
 autoload -U zmv
-#zmodload -a zsh/stat stat
-#zmodload -a zsh/zpty zpty
 zmodload -a zsh/zprof zprof
 
 bindkey -e # emacs key bindings
@@ -22,17 +20,13 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
 # list of completers to use
-zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
-
-# allow one error for every three characters typed in approximate completer
-zstyle -e ':completion:*:approximate:*' max-errors \
-	'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numeric )'
+zstyle ':completion:*::::' completer _expand _complete _correct _approximate
 
 # insert all expansions for expand completer
 zstyle ':completion:*:expand:*' tag-order all-expansions
 
-# match uppercase from lowercase
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+# match uppercase from lowercase, and other substitutions
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
 
 # offer indexes before parameters in subscripts
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
@@ -47,6 +41,20 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 # With commands like `rm' it's annoying if one gets offered the same filename
 # again even if it is already on the command line. To avoid that:
 zstyle ':completion:*:rm:*' ignore-line yes
+
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+if [ -x /usr/bin/dircolors ]; then
+	eval $(dircolors)
+	alias ls='ls --color=auto'
+	zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+fi
 
 umask 022
 
@@ -82,7 +90,6 @@ alias doco='docker-compose'
 alias fgrep='grep -F' # to pick up grep alias
 alias fileserver='python -m SimpleHTTPServer 8080' # serves files in current dir
 alias grep='grep --color=auto --exclude-dir=.svn --exclude-dir=.git --exclude=\*~ --exclude=\*.o --exclude=\*.pyc --exclude="*.sw[op]" --exclude=tags'
-alias gvimr='gvim --remote'
 alias h=history
 alias help=run-help
 # update zsh history file if sharehistory is off;
@@ -113,8 +120,6 @@ alias pu=pushd
 [ -x /usr/bin/trash ] && alias rm=trash
 alias s='nocorrect spring'
 alias sudo='nocorrect sudo'
-alias rpry='bundle exec pry'
-alias vimr='vim --remote'
 alias zcp='zmv -C'
 alias zln='zmv -L'
 
@@ -156,11 +161,6 @@ case $TERM in
 		precmd
 		;;
 esac
-
-if [ -x /usr/bin/dircolors ]; then
-	eval $(dircolors)
-	alias ls='ls --color=auto'
-fi
 
 # Some environment variables
 [ -x /usr/bin/lessfile ] && eval $(lessfile)
