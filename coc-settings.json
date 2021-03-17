@@ -1,7 +1,7 @@
 {
   "yank.list.maxsize": 50,
   "eslint.autoFixOnSave": true,
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript"],
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "javascript.validate.enable": false,
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,

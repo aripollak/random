@@ -117,7 +117,6 @@ endfunction
 map <C-P> :CocList files<CR>
 map <C-S> <Esc>:update<CR>
 inoremap <C-S> <Esc>:update<CR>a
-inoremap <F10> <Esc>:Dispatch<CR>a
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
@@ -140,7 +139,6 @@ map <leader>nt :Texplore<CR>
 map <leader>o <Esc>:set paste! linebreak!<CR>:call TShowBreak()<CR>:set paste?<CR>
 map <leader>tt :tabnew<CR>
 map <leader>yg :YamlGoToKey
-map <leader>yp :YamlGetFullPath<CR>
 map <leader>yu :YamlGoToParent<CR>
 " :w!! will save the file as root
 cmap w!! w !sudo tee %
@@ -198,22 +196,22 @@ if exists('g:loaded_plug')
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'juniway/indent-bar'
   Plug 'kana/vim-textobj-user', { 'tag': '0.7.6' }
-  Plug 'lmeijvogel/vim-yaml-helper', { 'commit': '59549c3d' }
+  Plug 'lmeijvogel/vim-yaml-helper', { 'commit': '403ff56' }
   Plug 'michaeljsmith/vim-indent-object'
   Plug 'MaxMEllon/vim-jsx-pretty'
   Plug 'nelstrom/vim-textobj-rubyblock', { 'tag': '0.0.3' }
   Plug 'neoclide/coc.nvim', { 'branch':  'release' }
-  Plug 'tommcdo/vim-exchange', { 'commit': '4589b30' }
+  Plug 'tommcdo/vim-exchange', { 'commit': '17f1a2c' }
   Plug 'tpope/vim-abolish', { 'tag': 'v1.1' }
-  Plug 'tpope/vim-bundler', { 'commit': 'b42217a' }
-  Plug 'tpope/vim-commentary', { 'commit': '73e0d9a' }
+  Plug 'tpope/vim-bundler', { 'tag': 'v2.1' }
+  Plug 'tpope/vim-commentary', { 'commit': 'f8238d7' }
   Plug 'tpope/vim-dispatch', { 'commit': '3757dda' }
   Plug 'tpope/vim-endwise', { 'commit': 'bf90d8b' }
-  Plug 'tpope/vim-fugitive', { 'commit': '0e35c9b' }
-  Plug 'tpope/vim-rails', { 'commit': '184d12e' }
+  Plug 'tpope/vim-fugitive', { 'commit': 'c63bc47' }
+  Plug 'tpope/vim-rails', { 'commit': '2c42236' }
   Plug 'tpope/vim-rhubarb'
-  Plug 'tpope/vim-repeat', { 'tag': 'v1.1' }
-  Plug 'tpope/vim-rsi', { 'commit': 'dfc5288' }
+  Plug 'tpope/vim-repeat', { 'tag': 'v1.2' }
+  Plug 'tpope/vim-rsi', { 'commit': 'e181883' }
   Plug 'tpope/vim-surround', { 'commit': 'f51a26d' }
   Plug 'vim-airline/vim-airline', { 'commit': '19d1990' }
   Plug 'yuezk/vim-js'
