@@ -138,8 +138,6 @@ map <leader>nt :Texplore<CR>
 " toggle paste mode:
 map <leader>o <Esc>:set paste! linebreak!<CR>:call TShowBreak()<CR>:set paste?<CR>
 map <leader>tt :tabnew<CR>
-map <leader>yg :YamlGoToKey
-map <leader>yu :YamlGoToParent<CR>
 " :w!! will save the file as root
 cmap w!! w !sudo tee %
 
@@ -196,7 +194,6 @@ if exists('g:loaded_plug')
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'juniway/indent-bar'
   Plug 'kana/vim-textobj-user', { 'tag': '0.7.6' }
-  Plug 'lmeijvogel/vim-yaml-helper', { 'commit': '403ff56' }
   Plug 'michaeljsmith/vim-indent-object'
   Plug 'MaxMEllon/vim-jsx-pretty'
   Plug 'nelstrom/vim-textobj-rubyblock', { 'tag': '0.0.3' }
