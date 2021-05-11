@@ -86,7 +86,7 @@ alias cdg='cd $(git rev-parse --show-toplevel)' # go to root of git project
 alias cp='nocorrect cp'
 alias d='dirs -v'
 alias devclone='cd ~/dev && git clone '
-alias doco='docker-compose'
+alias doco='docker compose'
 alias fgrep='grep -F' # to pick up grep alias
 alias fileserver='python -m SimpleHTTPServer 8080' # serves files in current dir
 alias grep='grep --color=auto --exclude-dir=.svn --exclude-dir=.git --exclude=\*~ --exclude=\*.o --exclude=\*.pyc --exclude="*.sw[op]" --exclude=tags'
