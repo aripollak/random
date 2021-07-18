@@ -4,8 +4,7 @@
 
 gem update --system
 gem install bundler bundler-audit foreman gem-browse gem-ctags hookup \
-    irbtools pry pry-debundle pry-doc spring spring-commands-rspec \
-    spring-commands-testunit spring-watcher-listen table_print travis travis-lint
+    irbtools pry pry-debundle pry-doc table_print travis travis-lint
 rbenv rehash
 gem ctags
 gem rdoc --all

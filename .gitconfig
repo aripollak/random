@@ -60,3 +60,5 @@
 	insteadOf = ghw:
 [web]
 	browser = xdg-open
+[pull]
+	ff = only
