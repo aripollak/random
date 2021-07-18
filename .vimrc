@@ -84,8 +84,6 @@ if has("autocmd")
   autocmd FileType vim setlocal et sts=2 sw=2
   autocmd FileType xml setlocal et sts=2 sw=2
   autocmd FileType yaml setlocal et sts=2 sw=2
-  " Highlight the symbol and its references when holding the cursor
-  autocmd CursorHold * silent call CocActionAsync('highlight')
 
   " Return to last edit position
   autocmd BufReadPost *
@@ -165,16 +163,6 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 nnoremap <silent><nowait> <space>y  :<C-u>CocList -A --normal yank<CR>
 
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
 let python_highlight_all = 1
 let ruby_space_errors = 1
 let g:airline#extensions#branch#format = 2
@@ -213,6 +201,19 @@ if exists('g:loaded_plug')
   Plug 'vim-airline/vim-airline', { 'commit': '19d1990' }
   Plug 'yuezk/vim-js'
   call plug#end()
+ 
+  " Highlight the symbol and its references when holding the cursor
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+
+  " Use K to show documentation in preview window.
+  nnoremap <silent> K :call <SID>show_documentation()<CR>
+  function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+      execute 'h '.expand('<cword>')
+    else
+      call CocAction('doHover')
+    endif
+  endfunction
 endif
 
 filetype plugin indent on

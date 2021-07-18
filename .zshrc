@@ -167,14 +167,10 @@ esac
 export CLICOLOR=1
 export DEBEMAIL=ari@debian.org
 export DEBFULLNAME="Ari Pollak"
-[ -x =nvim ] && export EDITOR=nvim
+which nvim >/dev/null && export EDITOR=nvim
 export EMAIL=ajp@aripollak.com # for git
 export LESS=-FMRX
-export HEBCAL_CITY="Boston"
-export MAIL=/var/mail/$USER
 export PAGER=less
-export PARALLEL_TEST_FIRST_IS_1=true
-export PYTHONSTARTUP=~/.pythonrc
 export REPORTBUGEMAIL=$DEBEMAIL
 
 # Set/unset shell options
