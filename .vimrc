@@ -33,7 +33,6 @@ endif
 set incsearch
 set linebreak
 set matchtime=2
-set modeline
 set mouse=a
 set noautoindent
 if has("balloon_eval")
@@ -95,6 +94,7 @@ endif " has ("autocmd")
 " abbreviations
 abbrev ARL ActiveRecord::Base.logger = Logger.new(STDOUT)
 abbrev binpry require 'pry'; binding.pry
+abbrev ipyrepl import IPython; IPython.embed()
 
 " Make cursor keys ignore wrapping in insert or visual mode
 map j gj
