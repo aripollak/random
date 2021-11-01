@@ -1,8 +1,6 @@
 {
   "yank.list.maxsize": 50,
-  "eslint.autoFixOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact", "python"],
-  "javascript.validate.enable": false,
   "python.linting.flake8Enabled": true,
   "python.pythonPath": "python3",
   "coc.preferences.jumpCommand": "tab drop",
