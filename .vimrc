@@ -153,6 +153,10 @@ xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
 nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
 nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
@@ -192,7 +196,7 @@ if exists('g:loaded_plug')
   Plug 'tpope/vim-commentary', { 'commit': 'f8238d7' }
   Plug 'tpope/vim-dispatch', { 'commit': '3757dda' }
   Plug 'tpope/vim-endwise', { 'commit': 'bf90d8b' }
-  Plug 'tpope/vim-fugitive', { 'commit': 'c63bc47' }
+  Plug 'tpope/vim-fugitive', { 'tag': 'v3.6' }
   Plug 'tpope/vim-rails', { 'commit': '2c42236' }
   Plug 'tpope/vim-rhubarb'
   Plug 'tpope/vim-repeat', { 'tag': 'v1.2' }
