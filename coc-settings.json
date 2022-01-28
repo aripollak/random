@@ -13,6 +13,18 @@
   "yaml.schemas": {
     "http://json.schemastore.org/circleciconfig": ".circleci/config.yml",
     "http://json.schemastore.org/travis": ".travis.yml"
+  },
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": [
+        "terraform",
+        "tf"
+      ],
+      "initializationOptions": {},
+      "settings": {}
+    }
   }
 }
 

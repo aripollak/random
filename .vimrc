@@ -69,7 +69,6 @@ endif
 
 if has("autocmd")
   autocmd BufEnter *.mdwn setfiletype ikiwiki
-  autocmd FocusGained * checktime " work around https://github.com/neovim/neovim/issues/1936
   autocmd FileType coffee setlocal et sts=2 sw=2 foldmethod=indent
   autocmd FileType css,html,scss setlocal et sts=2 sw=2
   autocmd FileType debchangelog setlocal et nobackup spell sts=2 indentexpr=4
@@ -184,6 +183,7 @@ silent! call plug#begin('~/.vim/plugged')
 if exists('g:loaded_plug')
   Plug 'gko/vim-coloresque', { 'commit': 'e12a500' }
   Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'hashivim/vim-terraform'
   Plug 'juniway/indent-bar'
   Plug 'kana/vim-textobj-user', { 'tag': '0.7.6' }
   Plug 'michaeljsmith/vim-indent-object'
