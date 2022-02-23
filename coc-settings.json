@@ -11,8 +11,9 @@
     "<C-t>": "action:tabe"
   },
   "yaml.schemas": {
-    "http://json.schemastore.org/circleciconfig": ".circleci/config.yml",
-    "http://json.schemastore.org/travis": ".travis.yml"
+    "https://json.schemastore.org/circleciconfig": ".circleci/config.yml",
+    "https://json.schemastore.org/github-workflow": ".github/workflows/*.yaml",
+    "https://json.schemastore.org/travis": ".travis.yml"
   },
   "languageserver": {
     "terraform": {
