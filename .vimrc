@@ -68,6 +68,7 @@ if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
 endif
 
 if has("autocmd")
+  autocmd FocusGained * checktime " work around https://github.com/neovim/neovim/issues/1936
   autocmd BufEnter *.mdwn setfiletype ikiwiki
   autocmd FileType coffee setlocal et sts=2 sw=2 foldmethod=indent
   autocmd FileType css,html,scss setlocal et sts=2 sw=2
