@@ -33,8 +33,6 @@
 [color]
 	# enables color for everything that supports it
 	ui = auto
-[core]
-	excludesfile = ~/.gitconfig-ignore
 [diff]
 	algorithm = patience
 	renames = copies

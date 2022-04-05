@@ -172,6 +172,7 @@ export EMAIL=ajp@aripollak.com # for git
 export LESS=-FMRX
 export PAGER=less
 export REPORTBUGEMAIL=$DEBEMAIL
+export RIPGREP_CONFIG_PATH=~/.random/.ripgreprc
 
 # Set/unset shell options
 setopt   autocd autopushd autoresume correct extended_glob

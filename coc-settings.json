@@ -6,7 +6,6 @@
   "coc.preferences.jumpCommand": "tab drop",
   "coc.preferences.rootPatterns": ["package.json", ".git", ".hg"],
   "list.source.grep.args": ["--engine=auto"],
-  "list.source.grep.excludePatterns": [".gitignore"],
   "list.insertMappings": {
     "<C-t>": "action:tabe"
   },
