@@ -170,6 +170,8 @@ export DEBFULLNAME="Ari Pollak"
 which nvim >/dev/null && export EDITOR=nvim
 export EMAIL=ajp@aripollak.com # for git
 export LESS=-FMRX
+export MAIL=/var/mail/ari
+export MAILCHECK=60
 export PAGER=less
 export REPORTBUGEMAIL=$DEBEMAIL
 export RIPGREP_CONFIG_PATH=~/.random/.ripgreprc
@@ -198,6 +200,11 @@ function g {
 }
 alias g='nocorrect g' # turn off correction so it doesn't constantly complain about git aliases
 compdef g=git
+
+if [[ ! -o login ]]; then
+	autoload checkmail
+	checkmail
+fi
 
 [ -d ~/.rbenv ] && PATH="$HOME/.rbenv/bin/:$PATH" && eval "$(rbenv init -)"
 
