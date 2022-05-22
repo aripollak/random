@@ -114,6 +114,7 @@ alias mv='nocorrect mv'
 alias notify='NO_TITLE=1; echo -e "\a"; print -Pn "\e]0; DONE \a"'
 alias notifyoff='unset NO_TITLE; print -Pn "\e]0;\a"'
 alias partest='be rake db:migrate; be rake db:test:prepare; be rake parallel:prepare; be nice eatmydata rake test:parallel_with_specs'
+alias poco='podman-compose'
 alias psgrep='ps auxw | grep '
 alias po=popd
 alias pu=pushd
@@ -133,7 +134,6 @@ alias wikiup='ikiwiki --setup .ikiwiki.setup'
 alias debug='MALLOC_CHECK_=2'
 alias gbp-buildwheezy="gbp buildpackage --git-dist=jessie"
 alias gbp-buildpackagej4="gbp buildpackage -j4"
-alias kerndist='CONCURRENCY_LEVEL=2 fakeroot make-kpkg kernel_image modules_image'
 alias nostrip='DEB_BUILD_OPTIONS=nostrip'
 alias pdebuild="pdebuild --use-pdebuild-internal"
 alias pdebuildj2="pdebuild --use-pdebuild-internal --debbuildopts -j2"
