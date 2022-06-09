@@ -167,6 +167,8 @@ esac
 export CLICOLOR=1
 export DEBEMAIL=ari@debian.org
 export DEBFULLNAME="Ari Pollak"
+# For rootless podman with docker-compose
+export DOCKER_HOST=unix:///run/user/$UID/podman/podman.sock
 which nvim >/dev/null && export EDITOR=nvim
 export EMAIL=ajp@aripollak.com # for git
 export LESS=-FMRX
@@ -184,11 +186,11 @@ unsetopt automenu # don't start completing when I press TAB too many times
 unsetopt autoparamslash beep bgnice clobber nomatch
 
 dev() { cd ~/dev/$1 }
-_dev() { _files -W ~/dev/ -/ }
+_dev() { _path_files -W ~/dev/ -/ }
 compdef _dev dev
 
 doc() { cd /usr/share/doc/$1 && ls }
-_doc() { _files -W /usr/share/doc -/ }
+_doc() { _path_files -W /usr/share/doc -/ }
 compdef _doc doc
 
 function g {
