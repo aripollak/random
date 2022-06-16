@@ -181,6 +181,8 @@ let g:airline_highlighting_cache = 1
 let g:indent_bar_set_conceal = 0
 let g:netrw_hide = 1
 let g:rails_ctags_arguments = ['--languages=JavaScript,Ruby', '--exclude=node_modules', '--exclude=vendor']
+" Fix https://github.com/neoclide/coc.nvim/issues/1775
+let g:coc_disable_transparent_cursor = 1
 
 " :Width # will set all width preferences to #
 command! -nargs=1 Width setlocal sw=<args> sts=<args>
