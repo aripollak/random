@@ -27,5 +27,3 @@ if defined?(Bundler)
     end
   end
 end
-
-require 'table_print'

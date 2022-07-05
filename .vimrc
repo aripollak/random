@@ -180,7 +180,6 @@ let g:airline#extensions#default#section_truncate_width = {
 let g:airline_highlighting_cache = 1
 let g:indent_bar_set_conceal = 0
 let g:netrw_hide = 1
-let g:rails_ctags_arguments = ['--languages=JavaScript,Ruby', '--exclude=node_modules', '--exclude=vendor']
 " Fix https://github.com/neoclide/coc.nvim/issues/1775
 let g:coc_disable_transparent_cursor = 1
 
@@ -205,7 +204,7 @@ if exists('g:loaded_plug')
   Plug 'tpope/vim-dispatch', { 'commit': '00e77d9' }
   Plug 'tpope/vim-endwise', { 'commit': 'bf90d8b' }
   Plug 'tpope/vim-fugitive', { 'tag': 'v3.6' }
-  Plug 'tpope/vim-rails', { 'commit': '2c42236' }
+  Plug 'tpope/vim-rails', { 'commit': '6bc0c78' }
   Plug 'tpope/vim-rhubarb'
   Plug 'tpope/vim-repeat', { 'tag': 'v1.2' }
   Plug 'tpope/vim-rsi', { 'commit': 'e181883' }
