@@ -119,7 +119,6 @@ alias psgrep='ps auxw | grep '
 alias po=popd
 alias pu=pushd
 [ -x /usr/bin/trash ] && alias rm=trash
-alias s='nocorrect spring'
 alias sudo='nocorrect sudo'
 alias zcp='zmv -C'
 alias zln='zmv -L'
@@ -127,8 +126,6 @@ alias zln='zmv -L'
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
-
-alias wikiup='ikiwiki --setup .ikiwiki.setup'
 
 # Debian building stuff
 alias debug='MALLOC_CHECK_=2'
@@ -183,6 +180,7 @@ export LESS=-FMRX
 export MAIL=/var/mail/ari
 export MAILCHECK=60
 export PAGER=less
+export PARALLEL_TEST_FIRST_IS_1=true # for parallel_tests gem
 export REPORTBUGEMAIL=$DEBEMAIL
 export RIPGREP_CONFIG_PATH=~/.random/.ripgreprc
 

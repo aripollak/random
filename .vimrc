@@ -188,6 +188,7 @@ command! -nargs=1 Width setlocal sw=<args> sts=<args>
 
 silent! call plug#begin('~/.vim/plugged')
 if exists('g:loaded_plug')
+  Plug 'github/copilot.vim'
   Plug 'gko/vim-coloresque', { 'commit': 'e12a500' }
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'hashivim/vim-terraform'
@@ -196,14 +197,14 @@ if exists('g:loaded_plug')
   Plug 'michaeljsmith/vim-indent-object'
   Plug 'MaxMEllon/vim-jsx-pretty'
   Plug 'nelstrom/vim-textobj-rubyblock', { 'tag': '0.0.3' }
-  Plug 'neoclide/coc.nvim', { 'branch':  'release' }
+  Plug 'neoclide/coc.nvim', { 'tag':  'v0.0.82' }
   Plug 'tommcdo/vim-exchange', { 'commit': '17f1a2c' }
   Plug 'tpope/vim-abolish', { 'tag': 'v1.1' }
   Plug 'tpope/vim-bundler', { 'tag': 'v2.1' }
   Plug 'tpope/vim-commentary', { 'commit': 'f8238d7' }
   Plug 'tpope/vim-dispatch', { 'commit': '00e77d9' }
   Plug 'tpope/vim-endwise', { 'commit': 'bf90d8b' }
-  Plug 'tpope/vim-fugitive', { 'tag': 'v3.6' }
+  Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
   Plug 'tpope/vim-rails', { 'commit': '6bc0c78' }
   Plug 'tpope/vim-rhubarb'
   Plug 'tpope/vim-repeat', { 'tag': 'v1.2' }
