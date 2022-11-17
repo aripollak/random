@@ -218,7 +218,7 @@ if exists('g:loaded_plug')
   Plug 'tpope/vim-repeat', { 'tag': 'v1.2' }
   Plug 'tpope/vim-rsi', { 'commit': 'e181883' }
   Plug 'tpope/vim-surround', { 'commit': 'f51a26d' }
-  Plug 'vim-airline/vim-airline', { 'commit': '19d1990' }
+  Plug 'vim-airline/vim-airline', { 'commit': '2654f83' }
   Plug 'yuezk/vim-js'
   call plug#end()
  
