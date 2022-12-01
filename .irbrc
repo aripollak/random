@@ -5,7 +5,7 @@ IRB.conf[:SAVE_HISTORY] = 1000
 if defined?(Bundler)
   Gem.post_reset_hooks.reject!{ |hook| hook.source_location.first =~ %r{/bundler/} }
   Gem::Specification.reset
-  load 'rubygems/core_ext/kernel_require.rb'
+  # load 'rubygems/core_ext/kernel_require.rb'
   Kernel.module_eval do
     def gem(gem_name, *requirements) # :doc:
       skip_list = (ENV['GEM_SKIP'] || "").split(/:/)
@@ -15,13 +15,3 @@ if defined?(Bundler)
     end
   end
 end
-
-# require 'irb/completion'
-# require 'table_print'
-# require 'irbtools/configure'
-# Irbtools.add_library_callback(:hirb) do
-#   Hirb.disable
-#   def hirb_enable; Hirb.enable unicode: true; end
-#   def hirb_disable; Hirb.disable; end
-# end
-# Irbtools.start
