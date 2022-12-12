@@ -70,6 +70,7 @@ endif
 if has("autocmd")
   autocmd FocusGained * checktime " work around https://github.com/neovim/neovim/issues/1936
   autocmd BufEnter *.mdwn setfiletype ikiwiki
+  autocmd BufEnter *.rabl setfiletype ruby
   autocmd FileType coffee setlocal et sts=2 sw=2 foldmethod=indent
   autocmd FileType css,html,scss setlocal et sts=2 sw=2
   autocmd FileType debchangelog setlocal et nobackup spell sts=2 indentexpr=4
