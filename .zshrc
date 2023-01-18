@@ -113,7 +113,7 @@ alias mv='nocorrect mv'
 # beeps & notifies in xterm titlebar
 alias notify='NO_TITLE=1; echo -e "\a"; print -Pn "\e]0; DONE \a"'
 alias notifyoff='unset NO_TITLE; print -Pn "\e]0;\a"'
-alias partest='be rake db:migrate; be rake db:test:prepare; be rake parallel:prepare; be nice eatmydata rake test:parallel_with_specs'
+alias ppc='powerprofilesctl launch'
 alias poco='podman-compose'
 alias psgrep='ps auxw | grep '
 alias po=popd
