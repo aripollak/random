@@ -88,7 +88,7 @@ alias d='dirs -v'
 alias devclone='cd ~/dev && git clone '
 alias doco='docker-compose'
 alias fgrep='grep -F' # to pick up grep alias
-alias fileserver='python -m SimpleHTTPServer 8080' # serves files in current dir
+alias fileserver='python3 -m http.server 8080' # serves files in current dir
 alias grep='grep --color=auto --exclude-dir=.svn --exclude-dir=.git --exclude=\*~ --exclude=\*.o --exclude=\*.pyc --exclude="*.sw[op]" --exclude=tags'
 alias h=history
 alias help=run-help

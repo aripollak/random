@@ -31,20 +31,15 @@ if exists("&inccommand")
   set inccommand=split
 endif
 set incsearch
-set linebreak
 set matchtime=2
 set mouse=a
 set noautoindent
-if has("balloon_eval")
-  set noballooneval       " disable vim-ruby's annoying tooltip
-endif
 set nocompatible        " Use Vim defaults instead of 100% vi compatibility
 set nojoinspaces
 set printoptions=paper:letter
 set ruler               " show the cursor position all the time
 set scrolloff=5
 set shiftround
-set showbreak=>\ 
 set showcmd             " Show (partial) command in status line.
 set showmatch           " Show matching brackets.
 set showmode
@@ -103,14 +98,6 @@ map k gk
 map <Down> gj
 map <Up> gk
 
-function! TShowBreak()
-  if &showbreak == ''
-    set showbreak=>\ 
-  else
-    set showbreak=
-  endif
-endfunction
-
 map <C-P> :CocList files<CR>
 map <C-S> <Esc>:update<CR>
 inoremap <C-S> <Esc>:update<CR>a
@@ -133,7 +120,7 @@ map <leader>nn :Explore<CR>
 map <leader>ns :Sexplore<CR>
 map <leader>nt :Texplore<CR>
 " toggle paste mode:
-map <leader>o <Esc>:set paste! linebreak!<CR>:call TShowBreak()<CR>:set paste?<CR>
+map <leader>o <Esc>:set paste!<CR>:set paste?<CR>
 map <leader>tt :tabnew<CR>
 " :w!! will save the file as root
 cmap w!! w !sudo tee %
@@ -197,7 +184,7 @@ command! -nargs=1 Width setlocal sw=<args> sts=<args>
 silent! call plug#begin('~/.vim/plugged')
 if exists('g:loaded_plug')
   Plug 'airblade/vim-gitgutter', { 'commit': '400a120' }
-  Plug 'github/copilot.vim'
+  " Plug 'github/copilot.vim'
   Plug 'gko/vim-coloresque', { 'commit': 'e12a500' }
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'hashivim/vim-terraform'
@@ -219,7 +206,7 @@ if exists('g:loaded_plug')
   Plug 'tpope/vim-repeat', { 'tag': 'v1.2' }
   Plug 'tpope/vim-rsi', { 'commit': 'e181883' }
   Plug 'tpope/vim-surround', { 'commit': 'f51a26d' }
-  Plug 'vim-airline/vim-airline', { 'commit': '2654f83' }
+  Plug 'vim-airline/vim-airline', { 'commit': '038e3a6' }
   Plug 'yuezk/vim-js'
   call plug#end()
  
