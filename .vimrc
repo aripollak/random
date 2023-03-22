@@ -73,7 +73,7 @@ if has("autocmd")
   autocmd FileType javascript,typescript,typescriptreact setlocal et sts=2 sw=2
   autocmd FileType json setlocal et sts=2 sw=2
   autocmd FileType markdown setlocal spell
-  autocmd FileType python setlocal et sts=4 sw=4 foldmethod=indent
+  autocmd FileType cfg,python setlocal et sts=4 sw=4 foldmethod=indent
   autocmd FileType ruby,rspec setlocal et sts=2 sw=2 tw=100 foldmethod=indent
   autocmd FileType sh setlocal et isf-==
   autocmd FileType vim setlocal et sts=2 sw=2
