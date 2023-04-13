@@ -80,6 +80,7 @@ alias apts='apt show'
 alias apti='sudo apt install'
 alias aptfu='sudo apt full-upgrade'
 alias aptu='sudo apt update && sudo apt upgrade'
+alias bat='batcat'
 alias be='nocorrect bundle exec'
 alias by='byobu'
 alias cdg='cd $(git rev-parse --show-toplevel)' # go to root of git project

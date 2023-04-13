@@ -184,7 +184,7 @@ command! -nargs=1 Width setlocal sw=<args> sts=<args>
 silent! call plug#begin('~/.vim/plugged')
 if exists('g:loaded_plug')
   Plug 'airblade/vim-gitgutter', { 'commit': '400a120' }
-  " Plug 'github/copilot.vim'
+  Plug 'github/copilot.vim'
   Plug 'gko/vim-coloresque', { 'commit': 'e12a500' }
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'hashivim/vim-terraform'
