@@ -127,9 +127,9 @@ cmap w!! w !sudo tee %
 
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gd :call CocAction('jumpDefinition', v:false)<CR>
+nmap <silent> gr :call CocAction('jumpReferences', v:false)<CR>
+nmap <silent> gy :call CocAction('jumpTypeDefinition', v:false)<CR>
 nmap <leader>ac <Plug>(coc-codeaction)
 nmap <leader>a <Plug>(coc-codeaction-selected)
 xmap <leader>a <Plug>(coc-codeaction-selected)
