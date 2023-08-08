@@ -164,10 +164,6 @@ if [ -f /etc/zsh_command_not_found ]; then
 	source /etc/zsh_command_not_found
 fi
 
-if [ -f ~/.local/bin/aws_zsh_completer.sh ]; then
-	source ~/.local/bin/aws_zsh_completer.sh
-fi
-
 # Some environment variables
 [ -x /usr/bin/lessfile ] && eval $(lessfile)
 export CLICOLOR=1
