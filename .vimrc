@@ -1,12 +1,4 @@
 " vim: set et sts=2 sw=2:
-if ($TERM =~ ".*-256color" || $TERM == "screen") && has("termguicolors")
-  set termguicolors
-  let g:airline_powerline_fonts = 1
-  hi CocFloating guibg=#333333
-  hi TabLine guibg=grey
-end
-set background=dark
-
 syntax on
 
 set autoread
@@ -36,7 +28,6 @@ set mouse=a
 set noautoindent
 set nocompatible        " Use Vim defaults instead of 100% vi compatibility
 set nojoinspaces
-set printoptions=paper:letter
 set ruler               " show the cursor position all the time
 set scrolloff=5
 set shiftround
@@ -72,6 +63,7 @@ if has("autocmd")
   autocmd FileType gitcommit setlocal nobackup spell sts=2 sw=2 tw=72
   autocmd FileType javascript,typescript,typescriptreact setlocal et sts=2 sw=2
   autocmd FileType json setlocal et sts=2 sw=2
+  autocmd FileType lua setlocal et sts=2 sw=2
   autocmd FileType markdown setlocal spell
   autocmd FileType cfg,python setlocal et sts=4 sw=4 foldmethod=indent
   autocmd FileType ruby,rspec setlocal et sts=2 sw=2 tw=100 foldmethod=indent
@@ -169,6 +161,8 @@ endif
 
 let python_highlight_all = 1
 let ruby_space_errors = 1
+let g:airline_theme = 'powerlineish'
+let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#format = 2
 let g:airline#extensions#default#section_truncate_width = {
     \ 'b': 90, 'x': 90, 'y': 90, 'z': 45, 'warning': 80, 'error': 80, }
@@ -184,10 +178,12 @@ command! -nargs=1 Width setlocal sw=<args> sts=<args>
 silent! call plug#begin('~/.vim/plugged')
 if exists('g:loaded_plug')
   Plug 'airblade/vim-gitgutter', { 'commit': '400a120' }
+  Plug 'f-person/auto-dark-mode.nvim', { 'commit': '7cbf30c' }
   Plug 'github/copilot.vim'
   Plug 'gko/vim-coloresque', { 'commit': 'e12a500' }
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'hashivim/vim-terraform'
+  Plug 'iibe/gruvbox-high-contrast'
   Plug 'juniway/indent-bar'
   Plug 'kana/vim-textobj-user', { 'tag': '0.7.6' }
   Plug 'michaeljsmith/vim-indent-object'
@@ -206,7 +202,8 @@ if exists('g:loaded_plug')
   Plug 'tpope/vim-repeat', { 'tag': 'v1.2' }
   Plug 'tpope/vim-rsi', { 'commit': 'e181883' }
   Plug 'tpope/vim-surround', { 'commit': 'f51a26d' }
-  Plug 'vim-airline/vim-airline', { 'commit': '038e3a6' }
+  Plug 'vim-airline/vim-airline', { 'commit': 'e6bb842' }
+  Plug 'vim-airline/vim-airline-themes'
   Plug 'yuezk/vim-js'
   call plug#end()
  
@@ -225,3 +222,13 @@ if exists('g:loaded_plug')
 endif
 
 filetype plugin indent on
+
+if has("termguicolors")
+  set termguicolors
+  let g:airline_powerline_fonts = 1
+  let g:gruvbox_contrast_light = 'hard'
+  let g:gruvbox_contrast_dark = 'hard'
+  colorscheme gruvbox-high-contrast
+  " hi TabLine guibg=grey
+  " hi CocFloating guibg=#333333
+end
