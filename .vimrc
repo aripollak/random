@@ -194,7 +194,7 @@ if exists('g:loaded_plug')
   Plug 'tpope/vim-abolish', { 'tag': 'v1.1' }
   Plug 'tpope/vim-bundler', { 'tag': 'v2.1' }
   Plug 'tpope/vim-commentary', { 'commit': 'f8238d7' }
-  Plug 'tpope/vim-dispatch', { 'commit': '00e77d9' }
+  Plug 'tpope/vim-dispatch', { 'commit': '6cc2691' }
   Plug 'tpope/vim-endwise', { 'commit': 'bf90d8b' }
   Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
   Plug 'tpope/vim-rails', { 'commit': '6bc0c78' }
