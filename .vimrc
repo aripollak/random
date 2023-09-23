@@ -182,7 +182,6 @@ if exists('g:loaded_plug')
   Plug 'f-person/auto-dark-mode.nvim', { 'commit': '7cbf30c' }
   Plug 'github/copilot.vim'
   Plug 'gko/vim-coloresque', { 'commit': 'e12a500' }
-  Plug 'HerringtonDarkholme/yats.vim'
   Plug 'iibe/gruvbox-high-contrast'
   Plug 'juniway/indent-bar'
   Plug 'kana/vim-textobj-user', { 'tag': '0.7.6' }
@@ -197,14 +196,13 @@ if exists('g:loaded_plug')
   Plug 'tpope/vim-dispatch', { 'commit': '6cc2691' }
   Plug 'tpope/vim-endwise', { 'commit': 'bf90d8b' }
   Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
-  Plug 'tpope/vim-rails', { 'commit': '6bc0c78' }
+  Plug 'tpope/vim-rails', { 'commit': '1ad9663' }
   Plug 'tpope/vim-rhubarb'
   Plug 'tpope/vim-repeat', { 'tag': 'v1.2' }
   Plug 'tpope/vim-rsi', { 'commit': 'e181883' }
   Plug 'tpope/vim-surround', { 'commit': 'f51a26d' }
   Plug 'vim-airline/vim-airline', { 'commit': 'e6bb842' }
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'yuezk/vim-js'
   call plug#end()
  
   " Highlight the symbol and its references when holding the cursor
