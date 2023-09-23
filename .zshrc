@@ -144,7 +144,7 @@ fi
 source ~/.zsh/git_prompt.zsh
 
 p_host="%F{green}"
-PROMPT='${debian_chroot}%F{green}%n%F{white}@${p_host}%m%F{white}:%F{cyan}%~ $(git_prompt_string)%#%F{default} '
+PROMPT='${debian_chroot}%n@${p_host}%m%F{default}:%~ $(git_prompt_string)%# '
 RPROMPT='%W %t'     # prompt for right side of screen
 ### END PROMPT SETUP ###
 
