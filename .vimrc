@@ -54,9 +54,10 @@ if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
 endif
 
 if has("autocmd")
-  autocmd FocusGained * checktime " work around https://github.com/neovim/neovim/issues/1936
-  autocmd BufEnter *.mdwn setfiletype ikiwiki
-  autocmd BufEnter *.rabl setfiletype ruby
+  autocmd BufNewFile,BufRead *.rabl setlocal filetype=ruby
+  autocmd BufNewFile,BufRead .eslintrc.json setlocal filetype=jsonc
+  autocmd BufNewFile,BufRead coc-settings.json setlocal filetype=jsonc
+  autocmd BufNewFile,BufRead tsconfig.json setlocal filetype=jsonc
   autocmd FileType coffee setlocal et sts=2 sw=2 foldmethod=indent
   autocmd FileType css,html,scss setlocal et sts=2 sw=2
   autocmd FileType debchangelog setlocal et nobackup spell sts=2 indentexpr=4
@@ -182,7 +183,6 @@ if exists('g:loaded_plug')
   Plug 'github/copilot.vim'
   Plug 'gko/vim-coloresque', { 'commit': 'e12a500' }
   Plug 'HerringtonDarkholme/yats.vim'
-  Plug 'hashivim/vim-terraform'
   Plug 'iibe/gruvbox-high-contrast'
   Plug 'juniway/indent-bar'
   Plug 'kana/vim-textobj-user', { 'tag': '0.7.6' }

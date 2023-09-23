@@ -2,10 +2,10 @@
   "yank.list.maxsize": 50,
   // "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact", "python"],
   "typescript.format.enable": false, // use coc-prettier instead of coc-tsserver
+  "python.analysis.typeCheckingMode": "off",
   "python.formatting.provider": "black",
-  // "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": true,
   "python.pythonPath": "python3",
-  //"coc.preferences.jumpCommand": "tab drop",
   "coc.preferences.rootPatterns": ["package.json", ".git", ".hg"],
   "list.source.grep.args": ["--engine=auto"],
   "list.insertMappings": {
@@ -29,4 +29,3 @@
     }
   }
 }
-
