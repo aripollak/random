@@ -191,7 +191,7 @@ if exists('g:loaded_plug')
   Plug 'neoclide/coc.nvim', { 'tag':  'v0.0.82' }
   Plug 'tommcdo/vim-exchange', { 'commit': '17f1a2c' }
   Plug 'tpope/vim-abolish', { 'tag': 'v1.1' }
-  Plug 'tpope/vim-bundler', { 'tag': 'v2.1' }
+  Plug 'tpope/vim-bundler', { 'tag': 'v2.2' }
   Plug 'tpope/vim-commentary', { 'commit': 'f8238d7' }
   Plug 'tpope/vim-dispatch', { 'commit': '6cc2691' }
   Plug 'tpope/vim-endwise', { 'commit': 'bf90d8b' }
