@@ -80,7 +80,6 @@ alias apts='apt show'
 alias apti='sudo apt install'
 alias aptfu='sudo apt full-upgrade'
 alias aptu='sudo apt update && sudo apt upgrade'
-alias bat='batcat'
 alias be='nocorrect bundle exec'
 alias by='byobu'
 alias cdg='cd $(git rev-parse --show-toplevel)' # go to root of git project
@@ -195,6 +194,11 @@ compdef _dev dev
 doc() { cd /usr/share/doc/$1 && ls }
 _doc() { _path_files -W /usr/share/doc -/ }
 compdef _doc doc
+
+function bat {
+	theme_arg=$([[ `gsettings get org.gnome.desktop.interface color-scheme 2>/dev/null` == "'default'" ]] && echo '--theme=GitHub')
+	batcat $theme_arg $@
+}
 
 function g {
 	if [[ $# > 0 ]]; then

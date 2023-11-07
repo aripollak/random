@@ -127,7 +127,7 @@ nmap <leader>ac <Plug>(coc-codeaction)
 nmap <leader>a <Plug>(coc-codeaction-selected)
 xmap <leader>a <Plug>(coc-codeaction-selected)
 nmap <leader>re <Plug>(coc-rename)
-" Introduce function text object
+" Introduce function and class text objects
 xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
@@ -182,6 +182,7 @@ if exists('g:loaded_plug')
   Plug 'f-person/auto-dark-mode.nvim', { 'commit': '7cbf30c' }
   Plug 'github/copilot.vim'
   Plug 'gko/vim-coloresque', { 'commit': 'e12a500' }
+  Plug 'hashivim/vim-terraform'
   Plug 'iibe/gruvbox-high-contrast'
   Plug 'juniway/indent-bar'
   Plug 'kana/vim-textobj-user', { 'tag': '0.7.6' }
