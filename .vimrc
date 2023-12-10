@@ -43,7 +43,6 @@ set tags+=../tags;,../TAGS
 set title
 set undodir=~/.vim/backup
 set undofile " omg why is this not on by default
-set updatetime=300 " for quicker CursorHold and other coc thinigs
 set visualbell
 set wildignore+=*.o,*.pyc
 set wildmode=longest,list " don't automatically cycle through completions
@@ -56,7 +55,6 @@ endif
 if has("autocmd")
   autocmd BufNewFile,BufRead *.rabl setlocal filetype=ruby
   autocmd BufNewFile,BufRead .eslintrc.json setlocal filetype=jsonc
-  autocmd BufNewFile,BufRead coc-settings.json setlocal filetype=jsonc
   autocmd BufNewFile,BufRead tsconfig.json setlocal filetype=jsonc
   autocmd FileType coffee setlocal et sts=2 sw=2 foldmethod=indent
   autocmd FileType css,html,scss setlocal et sts=2 sw=2
@@ -91,7 +89,6 @@ map k gk
 map <Down> gj
 map <Up> gk
 
-map <C-P> :CocList files<CR>
 map <C-S> <Esc>:update<CR>
 inoremap <C-S> <Esc>:update<CR>a
 " Use <C-L> to clear the highlighting of :set hlsearch.
@@ -100,12 +97,6 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 " leader is \ by default, so this command is \d:
 map <leader>d :cd %:p:h<CR> " go to directory of current file
-map <leader>cs :CocSearch --smart-case 
-map <leader>fb :CocList buffers<CR>
-map <leader>fg :CocList grep -S 
-map <leader>fh :CocList mru<CR>
-map <leader>ft :CocList tags<CR>
-map <leader>fw :CocList windows<CR>
 map <leader>l :set list!<CR>:set list?<CR>
 map <leader>nd :edit .<CR>
 map <leader>ne :Ntree<CR>
@@ -115,50 +106,6 @@ map <leader>nt :Texplore<CR>
 " toggle paste mode:
 map <leader>o <Esc>:set paste!<CR>:set paste?<CR>
 map <leader>tt :tabnew<CR>
-" :w!! will save the file as root; replace pkexec with sudo on non-Linux.
-cmap w!! w !pkexec tee %
-
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <silent> gd :call CocAction('jumpDefinition', v:false)<CR>
-nmap <silent> gr :call CocAction('jumpReferences', v:false)<CR>
-nmap <silent> gy :call CocAction('jumpTypeDefinition', v:false)<CR>
-nmap <leader>ac <Plug>(coc-codeaction)
-nmap <leader>a <Plug>(coc-codeaction-selected)
-xmap <leader>a <Plug>(coc-codeaction-selected)
-nmap <leader>re <Plug>(coc-rename)
-" Introduce function and class text objects
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
-xmap ic <Plug>(coc-classobj-i)
-omap ic <Plug>(coc-classobj-i)
-xmap ac <Plug>(coc-classobj-a)
-omap ac <Plug>(coc-classobj-a)
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-nnoremap <silent><nowait> <space>y  :<C-u>CocList -A --normal yank<CR>
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
-" Remap <C-f> and <C-b> for scroll float windows/popups.
-if has('nvim-0.4.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-endif
 
 let python_highlight_all = 1
 let ruby_space_errors = 1
@@ -170,8 +117,6 @@ let g:airline#extensions#default#section_truncate_width = {
 let g:airline_highlighting_cache = 1
 let g:indent_bar_set_conceal = 0
 let g:netrw_hide = 1
-" Fix https://github.com/neoclide/coc.nvim/issues/1775
-let g:coc_disable_transparent_cursor = 1
 
 " :Width # will set all width preferences to #
 command! -nargs=1 Width setlocal sw=<args> sts=<args>
@@ -179,8 +124,6 @@ command! -nargs=1 Width setlocal sw=<args> sts=<args>
 silent! call plug#begin('~/.vim/plugged')
 if exists('g:loaded_plug')
   Plug 'airblade/vim-gitgutter', { 'commit': '400a120' }
-  Plug 'f-person/auto-dark-mode.nvim', { 'commit': '7cbf30c' }
-  Plug 'github/copilot.vim'
   Plug 'gko/vim-coloresque', { 'commit': 'e12a500' }
   Plug 'hashivim/vim-terraform'
   Plug 'iibe/gruvbox-high-contrast'
@@ -189,7 +132,6 @@ if exists('g:loaded_plug')
   Plug 'michaeljsmith/vim-indent-object'
   Plug 'MaxMEllon/vim-jsx-pretty'
   Plug 'nelstrom/vim-textobj-rubyblock', { 'tag': '0.0.3' }
-  Plug 'neoclide/coc.nvim', { 'tag':  'v0.0.82' }
   Plug 'tommcdo/vim-exchange', { 'commit': '17f1a2c' }
   Plug 'tpope/vim-abolish', { 'tag': 'v1.1' }
   Plug 'tpope/vim-bundler', { 'tag': 'v2.2' }
@@ -205,19 +147,6 @@ if exists('g:loaded_plug')
   Plug 'vim-airline/vim-airline', { 'commit': 'e6bb842' }
   Plug 'vim-airline/vim-airline-themes'
   call plug#end()
- 
-  " Highlight the symbol and its references when holding the cursor
-  autocmd CursorHold * silent call CocActionAsync('highlight')
-
-  " Use K to show documentation in preview window.
-  nnoremap <silent> K :call <SID>show_documentation()<CR>
-  function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-      execute 'h '.expand('<cword>')
-    else
-      call CocAction('doHover')
-    endif
-  endfunction
 endif
 
 filetype plugin indent on
@@ -228,6 +157,4 @@ if has("termguicolors")
   let g:gruvbox_contrast_light = 'hard'
   let g:gruvbox_contrast_dark = 'hard'
   colorscheme gruvbox-high-contrast
-  " hi TabLine guibg=grey
-  " hi CocFloating guibg=#333333
 end
