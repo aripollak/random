@@ -168,6 +168,7 @@ fi
 export CLICOLOR=1
 export DEBEMAIL=ari@debian.org
 export DEBFULLNAME="Ari Pollak"
+export DOCKER_BUILDKIT=0 # for tilt to work with podman
 # For rootless podman with docker-compose
 export DOCKER_HOST=unix:///run/user/$UID/podman/podman.sock
 which nvim >/dev/null && export EDITOR=nvim
