@@ -51,7 +51,6 @@
 	submoduleSummary = true
 [user]
 	name = Ari Pollak
-	signingkey = /home/ari/.ssh/id_ed25519.pub
 [url "git://github.com/"]
 	# Read-only, e.g. gh:aripollak/random
 	insteadOf = gh:
@@ -66,5 +65,7 @@
 	autoSetupRemote = true
 [gpg]
 	format = ssh
+[gpg "ssh"]
+	defaultKeyCommand = ssh-add -L
 [commit]
 	gpgsign = true
