@@ -51,6 +51,7 @@
 	submoduleSummary = true
 [user]
 	name = Ari Pollak
+	signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPg/BwGED9tKKBPb6frF7q/5zxKKFKIU7sRzgdqbDKzs
 [url "git://github.com/"]
 	# Read-only, e.g. gh:aripollak/random
 	insteadOf = gh:
@@ -66,7 +67,6 @@
 [gpg]
 	format = ssh
 [gpg "ssh"]
-	defaultKeyCommand = ssh-add -L
 	allowedSignersFile = /home/ari/.ssh/allowed_signers
 [commit]
 	gpgsign = true
