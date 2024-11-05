@@ -70,3 +70,5 @@
 	allowedSignersFile = /home/ari/.ssh/allowed_signers
 [commit]
 	gpgsign = true
+[rerere]
+	enabled = true
