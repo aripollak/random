@@ -220,3 +220,4 @@ fi
 
 [ -f ~/.zshrc.priv ] && source ~/.zshrc.priv
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local # a good place to override p_host
+[ -f /etc/profile.d/vte-2.91.sh ] && source /etc/profile.d/vte-2.91.sh # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1083281
